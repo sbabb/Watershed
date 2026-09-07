@@ -1,91 +1,110 @@
 # Blockx
 
-A time tracker that only asks you one thing: *was the day you planned the day
-you got?*
+A mobile app that turns each day into purpose-defined blocks of time.
 
-Not a timer. Not a stopwatch you forget to stop. Not billable hours. Blockx is
-a personal attention tool — you block out the day you intend to have, and later
-you paint in the day you actually had, on the same timeline. The product is the
-space between those two.
+Most trackers ask *what did you do?* — and give you back a pie chart of
+activities. Blockx asks *what was it for?*, and keeps that answer attached to
+the block for as long as the block exists.
 
-## Why not a timer
+## The reframe
 
-Timers measure the days you remembered to press the button. That is not a
-sample of your life, it's a sample of your discipline, and the two get confused
-constantly. A week of timer data flatters you: the tracked hours look focused
-because the untracked hours are the ones where you fell apart.
-
-Blockx never runs. At the end of the day you paint the timeline in from memory.
-Memory is coarse and slightly wrong, which is fine — you are not billing anyone.
-Coarse and complete beats precise and full of holes.
-
-## The part worth reading
-
-The obvious version of this app scores you. Planned six hours of deep work, got
-two, here's your 33%. That number is worse than useless for two reasons.
-
-First, it punishes ambition. The way to win is to plan nothing.
-
-Second, and worse, it tells you *that* you failed without telling you *how*.
-The two hours did not evaporate. They went somewhere specific.
-
-So Blockx does not report compliance. It reports **substitution** — the named
-trade you actually made:
+The category isn't the activity. It's the purpose:
 
 ```
-Deep work    planned 4h   actual 1h30   -2h30
-                                        ↳ 1h45 went to Meetings
-                                        ↳   45m went to Email
+WORK        earning money
+LEARNING    self-improvement          ← design practice lives here
+SOCIAL      relationships
 ```
 
-That sentence is the whole product. Not "you were 38% compliant." Rather:
-*today, deep work lost two and a half hours to meetings and email.* One is a
-grade. The other is a fact you can do something about tomorrow.
+Not "coding" but *earning*. Not "reading" but *self-improvement*. Not "dinner
+with friends" but *relationships*. Same hours, different question, and the
+second question is the one that actually tells you whether the year is going
+the way you wanted.
 
-## The second idea: plans should learn
+This is the whole product. Everything else is in service of keeping the *why*
+visible instead of letting it decay into a list of tasks.
 
-If you plan six hours of deep work every day and average two, a tracker that
-just keeps recording the gap is a machine for making you feel bad. The gap is
-constant. There is no information in it after the third day.
+## The second axis: quality
 
-So the plan side pushes back. When you go to block out tomorrow, Blockx knows
-what you have actually managed in this category over the last few weeks, and
-says so:
+An hour is not an hour. Three hours of work at half-attention is not three
+hours, and every tracker that reports it as three hours is lying to you in a
+way that feels like progress.
 
-> You've planned 6h of deep work daily this week and averaged 2h20.
+So a block carries a focus rating alongside its duration. Two axes, kept
+separate — **how long** and **how well**. They are never multiplied into a
+single "effective hours" score, because that invents a precision neither number
+has. You see the hours, and you see the quality distribution underneath them.
 
-It does not stop you. It just refuses to let you plan in a vacuum. Over time
-your plans converge on your real capacity, and *that* — a plan you can actually
-hit — is the outcome, not a higher score.
+## Scale
+
+Blocks roll up: day, week, month, year. The day is where you log; the longer
+ranges are where the point lands. A week of blocks is a status report. A year
+of blocks is an answer to a question you can't ask any other way.
+
+Goal spend reads off the same data — time toward a goal, accumulated across
+whatever range you're looking at.
+
+## Design direction
+
+**Terminal aesthetic**, continuous with [Cadence](https://github.com/sbabb/cadence),
+which already has the system worth inheriting:
+
+- Published IDE palettes people recognize by sight — Tokyo Night, Nord,
+  Catppuccin Latte — plus a neutral. Never hand-mixed.
+- Sharp corners. No radius, no shadows, no gradients, no blur. Flat, always.
+- Borders carry state; background fills are for grouping, never status.
+- Color always pairs with a number or a word. It never carries meaning alone.
+- Every color comes from a token. A literal hex downstream is a color that will
+  be wrong in four themes out of five — and `verify-themes.mjs` checks contrast
+  by arithmetic rather than by eye.
+
+**Motion is high priority, and deliberately placed.** Cadence's `motion.js`
+is the model: a single data table of named moments with durations and bezier
+curves, readable in one screen, retypeable into Rive. Motion earns specific
+moments rather than being sprayed across every transition.
 
 ## What it deliberately isn't
 
+Blockx intentionally does less than other tracking apps, because the ones that
+do more are the ones people abandon in week two.
+
+- **No live timer.** No stopwatch to forget to stop.
+- **No minute precision.** Coarse blocks. Granularity from memory is fiction
+  with a decimal point.
 - **No clients, projects, or invoices.** The output is self-knowledge, not a bill.
-- **No minute precision.** Blocks snap coarse. Fifteen-minute granularity from
-  memory is fiction with a decimal point.
-- **No automatic capture.** No app monitoring, no calendar scraping to start
-  with. Deciding what the last two hours *were* is the part that does the work.
-- **No streaks or badges.** Missing a day is data, not a failure state.
+- **No automatic capture.** No app monitoring, no calendar scraping. Deciding
+  what the last two hours were *for* is the part that does the work.
+- **No streaks or badges.** A missed day is data, not a failure state.
 
-## Status
+## Proposals — mine, not yet decided
 
-Early. Concept settled, design in progress. Nothing implemented yet.
+Flagged separately so they don't get mistaken for settled concept:
+
+- **Quality as texture, not multiplier.** On a goal-progress bar, show hours as
+  length and focus as fill treatment. Keeps "color pairs with a number" intact
+  and avoids a fake composite score.
+- **The scale transition is the motion moment.** Day → week → month → year
+  zoom-out is the emotional payoff and the one animation worth building
+  properly in Rive. Logging a block is the second.
+- **Substitution reporting.** Salvaged from an earlier draft: when a purpose
+  comes up short over a range, name where the time went instead ("learning lost
+  6h to work this week") rather than reporting a percentage.
 
 ## Open questions
 
-Things deliberately not decided yet, because the design work should inform them:
+- **Does planning survive at all?** An earlier draft was built on plan-vs-actual.
+  The concept as stated is purely retrospective, and "do less" argues against
+  adding a planning layer. Undecided.
+- **Platform.** Native (React Native / Expo) or PWA? Cadence is a Vite PWA with
+  keyboard-inset and tap-press handling, so it already behaves on mobile.
+- **Are purposes fixed or user-defined?** A small fixed set keeps rollups
+  legible across years; user-defined makes it personal. Renaming may be the
+  middle.
+- **Focus rating scale.** 3 points or 5? Fewer is faster to log, which matters
+  more here than resolution.
+- **What logging actually looks like.** The central design problem. Painting a
+  timeline is a desktop gesture; mobile likely wants something else.
 
-- **Categories.** Fixed small set, or user-defined? A small fixed set makes the
-  substitution report legible; user-defined makes it personal. Probably fixed to
-  start, with renaming.
-- **Granularity.** 30 minutes feels right. 15 is a lie, 60 is too coarse to show
-  a substitution.
-- **The plan/actual interaction.** Two stacked timelines? One timeline you paint
-  over, with the plan showing through underneath? This is the central design
-  problem and it gets answered in Figma, not here.
-- **Range.** Is there a week view, or is the day the only unit that exists?
+## Status
 
-## Prior art in this repo's family
-
-[Cadence](https://github.com/sbabb/cadence) — same instinct, applied to money.
-One question a day, one honest number back, no feature creep.
+Concept settled. Design in progress. Nothing implemented.
