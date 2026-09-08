@@ -1,0 +1,34 @@
+{
+  "artboards": [
+    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 390, "h": 844, "title": "Home" },
+    { "file": "LogLane.dc.html", "x": 470, "y": 0, "w": 390, "h": 844, "title": "Log 1 — pick a lane" },
+    { "file": "LogGrid.dc.html", "x": 940, "y": 0, "w": 390, "h": 844, "title": "Log 2 — the 3x2 grid" },
+    { "file": "Year.dc.html", "x": 1410, "y": 0, "w": 390, "h": 844, "title": "Year — week resolution" },
+    { "file": "LaneDetail.dc.html", "x": 0, "y": 1010, "w": 390, "h": 844, "title": "Lane + goal" },
+    { "file": "Encoding.dc.html", "x": 470, "y": 1010, "w": 900, "h": 700, "title": "Encoding options" }
+  ],
+  "annotations": [
+    {
+      "id": "note-flow",
+      "x": 0,
+      "y": -210,
+      "w": 380,
+      "text": "The logging flow reads left to right.\n\nHome carries the last three weeks at day resolution, today's blocks, and the one free-text line. LOG A BLOCK opens the lane picker; picking a lane opens the grid. Two taps after the lane, and the lane's why-sentence is on screen while you answer."
+    },
+    {
+      "id": "note-year",
+      "x": 1410,
+      "y": -210,
+      "w": 380,
+      "text": "The payoff view. 52 columns, one per week, five lanes.\n\nThe thing to judge: BODY going quiet from March to November. Nothing in the app mentions it — the shape just says so. If that doesn't land at a glance, the encoding is wrong, not the concept."
+    },
+    {
+      "id": "note-encoding",
+      "x": 470,
+      "y": 1750,
+      "w": 900,
+      "text": "The two questions the README leaves open, drawn rather than argued.\n\nRow 1 is the day mark; row 2 is the week cell, shown at true size and at 3x. The highlighted border marks what the four screens above currently use — A and 1. Each caption names the cost, including for the ones I'd reject."
+    }
+  ],
+  "launch": { "view": "canvas" }
+}
