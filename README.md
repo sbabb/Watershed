@@ -1,110 +1,130 @@
-# Blockx
+# Watershed
 
-A mobile app that turns each day into purpose-defined blocks of time.
+A record of what your time was *for*.
 
-Most trackers ask *what did you do?* — and give you back a pie chart of
-activities. Blockx asks *what was it for?*, and keeps that answer attached to
-the block for as long as the block exists.
+Not a timer, not a calendar, not a productivity tracker. Watershed asks two
+questions about a block of time — **what was it for**, and **did it enlarge you
+or diminish you** — and then shows you what those answers look like across a
+year.
 
-## The reframe
+The name carries both meanings on purpose: the land that drains to one river,
+and the turning point.
 
-The category isn't the activity. It's the purpose:
+## The two questions
 
-```
-WORK        earning money
-LEARNING    self-improvement          ← design practice lives here
-SOCIAL      relationships
-```
+**What was it for.** Most trackers record the activity. Watershed records the
+purpose. Not "coding" but *earning*; not "reading" but *becoming someone*. The
+activity is observable and mostly uninteresting. The purpose is the thing you
+lose track of.
 
-Not "coding" but *earning*. Not "reading" but *self-improvement*. Not "dinner
-with friends" but *relationships*. Same hours, different question, and the
-second question is the one that actually tells you whether the year is going
-the way you wanted.
+**Did it enlarge or diminish you.** This is James Hollis's question, and it
+replaces the focus rating that every other tracker uses. A focus score measures
+output, invites optimization, and turns an app into a second job. Enlarge or
+diminish measures meaning, cannot be gamed — there is no direction to push it —
+and Hollis's observation is that you know the answer in your body within a
+second, before your intellect arrives with reasons.
 
-This is the whole product. Everything else is in service of keeping the *why*
-visible instead of letting it decay into a list of tasks.
+An hour can be productive and diminishing. That is the most important fact
+about a day, and no focus slider can see it.
 
-## The second axis: quality
+## Lanes
 
-An hour is not an hour. Three hours of work at half-attention is not three
-hours, and every tracker that reports it as three hours is lying to you in a
-way that feels like progress.
+Purposes are **lanes** — persistent, like git branches. They run through your
+timeline whether or not you commit to them, so a lane you haven't touched in
+six weeks is visibly quiet rather than absent. That silence is the app's most
+valuable output, and a tag-based model literally cannot draw it.
 
-So a block carries a focus rating alongside its duration. Two axes, kept
-separate — **how long** and **how well**. They are never multiplied into a
-single "effective hours" score, because that invents a precision neither number
-has. You see the hours, and you see the quality distribution underneath them.
+Each lane carries a sentence *you* wrote about why it exists, shown whenever you
+log to it. When a lane's stated why stops being true, you find out — because
+you read it and flinch.
 
-## Scale
+Lanes are yours to create, capped at five or six. The cap is a feature: if you
+can only have five, you have to decide what actually matters. It must be stated
+plainly in the UI, never silently enforced — and the number itself is a guess to
+test, not a settled fact.
 
-Blocks roll up: day, week, month, year. The day is where you log; the longer
-ranges are where the point lands. A week of blocks is a status report. A year
-of blocks is an answer to a question you can't ask any other way.
+## What a block is
 
-Goal spend reads off the same data — time toward a goal, accumulated across
-whatever range you're looking at.
+A block is a commit, not a calendar entry: it has a day and a rough size, but no
+start or end time. Three size buckets. Precise times would be both slow to enter
+and fiction, and they'd drag the app back toward the calendar it exists to avoid.
+
+You log only the blocks that **mattered** — two or three on a normal day. There
+is no expectation of covering sixteen hours, because full-day reconstruction is
+what kills every retrospective tracker ever built.
+
+One optional free-text line per **day** — never per block, which is how this
+would become journalling and die in three weeks. The structure tells you what
+the year was; the sentences tell you what it felt like.
+
+## What it refuses to do
+
+Every item here exists because the alternative is how tracking apps burn people
+out:
+
+- **No streaks, scores, or percentages.** Nothing to optimize, so nothing to
+  resent.
+- **No backfill prompts. Ever.** "You missed 3 days" is a debt with a friendly
+  face. A silent day draws as quiet and the app never mentions it.
+- **No progress bars on goals.** Goals carry a date for orientation and show
+  time *accumulated*, never time remaining or percent complete — a completion
+  figure would require knowing a total nobody knows, and a fabricated "23%" on a
+  hard day does real harm.
+- **No live timer, no auto-capture, no app monitoring.** Deciding what the last
+  two hours were *for* is the part that does the work.
+- **A diminishing block is data, never a failure state.** No red, no warning, no
+  suggestion to improve. Hollis's swamplands: the hard passages aren't
+  malfunctions, they're territory with something to say.
+
+## Why not just use a calendar
+
+A calendar records **appointments** — time other people can see and claim. Its
+atom is the commitment.
+
+The blocks that mattered most in your life were never on a calendar. The walk.
+The bad Tuesday afternoon. The conversation that changed something. A calendar
+structurally cannot hold those, has no field for *why* or for *enlarged or
+diminished*, and offers no view that makes a year feel like anything. It shows
+the future as obligation and the past as residue.
 
 ## Design direction
 
 **Terminal aesthetic**, continuous with [Cadence](https://github.com/sbabb/cadence),
-which already has the system worth inheriting:
+which already has the system to inherit: published IDE palettes (Tokyo Night,
+Nord, Catppuccin Latte) rather than hand-mixed ones; sharp corners, no radius,
+no shadows or gradients; borders carry state while fills only group; color
+always pairs with a number or a word; every color from a token, with contrast
+verified by arithmetic rather than by eye.
 
-- Published IDE palettes people recognize by sight — Tokyo Night, Nord,
-  Catppuccin Latte — plus a neutral. Never hand-mixed.
-- Sharp corners. No radius, no shadows, no gradients, no blur. Flat, always.
-- Borders carry state; background fills are for grouping, never status.
-- Color always pairs with a number or a word. It never carries meaning alone.
-- Every color comes from a token. A literal hex downstream is a color that will
-  be wrong in four themes out of five — and `verify-themes.mjs` checks contrast
-  by arithmetic rather than by eye.
+**Lanes render as a git graph.** Parallel channels running through time, commits
+landing on them, dormant branches visibly quiet. It's the right metaphor, it's
+natively terminal, and it's built for exactly the problem of making a long
+stretch of time legible at a glance.
 
-**Motion is high priority, and deliberately placed.** Cadence's `motion.js`
-is the model: a single data table of named moments with durations and bezier
-curves, readable in one screen, retypeable into Rive. Motion earns specific
-moments rather than being sprayed across every transition.
+**Motion is high priority and deliberately placed.** Cadence's `motion.js` is
+the model — one readable data table of named moments with durations and bezier
+curves, retypeable into Rive. Named moments, not scattered transitions.
 
-## What it deliberately isn't
+## Architecture
 
-Blockx intentionally does less than other tracking apps, because the ones that
-do more are the ones people abandon in week two.
+- **Local-first, no accounts, no server.** This is also what makes a one-time
+  purchase viable: no marginal cost per user means no need for recurring revenue.
+- **One web codebase (PWA)** covering desktop and mobile today. Tauri can wrap
+  the same codebase into a sellable native desktop binary later.
+- **Sync is a stretch goal**, deliberately deferred — and it stays cheap to add
+  as long as the data model is a portable file from day one. Cadence's
+  export/import is the precedent: that *is* the sync story, with no account and
+  no password.
 
-- **No live timer.** No stopwatch to forget to stop.
-- **No minute precision.** Coarse blocks. Granularity from memory is fiction
-  with a decimal point.
-- **No clients, projects, or invoices.** The output is self-knowledge, not a bill.
-- **No automatic capture.** No app monitoring, no calendar scraping. Deciding
-  what the last two hours were *for* is the part that does the work.
-- **No streaks or badges.** A missed day is data, not a failure state.
+## Open
 
-## Proposals — mine, not yet decided
-
-Flagged separately so they don't get mistaken for settled concept:
-
-- **Quality as texture, not multiplier.** On a goal-progress bar, show hours as
-  length and focus as fill treatment. Keeps "color pairs with a number" intact
-  and avoids a fake composite score.
-- **The scale transition is the motion moment.** Day → week → month → year
-  zoom-out is the emotional payoff and the one animation worth building
-  properly in Rive. Logging a block is the second.
-- **Substitution reporting.** Salvaged from an earlier draft: when a purpose
-  comes up short over a range, name where the time went instead ("learning lost
-  6h to work this week") rather than reporting a percentage.
-
-## Open questions
-
-- **Does planning survive at all?** An earlier draft was built on plan-vs-actual.
-  The concept as stated is purely retrospective, and "do less" argues against
-  adding a planning layer. Undecided.
-- **Platform.** Native (React Native / Expo) or PWA? Cadence is a Vite PWA with
-  keyboard-inset and tap-press handling, so it already behaves on mobile.
-- **Are purposes fixed or user-defined?** A small fixed set keeps rollups
-  legible across years; user-defined makes it personal. Renaming may be the
-  middle.
-- **Focus rating scale.** 3 points or 5? Fewer is faster to log, which matters
-  more here than resolution.
-- **What logging actually looks like.** The central design problem. Painting a
-  timeline is a desktop gesture; mobile likely wants something else.
+- The logging interaction. Lane → size → enlarge/diminish is three taps; the
+  design question is whether size and valence collapse into one control.
+- What the year view actually shows, and at what granularity.
+- Where the motion moments land.
+- The file format.
+- Whether the lane cap is five or six.
 
 ## Status
 
-Concept settled. Design in progress. Nothing implemented.
+Concept settled through a full grilling pass. Design next. Nothing implemented.
