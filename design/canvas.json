@@ -1,34 +1,41 @@
 {
   "artboards": [
-    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 400, "h": 880, "title": "Home — horizontal" },
-    { "file": "MainVertical.dc.html", "x": 500, "y": 0, "w": 400, "h": 880, "title": "Home — vertical" },
-    { "file": "LogLane.dc.html", "x": 1000, "y": 0, "w": 400, "h": 880, "title": "Log 1 — pick a lane" },
-    { "file": "LogGrid.dc.html", "x": 1500, "y": 0, "w": 400, "h": 880, "title": "Log 2 — the 3x2 grid" },
-    { "file": "Year.dc.html", "x": 2000, "y": 0, "w": 400, "h": 880, "title": "Year — week resolution" },
-    { "file": "LaneDetail.dc.html", "x": 0, "y": 1020, "w": 400, "h": 880, "title": "Lane + goal" },
-    { "file": "Encoding.dc.html", "x": 500, "y": 1020, "w": 920, "h": 840, "title": "Encoding options" }
+    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 400, "h": 880, "title": "1 — Home" },
+    { "file": "LogLane.dc.html", "x": 500, "y": 0, "w": 400, "h": 880, "title": "2 — Pick a lane" },
+    { "file": "LogGrid.dc.html", "x": 1000, "y": 0, "w": 400, "h": 880, "title": "3 — The 3x2 grid" },
+    { "file": "LaneDetail.dc.html", "x": 1600, "y": 0, "w": 400, "h": 880, "title": "Lane + goal" },
+    { "file": "Year.dc.html", "x": 2100, "y": 0, "w": 400, "h": 880, "title": "The year" },
+    { "file": "Encoding.dc.html", "x": 0, "y": 1020, "w": 920, "h": 840, "title": "Encoding — decided" },
+    { "file": "MainHorizontal.dc.html", "x": 1600, "y": 1020, "w": 400, "h": 880, "title": "Home — horizontal (not chosen)" }
   ],
   "annotations": [
     {
-      "id": "note-axis",
+      "id": "note-flow",
       "x": 0,
-      "y": -250,
-      "w": 880,
-      "text": "The same 21 days, the same blocks, both ways.\n\nLEFT — time runs left to right, lanes are rows. The calendar convention. Today sits at the right edge, where a graph grows.\n\nRIGHT — time runs top to bottom, lanes are rails. The git log convention. Today sits at the top, under your thumb, and the past is one scroll away. Weekends band for free, which the horizontal version cannot do legibly.\n\nBoth are 393 x 873, the Galaxy A52's viewport. The vertical one gives each day 25px of room instead of 17px, and it can keep going down for as long as you have history."
+      "y": -300,
+      "w": 1400,
+      "text": "THREE TAPS FROM HOME TO A LOGGED BLOCK. Nothing is confirmed; the third tap is the commit.\n\n1 — HOME. Tap LOG A BLOCK, pinned to the bottom edge where the thumb already is. Or skip a step: tap a lane's name at the top of its rail and go straight to screen 3 for that lane. Or tap any day row to open that day and add to it.\n\n2 — PICK A LANE. Six cards, each showing the why-sentence you wrote, so the reason is on screen while you choose. TODAY is selected; one tap on YESTERDAY reaches back. That is the whole reach-back — there is no date picker, because a date picker is an invitation to backfill.\n\n3 — THE GRID. Size across, valence down. One tap on a cell writes the block and returns you to Home, where the new mark is already on the rail. Instead of a confirm step, the line that said YESTERDAY IS STILL OPEN now says LOGGED · UNDO for a few seconds.\n\nWorst case three taps, best case two, no typing, no scrolling, no decisions that aren't about meaning."
     },
     {
-      "id": "note-year",
-      "x": 2000,
-      "y": -250,
-      "w": 380,
-      "text": "The payoff view. 52 columns, one per week, five lanes.\n\nThe thing to judge: BODY going quiet from March to November. Nothing in the app mentions it — the shape just says so. If that doesn't land at a glance, the encoding is wrong, not the concept."
+      "id": "note-lanes",
+      "x": 1600,
+      "y": -300,
+      "w": 900,
+      "text": "SIX LANES, NOT FIVE. The cap moved because the sixth could not be honestly merged into any of the other five.\n\nTHE JOB and THE WORK are the pair worth staring at. They are near-synonyms in English and everybody feels the difference — 'how was the job' and 'how's the work going' are different questions. The job is what the world asks of you; the work is what you ask of yourself. Hollis would call the first the provisional life and the second the summons. Keeping them apart is the point: a fat blue rail beside a thin green one IS that distinction, drawn, with no text at all. Merging them would destroy the most useful signal the app has.\n\nMONEY is money that isn't the job — admin, side income, the 2am sums. If that isn't real for you, fold it into THE JOB and run five.\n\nSOBER is logged as the work of it: the meeting, the call, the reading, the walk you took instead. Watch its rail against BODY's — unbroken beside an eight-month silence."
     },
     {
       "id": "note-encoding",
-      "x": 500,
+      "x": 0,
       "y": 1900,
       "w": 900,
-      "text": "Decided: B FULL / FADED for the day mark, 1 STACKED for the week cell.\n\nThat also makes the two resolutions speak one language — fill means enlarged, fade means diminished, at both zoom levels. Under solid/hollow they were two different languages, which was a bug nobody had named yet.\n\nThe rejected options stay on the board with their costs, so the choice keeps its reasons."
+      "text": "LOCKED. B FULL / FADED for the day mark, 1 STACKED for the week cell.\n\nOne rule now holds at both resolutions: footprint means size, fill means enlarged, fade means diminished. Under solid/hollow the two zoom levels were speaking different languages, which was a bug nobody had named.\n\nThe rejected options stay on the board, dimmed, with their costs intact — a decision without its reasons is just a preference."
+    },
+    {
+      "id": "note-rejected",
+      "x": 1600,
+      "y": 1900,
+      "w": 380,
+      "text": "Kept as a record. Time ran left to right and lanes were rows. Vertical won: it puts today under the thumb, scrolls the way the device already scrolls, gives each day 25px instead of 17px, and bands the weekends for free."
     }
   ],
   "launch": { "view": "canvas" }

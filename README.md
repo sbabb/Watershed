@@ -46,11 +46,40 @@ Each lane carries a sentence *you* wrote about why it exists, shown whenever you
 log to it. When a lane's stated why stops being true, you find out — because
 you read it and flinch.
 
-Lanes are yours to create, capped at **five**. The cap is a feature: the fifth
-cut is the one that does the work, and six is the number you pick when you don't
-want to make it. Five is also what fits as parallel channels on a phone. The cap
-must be stated plainly in the UI, never silently enforced, and wanting a sixth
-lane is a prompt to re-read your why-sentences rather than to raise the cap.
+Lanes are yours to create, capped at **six**. The cap is a feature — the cut is
+the part that does the work — and it must be stated plainly in the UI, never
+silently enforced. Wanting a seventh lane is a prompt to re-read your
+why-sentences, not to raise the cap. Six rather than five is what the vertical
+layout and the palette both afford: six columns at ~53px each on a 393px screen,
+and six distinguishable Tokyo Night hues that avoid red, which every IDE palette
+has already trained the eye to read as *error*.
+
+**Lanes are picked, not prescribed.** Onboarding offers a menu of candidates
+with their why-sentences already drafted, and you take up to six, renaming and
+rewriting freely. The menu exists because a blank taxonomy screen is where this
+kind of app loses people, and because writing a why-sentence cold is hard while
+editing one is easy. But the picking has to be yours: a prescribed set means you
+never make the cut, and the cut is the whole mechanism.
+
+**Name lanes in ordinary words** — one or two syllables, Anglo-Saxon, a noun of
+purpose rather than of activity. Hollis's own move is to ask the largest possible
+question in the plainest possible language; a lane labelled INDIVIDUATION would
+be insufferable, and one labelled MISC would be a lie.
+
+**THE JOB and THE WORK are the load-bearing pair.** They are near-synonyms in
+English and everybody feels the difference — *how was the job* and *how's the
+work going* are different questions. The job is what the world asks of you; the
+work is what you ask of yourself. In Hollis's terms that is the provisional life
+against the summons, and in Jung's it is persona against Self. They must stay
+separate lanes even for someone whose job and work overlap, because the gap
+between them is the single most useful thing this app can show: two thousand
+hours given to the job and ninety to the thing the job was supposed to be for.
+Merging them to tidy the taxonomy destroys the finding.
+
+A lane the world asks of you and a lane you ask of yourself are not otherwise
+distinguished in the model. That asymmetry is real and tempting to encode as a
+second attribute, but it would be a second axis on top of valence, and two axes
+is one more than anyone will answer honestly at 11pm.
 
 ## What a block is
 
@@ -89,8 +118,20 @@ the year was; the sentences tell you what it felt like.
 
 ## Logging
 
-Pick a lane, then one **3×2 grid**: size across, enlarged/diminished down. Two
-taps.
+Pick a lane, then one **3×2 grid**: size across, enlarged/diminished down.
+
+**Three taps from home to a logged block, and the third tap is the commit.**
+LOG A BLOCK sits pinned to the bottom edge where the thumb already is; the lane
+picker shows all six with their why-sentences, so the reason is on screen while
+you choose; one tap on a grid cell writes the block and returns you home with
+the mark already on the rail. There is no confirm step, because a confirm step
+doubles the taps and carries no information. The undo lives where the reach-back
+line was: LOGGED · UNDO, for a few seconds.
+
+Two shortcuts off that path. Tapping a lane's name at the top of its rail goes
+straight to the grid for that lane, making it two taps. Tapping a day row opens
+that day. And TODAY / YESTERDAY chips are the *entire* reach-back — there is no
+date picker, because a date picker is an invitation to backfill.
 
 Size and valence share a surface but not a control. A single
 magnitude-and-direction slider — distance for size, direction for valence —
@@ -176,12 +217,21 @@ puts a thumb on the scale. Small marks need more alpha than large ones to
 survive the dark ground (0.45 at day resolution, 0.32 at week), which is a
 rendering detail, not a second rule.
 
+**Time runs downward; lanes are vertical rails.** Which is how `git log --graph`
+has always drawn it, and how a phone already scrolls. Today sits at the top
+under the thumb and history is one gesture away, rather than pinned to a right
+edge the hand has to reach for. It also buys two things the horizontal version
+could not: weekends band for free, because a day is a row, and each day gets
+25px of room instead of 17px. The cost is honest — a graph that runs downward
+pushes rather than grows, so it loses the accumulate-toward-you feeling every
+contribution chart has. Worth it.
+
 **Two resolutions.** The home screen is the day-resolution graph over recent
 weeks, because that's where logging happens. The year view's cell is a **week** —
-52 columns at ~7px fits 390px, the same arithmetic as a contribution graph,
-where 365 would be eight screen-widths of horizontal scroll. A graph you scroll
-can never show "quiet for six weeks" as a single perceived shape, and that
-gestalt is the entire output of the year view.
+52 rows at 11px fits 873px with room for the chrome, where 365 days would be
+eight screen-lengths of scroll. A graph you scroll can never show "quiet for six
+weeks" as a single perceived shape, and that gestalt is the entire output of the
+year view. Both resolutions share an axis, so nothing flips when you zoom.
 
 **Motion is high priority and deliberately placed.** Cadence's `motion.js` is
 the model — one readable data table of named moments with durations and bezier
@@ -207,15 +257,16 @@ settling, back-out for anything that should read as impact) and a
 
 Everything left is a visual question that mockups have to answer, not prose:
 
-- Whether the streams run horizontally (time rightward, lanes as rows) or
-  vertically (time downward, lanes as rails). Both are drawn.
-- Whether the five lanes ship as a prescribed set or as a pick-and-rename menu.
-- How the lane + goal screen earns its first read without a progress bar.
+- Whether a continuously-held commitment (sobriety) is a lane whose blocks are
+  the *work* of holding it, or a second data type entirely — a state that runs
+  as an unbroken band beside the lanes rather than as marks on one. The first
+  needs no new concepts and is what's drawn; the second is more truthful.
 - Where the motion moments land, and what they're called.
 - The file format's payload shape (the envelope is settled; the body follows the
   model above).
 
 ## Status
 
-Concept settled through two grilling passes. Seven artboards drawn; encoding
-and bucket calibration settled against them. Nothing implemented.
+Concept settled through two grilling passes. Seven artboards drawn. Settled
+against them: the vertical axis, the six-lane set and its naming, the encoding,
+the bucket calibration, and the logging flow. Nothing implemented.

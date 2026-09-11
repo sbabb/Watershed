@@ -21,106 +21,55 @@
     <div style="font-size: 13px; letter-spacing: 1px; color: #636c97;">DONE</div>
   </div>
 
-  <div style="display: flex; align-items: baseline; justify-content: space-between; margin-top: 18px;">
+  <div style="display: flex; align-items: baseline; justify-content: space-between; margin-top: 14px;">
     <div style="font-size: 20px; font-weight: 700; letter-spacing: 1.5px;">2026</div>
-    <div style="font-size: 11px; letter-spacing: 0.8px; color: #636c97;">ONE COLUMN = ONE WEEK</div>
+    <div style="font-size: 11px; letter-spacing: 0.8px; color: #636c97;">ONE ROW = ONE WEEK</div>
   </div>
 
-  <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 20px;">
+  <div style="display: flex; margin-top: 14px;">
+    <div style="width: 40px; flex-shrink: 0;"></div>
+    <div style="flex-grow: 1; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); font-size: 10px; font-weight: 500; letter-spacing: 0.4px;">
+      <div><div style="color: #7aa2f7;">THE JOB</div><div style="color: #636c97; margin-top: 2px;">~1840</div></div>
+      <div><div style="color: #9ece6a;">THE WORK</div><div style="color: #636c97; margin-top: 2px;">~290</div></div>
+      <div><div style="color: #e0af68;">MONEY</div><div style="color: #636c97; margin-top: 2px;">~60</div></div>
+      <div><div style="color: #ff9e64;">BODY</div><div style="color: #636c97; margin-top: 2px;">~41</div></div>
+      <div><div style="color: #73daca;">SOBER</div><div style="color: #636c97; margin-top: 2px;">~180</div></div>
+      <div><div style="color: #bb9af7;">LOVE</div><div style="color: #636c97; margin-top: 2px;">~240</div></div>
+    </div>
+  </div>
 
-    <div>
-      <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 5px;">
-        <div style="font-size: 11px; font-weight: 500; letter-spacing: 1.2px; color: #7aa2f7;">EARNING</div>
-        <div style="font-size: 11px; color: #636c97;">~740h</div>
-      </div>
-      <div style="display: grid; grid-template-columns: repeat(52, minmax(0, 1fr)); gap: 1px; height: 28px; align-items: end; border-bottom: 1px solid #2f3549;">
-        <sc-for list="{{earning}}" as="w" hint-placeholder-count="52">
-          <div style="display: flex; flex-direction: column; justify-content: flex-end; height: 28px;">
-            <div style="height: {{w.dim}}; background: {{w.dimColor}};"></div>
-            <div style="height: {{w.pos}}; background: {{w.color}};"></div>
-          </div>
-        </sc-for>
-      </div>
+  <div style="display: flex; margin-top: 8px; border-top: 1px solid #2f3549; border-bottom: 1px solid #2f3549; padding: 4px 0;">
+
+    <div style="width: 40px; flex-shrink: 0; display: flex; flex-direction: column;">
+      <sc-for list="{{weeks}}" as="w" hint-placeholder-count="52">
+        <div style="height: 11px; display: flex; align-items: center; font-size: 10px; letter-spacing: 0.5px; color: #636c97;">{{w.label}}</div>
+      </sc-for>
     </div>
 
-    <div>
-      <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 5px;">
-        <div style="font-size: 11px; font-weight: 500; letter-spacing: 1.2px; color: #9ece6a;">CRAFT</div>
-        <div style="font-size: 11px; color: #636c97;">~310h</div>
-      </div>
-      <div style="display: grid; grid-template-columns: repeat(52, minmax(0, 1fr)); gap: 1px; height: 28px; align-items: end; border-bottom: 1px solid #2f3549;">
-        <sc-for list="{{craft}}" as="w" hint-placeholder-count="52">
-          <div style="display: flex; flex-direction: column; justify-content: flex-end; height: 28px;">
-            <div style="height: {{w.dim}}; background: {{w.dimColor}};"></div>
-            <div style="height: {{w.pos}}; background: {{w.color}};"></div>
-          </div>
-        </sc-for>
-      </div>
-    </div>
-
-    <div>
-      <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 5px;">
-        <div style="font-size: 11px; font-weight: 500; letter-spacing: 1.2px; color: #bb9af7;">PEOPLE</div>
-        <div style="font-size: 11px; color: #636c97;">~96h</div>
-      </div>
-      <div style="display: grid; grid-template-columns: repeat(52, minmax(0, 1fr)); gap: 1px; height: 28px; align-items: end; border-bottom: 1px solid #2f3549;">
-        <sc-for list="{{people}}" as="w" hint-placeholder-count="52">
-          <div style="display: flex; flex-direction: column; justify-content: flex-end; height: 28px;">
-            <div style="height: {{w.dim}}; background: {{w.dimColor}};"></div>
-            <div style="height: {{w.pos}}; background: {{w.color}};"></div>
-          </div>
-        </sc-for>
-      </div>
-    </div>
-
-    <div>
-      <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 5px;">
-        <div style="font-size: 11px; font-weight: 500; letter-spacing: 1.2px; color: #ff9e64;">BODY</div>
-        <div style="font-size: 11px; color: #636c97;">~41h</div>
-      </div>
-      <div style="display: grid; grid-template-columns: repeat(52, minmax(0, 1fr)); gap: 1px; height: 28px; align-items: end; border-bottom: 1px solid #2f3549;">
-        <sc-for list="{{body}}" as="w" hint-placeholder-count="52">
-          <div style="display: flex; flex-direction: column; justify-content: flex-end; height: 28px;">
-            <div style="height: {{w.dim}}; background: {{w.dimColor}};"></div>
-            <div style="height: {{w.pos}}; background: {{w.color}};"></div>
-          </div>
-        </sc-for>
-      </div>
-    </div>
-
-    <div>
-      <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 5px;">
-        <div style="font-size: 11px; font-weight: 500; letter-spacing: 1.2px; color: #73daca;">BECOMING</div>
-        <div style="font-size: 11px; color: #636c97;">~128h</div>
-      </div>
-      <div style="display: grid; grid-template-columns: repeat(52, minmax(0, 1fr)); gap: 1px; height: 28px; align-items: end; border-bottom: 1px solid #2f3549;">
-        <sc-for list="{{becoming}}" as="w" hint-placeholder-count="52">
-          <div style="display: flex; flex-direction: column; justify-content: flex-end; height: 28px;">
-            <div style="height: {{w.dim}}; background: {{w.dimColor}};"></div>
-            <div style="height: {{w.pos}}; background: {{w.color}};"></div>
-          </div>
-        </sc-for>
-      </div>
+    <div style="flex-grow: 1; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr));">
+      <sc-for list="{{cells}}" as="c" hint-placeholder-count="312">
+        <div style="height: 11px; display: flex; align-items: center;">
+          <div style="width: {{c.pos}}; height: 8px; background: {{c.color}};"></div>
+          <div style="width: {{c.dim}}; height: 8px; background: {{c.dimColor}};"></div>
+        </div>
+      </sc-for>
     </div>
 
   </div>
 
-  <div style="display: flex; justify-content: space-between; font-size: 10px; letter-spacing: 0.5px; color: #636c97; margin-top: 8px;">
-    <div>JAN</div><div>MAR</div><div>MAY</div><div>JUL</div><div>SEP</div><div>NOV</div>
+  <div style="display: flex; gap: 18px; margin-top: 12px;">
+    <div style="display: flex; align-items: center; gap: 7px;">
+      <div style="width: 16px; height: 8px; background: #c0caf5;"></div>
+      <div style="font-size: 10px; letter-spacing: 0.8px; color: #787c99;">ENLARGED</div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 7px;">
+      <div style="width: 16px; height: 8px; background: rgba(192, 202, 245, 0.32);"></div>
+      <div style="font-size: 10px; letter-spacing: 0.8px; color: #787c99;">DIMINISHED</div>
+    </div>
+    <div style="font-size: 10px; letter-spacing: 0.8px; color: #636c97;">HOURS, ROUGHLY</div>
   </div>
 
-  <div style="display: flex; gap: 18px; margin-top: 24px; padding-top: 14px; border-top: 1px solid #2f3549;">
-    <div style="display: flex; align-items: center; gap: 8px;">
-      <div style="width: 8px; height: 16px; background: #c0caf5;"></div>
-      <div style="font-size: 11px; letter-spacing: 0.8px; color: #787c99;">ENLARGED</div>
-    </div>
-    <div style="display: flex; align-items: center; gap: 8px;">
-      <div style="width: 8px; height: 16px; background: rgba(192, 202, 245, 0.32);"></div>
-      <div style="font-size: 11px; letter-spacing: 0.8px; color: #787c99;">DIMINISHED</div>
-    </div>
-  </div>
-
-  <div style="font-size: 12px; line-height: 1.6; color: #787c99; margin-top: 14px;">Column height is roughly how much. The solid part is what enlarged you. BODY went quiet from March to November, and nothing in the app ever mentioned it — you just see it.</div>
+  <div style="font-size: 12px; line-height: 1.6; color: #787c99; margin-top: 12px;">Bar length is roughly how much; the solid part is what enlarged you. BODY went quiet from March to November and SOBER never missed a week — nothing in the app ever said so. You just see it.</div>
 
   <div style="flex-grow: 1;"></div>
 
@@ -154,7 +103,7 @@ class Component extends DCLogic {
     const rand = this.rng(seed);
     const vol = this.envelope(volume);
     const dim = this.envelope(dimShare);
-    const MAX = 28;
+    const MAX = 46;
     return vol.map((v, w) => {
       const noisy = v * (0.55 + 0.9 * rand());
       const total = noisy < 0.07 ? 0 : Math.round(Math.min(1, noisy) * MAX);
@@ -176,23 +125,49 @@ class Component extends DCLogic {
   }
 
   renderVals() {
-    return {
-      earning: this.lane(7, '#7aa2f7',
-        [[0, 0.7], [12, 0.9], [26, 1.0], [40, 0.85], [51, 0.8]],
+    const MONTHS = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN',
+                    'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+    const weeks = [];
+    let last = -1;
+    for (let w = 0; w < 52; w += 1) {
+      const m = Math.min(11, Math.floor(w / 4.3333));
+      weeks.push({ label: m === last ? '' : MONTHS[m] });
+      last = m;
+    }
+
+    const lanes = [
+      // THE JOB — heavy and constant; the diminished share swells mid-year.
+      this.lane(7, '#7aa2f7',
+        [[0, 0.82], [12, 0.95], [26, 1.0], [40, 0.9], [51, 0.86]],
         [[0, 0.15], [16, 0.3], [26, 0.72], [34, 0.66], [44, 0.25], [51, 0.2]]),
-      craft: this.lane(19, '#9ece6a',
-        [[0, 0.8], [13, 0.65], [19, 0.1], [33, 0.06], [39, 0.5], [51, 0.85]],
-        [[0, 0.1], [26, 0.2], [51, 0.08]]),
-      people: this.lane(31, '#bb9af7',
-        [[0, 0.3], [14, 0.18], [28, 0.34], [41, 0.22], [51, 0.36]],
-        [[0, 0.12], [51, 0.14]]),
-      body: this.lane(53, '#ff9e64',
+      // THE WORK — dips while the job swells, comes back in the autumn.
+      this.lane(19, '#9ece6a',
+        [[0, 0.6], [13, 0.45], [22, 0.12], [31, 0.1], [38, 0.55], [51, 0.8]],
+        [[0, 0.1], [26, 0.18], [51, 0.08]]),
+      // MONEY — sparse admin, mostly diminishing.
+      this.lane(23, '#e0af68',
+        [[0, 0.2], [17, 0.12], [30, 0.22], [44, 0.14], [51, 0.2]],
+        [[0, 0.6], [26, 0.72], [51, 0.65]]),
+      // BODY — the eight-month silence the whole view exists to show.
+      this.lane(53, '#ff9e64',
         [[0, 0.55], [9, 0.42], [12, 0.04], [44, 0.03], [48, 0.2], [51, 0.34]],
         [[0, 0.06], [51, 0.06]]),
-      becoming: this.lane(97, '#73daca',
-        [[0, 0.34], [17, 0.28], [30, 0.36], [51, 0.3]],
-        [[0, 0.1], [51, 0.12]])
-    };
+      // SOBER — small, and never a missed week.
+      this.lane(11, '#73daca',
+        [[0, 0.32], [17, 0.3], [30, 0.34], [51, 0.33]],
+        [[0, 0.04], [51, 0.04]]),
+      // LOVE — steady, weekend-weighted.
+      this.lane(31, '#bb9af7',
+        [[0, 0.42], [14, 0.3], [28, 0.46], [41, 0.32], [51, 0.48]],
+        [[0, 0.12], [51, 0.14]])
+    ];
+
+    const cells = [];
+    for (let w = 0; w < 52; w += 1) {
+      for (const ln of lanes) cells.push(ln[w]);
+    }
+
+    return { weeks: weeks, cells: cells };
   }
 }
 </script>
