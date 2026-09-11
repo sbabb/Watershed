@@ -46,13 +46,35 @@ Each lane carries a sentence *you* wrote about why it exists, shown whenever you
 log to it. When a lane's stated why stops being true, you find out — because
 you read it and flinch.
 
-Lanes are yours to create, capped at **six**. The cap is a feature — the cut is
+Lanes are yours to create, capped at **six** — a ceiling, not a target; four
+is a likelier right answer than six, and the reference set is four. The cap is a feature — the cut is
 the part that does the work — and it must be stated plainly in the UI, never
 silently enforced. Wanting a seventh lane is a prompt to re-read your
 why-sentences, not to raise the cap. Six rather than five is what the vertical
 layout and the palette both afford: six columns at ~53px each on a 393px screen,
 and six distinguishable Tokyo Night hues that avoid red, which every IDE palette
 has already trained the eye to read as *error*.
+
+**The test for whether something is a lane: could it go quiet for six weeks
+without you noticing?** If yes, it is a lane — the silence is the finding and
+the rail is how you see it. If no, it is not, however important it is. A job
+cannot silently go quiet; you would be unemployed. Fifty-two identical fat bars
+for it is decoration. Importance is not the criterion; *capacity to surprise* is,
+and a lane that can only ever confirm what you already know is spending a rail
+to tell you nothing.
+
+That test also kills the lane that duplicates a tool you already use. Budgeting
+does not belong here for someone who already tracks it daily somewhere else —
+not because money doesn't matter, but because the surprise has already been
+collected.
+
+**Name lanes by their object, not their spirit.** This is where an earlier
+attempt failed: THE WORK is the right idea with a name that swallows everything,
+because the portfolio is the work, the step-writing is the work, and the body is
+the work. Every lane except the job is "the work" — it is the name of the app,
+not of a lane. CRAFT is being good at something; RECOVERY is meetings, the
+12x12, the step writing, the call made instead. Both are the summons; only one
+is about becoming good at a thing.
 
 **Lanes are picked, not prescribed.** Onboarding offers a menu of candidates
 with their why-sentences already drafted, and you take up to six, renaming and
@@ -66,7 +88,24 @@ purpose rather than of activity. Hollis's own move is to ask the largest possibl
 question in the plainest possible language; a lane labelled INDIVIDUATION would
 be insufferable, and one labelled MISC would be a lie.
 
-**THE JOB and THE WORK are the load-bearing pair.** They are near-synonyms in
+**Some things are conditions, not stacks of hours**, and forcing them into
+blocks is the model's main failure mode. A job takes the same ten hours every
+weekday; its *volume* carries nothing while its *valence* carries a great deal —
+"it took the same forty hours a week and stopped enlarging me in March" is a
+finding invisible in every other tool. The same shape applies to sobriety
+itself, as distinct from the hours spent maintaining it. Both want one verdict a
+day and no size: drawn as a **ribbon** down the edge of the graph, solid where
+it enlarged, faded where it diminished, blank on a day it didn't apply. The
+weekend gaps in that ribbon are drawn by nothing.
+
+**Overlap is the feature, within limits.** One lane per block, and the choosing
+is the reflective act — but that only survives contact with a real week if the
+hesitation is rare. The test of a lane *set* is that roughly nine blocks in ten
+are obvious and the tenth makes you think for two seconds. If every block is
+ambiguous, the lanes are wrong, not the rule.
+
+**THE JOB and THE WORK are the load-bearing pair** (superseded above; kept for
+the reasoning). They are near-synonyms in
 English and everybody feels the difference — *how was the job* and *how's the
 work going* are different questions. The job is what the world asks of you; the
 work is what you ask of yourself. In Hollis's terms that is the provisional life
@@ -257,16 +296,16 @@ settling, back-out for anything that should read as impact) and a
 
 Everything left is a visual question that mockups have to answer, not prose:
 
-- Whether a continuously-held commitment (sobriety) is a lane whose blocks are
-  the *work* of holding it, or a second data type entirely — a state that runs
-  as an unbroken band beside the lanes rather than as marks on one. The first
-  needs no new concepts and is what's drawn; the second is more truthful.
+- Whether the ribbon ships at all. It's a second data type, and one verdict a
+  day is still a daily ask. Drawn for the job; the same shape would serve
+  sobriety-as-a-state.
 - Where the motion moments land, and what they're called.
 - The file format's payload shape (the envelope is settled; the body follows the
   model above).
 
 ## Status
 
-Concept settled through two grilling passes. Seven artboards drawn. Settled
+Concept settled through two grilling passes. Eight artboards drawn. Settled
 against them: the vertical axis, the six-lane set and its naming, the encoding,
-the bucket calibration, and the logging flow. Nothing implemented.
+the bucket calibration, the logging flow, and the test for what earns a lane.
+Nothing implemented.

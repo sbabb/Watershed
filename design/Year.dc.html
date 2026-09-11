@@ -28,12 +28,10 @@
 
   <div style="display: flex; margin-top: 14px;">
     <div style="width: 40px; flex-shrink: 0;"></div>
-    <div style="flex-grow: 1; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); font-size: 10px; font-weight: 500; letter-spacing: 0.4px;">
-      <div><div style="color: #7aa2f7;">THE JOB</div><div style="color: #636c97; margin-top: 2px;">~1840</div></div>
-      <div><div style="color: #9ece6a;">THE WORK</div><div style="color: #636c97; margin-top: 2px;">~290</div></div>
-      <div><div style="color: #e0af68;">MONEY</div><div style="color: #636c97; margin-top: 2px;">~60</div></div>
+    <div style="flex-grow: 1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); font-size: 10px; font-weight: 500; letter-spacing: 0.4px;">
+      <div><div style="color: #9ece6a;">CRAFT</div><div style="color: #636c97; margin-top: 2px;">~290</div></div>
+      <div><div style="color: #73daca;">RECOVERY</div><div style="color: #636c97; margin-top: 2px;">~180</div></div>
       <div><div style="color: #ff9e64;">BODY</div><div style="color: #636c97; margin-top: 2px;">~41</div></div>
-      <div><div style="color: #73daca;">SOBER</div><div style="color: #636c97; margin-top: 2px;">~180</div></div>
       <div><div style="color: #bb9af7;">LOVE</div><div style="color: #636c97; margin-top: 2px;">~240</div></div>
     </div>
   </div>
@@ -46,8 +44,8 @@
       </sc-for>
     </div>
 
-    <div style="flex-grow: 1; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr));">
-      <sc-for list="{{cells}}" as="c" hint-placeholder-count="312">
+    <div style="flex-grow: 1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));">
+      <sc-for list="{{cells}}" as="c" hint-placeholder-count="208">
         <div style="height: 11px; display: flex; align-items: center;">
           <div style="width: {{c.pos}}; height: 8px; background: {{c.color}};"></div>
           <div style="width: {{c.dim}}; height: 8px; background: {{c.dimColor}};"></div>
@@ -69,7 +67,7 @@
     <div style="font-size: 10px; letter-spacing: 0.8px; color: #636c97;">HOURS, ROUGHLY</div>
   </div>
 
-  <div style="font-size: 12px; line-height: 1.6; color: #787c99; margin-top: 12px;">Bar length is roughly how much; the solid part is what enlarged you. BODY went quiet from March to November and SOBER never missed a week — nothing in the app ever said so. You just see it.</div>
+  <div style="font-size: 12px; line-height: 1.6; color: #787c99; margin-top: 12px;">Bar length is roughly how much; the solid part is what enlarged you. BODY went quiet from March to November and RECOVERY never missed a week — nothing in the app ever said so. You just see it.</div>
 
   <div style="flex-grow: 1;"></div>
 
@@ -103,7 +101,7 @@ class Component extends DCLogic {
     const rand = this.rng(seed);
     const vol = this.envelope(volume);
     const dim = this.envelope(dimShare);
-    const MAX = 46;
+    const MAX = 74;
     return vol.map((v, w) => {
       const noisy = v * (0.55 + 0.9 * rand());
       const total = noisy < 0.07 ? 0 : Math.round(Math.min(1, noisy) * MAX);
@@ -136,26 +134,18 @@ class Component extends DCLogic {
     }
 
     const lanes = [
-      // THE JOB — heavy and constant; the diminished share swells mid-year.
-      this.lane(7, '#7aa2f7',
-        [[0, 0.82], [12, 0.95], [26, 1.0], [40, 0.9], [51, 0.86]],
-        [[0, 0.15], [16, 0.3], [26, 0.72], [34, 0.66], [44, 0.25], [51, 0.2]]),
-      // THE WORK — dips while the job swells, comes back in the autumn.
+      // CRAFT — dips while the job swells, comes back in the autumn.
       this.lane(19, '#9ece6a',
         [[0, 0.6], [13, 0.45], [22, 0.12], [31, 0.1], [38, 0.55], [51, 0.8]],
         [[0, 0.1], [26, 0.18], [51, 0.08]]),
-      // MONEY — sparse admin, mostly diminishing.
-      this.lane(23, '#e0af68',
-        [[0, 0.2], [17, 0.12], [30, 0.22], [44, 0.14], [51, 0.2]],
-        [[0, 0.6], [26, 0.72], [51, 0.65]]),
+      // RECOVERY — small, and never a missed week.
+      this.lane(11, '#73daca',
+        [[0, 0.32], [17, 0.3], [30, 0.34], [51, 0.33]],
+        [[0, 0.04], [51, 0.04]]),
       // BODY — the eight-month silence the whole view exists to show.
       this.lane(53, '#ff9e64',
         [[0, 0.55], [9, 0.42], [12, 0.04], [44, 0.03], [48, 0.2], [51, 0.34]],
         [[0, 0.06], [51, 0.06]]),
-      // SOBER — small, and never a missed week.
-      this.lane(11, '#73daca',
-        [[0, 0.32], [17, 0.3], [30, 0.34], [51, 0.33]],
-        [[0, 0.04], [51, 0.04]]),
       // LOVE — steady, weekend-weighted.
       this.lane(31, '#bb9af7',
         [[0, 0.42], [14, 0.3], [28, 0.46], [41, 0.32], [51, 0.48]],

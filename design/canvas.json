@@ -1,41 +1,42 @@
 {
   "artboards": [
-    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 400, "h": 880, "title": "1 — Home" },
+    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 400, "h": 880, "title": "1 — Home (four lanes)" },
     { "file": "LogLane.dc.html", "x": 500, "y": 0, "w": 400, "h": 880, "title": "2 — Pick a lane" },
     { "file": "LogGrid.dc.html", "x": 1000, "y": 0, "w": 400, "h": 880, "title": "3 — The 3x2 grid" },
     { "file": "LaneDetail.dc.html", "x": 1600, "y": 0, "w": 400, "h": 880, "title": "Lane + goal" },
     { "file": "Year.dc.html", "x": 2100, "y": 0, "w": 400, "h": 880, "title": "The year" },
-    { "file": "Encoding.dc.html", "x": 0, "y": 1020, "w": 920, "h": 840, "title": "Encoding — decided" },
+    { "file": "MainJobBand.dc.html", "x": 0, "y": 1020, "w": 400, "h": 880, "title": "Home — the job as ground, not a lane" },
+    { "file": "Encoding.dc.html", "x": 500, "y": 1020, "w": 920, "h": 840, "title": "Encoding — decided" },
     { "file": "MainHorizontal.dc.html", "x": 1600, "y": 1020, "w": 400, "h": 880, "title": "Home — horizontal (not chosen)" }
   ],
   "annotations": [
     {
-      "id": "note-flow",
+      "id": "note-test",
       "x": 0,
-      "y": -300,
+      "y": -330,
       "w": 1400,
-      "text": "THREE TAPS FROM HOME TO A LOGGED BLOCK. Nothing is confirmed; the third tap is the commit.\n\n1 — HOME. Tap LOG A BLOCK, pinned to the bottom edge where the thumb already is. Or skip a step: tap a lane's name at the top of its rail and go straight to screen 3 for that lane. Or tap any day row to open that day and add to it.\n\n2 — PICK A LANE. Six cards, each showing the why-sentence you wrote, so the reason is on screen while you choose. TODAY is selected; one tap on YESTERDAY reaches back. That is the whole reach-back — there is no date picker, because a date picker is an invitation to backfill.\n\n3 — THE GRID. Size across, valence down. One tap on a cell writes the block and returns you to Home, where the new mark is already on the rail. Instead of a confirm step, the line that said YESTERDAY IS STILL OPEN now says LOGGED · UNDO for a few seconds.\n\nWorst case three taps, best case two, no typing, no scrolling, no decisions that aren't about meaning."
+      "text": "THE TEST FOR WHETHER SOMETHING IS A LANE: could it go quiet for six weeks without you noticing?\n\nIf yes, it is a lane — the silence is the finding, and the rail is how you see it.\nIf no, it is not. The job cannot silently go quiet; you would be unemployed. Drawing fifty-two identical fat bars for it is decoration, not information.\n\nAnd on overlap: one lane per block, and the choosing IS the reflective act. But that only survives contact with real life if the moment of hesitation is rare. A good lane set is one where roughly nine blocks in ten are obvious and the tenth makes you think for two seconds. If every block is ambiguous, the lanes are wrong — not the rule.\n\nFour lanes here, down from six. MONEY is gone: Cadence already does it, and a lane that duplicates a tool you already use produces no surprise. THE JOB is gone as a lane — see the variant below. What remains are the four that can go quiet on you."
     },
     {
-      "id": "note-lanes",
+      "id": "note-naming",
       "x": 1600,
-      "y": -300,
+      "y": -330,
       "w": 900,
-      "text": "SIX LANES, NOT FIVE. The cap moved because the sixth could not be honestly merged into any of the other five.\n\nTHE JOB and THE WORK are the pair worth staring at. They are near-synonyms in English and everybody feels the difference — 'how was the job' and 'how's the work going' are different questions. The job is what the world asks of you; the work is what you ask of yourself. Hollis would call the first the provisional life and the second the summons. Keeping them apart is the point: a fat blue rail beside a thin green one IS that distinction, drawn, with no text at all. Merging them would destroy the most useful signal the app has.\n\nMONEY is money that isn't the job — admin, side income, the 2am sums. If that isn't real for you, fold it into THE JOB and run five.\n\nSOBER is logged as the work of it: the meeting, the call, the reading, the walk you took instead. Watch its rail against BODY's — unbroken beside an eight-month silence."
+      "text": "WHY 'THE WORK' HAD TO GO. It was the right idea with a name that swallows everything: the portfolio is the work, the steps are the work, the body is the work. Every lane except the job is 'the work' — it is the name of the app, not of a lane.\n\nSo name lanes by their OBJECT, not their spirit. CRAFT is being good at something. RECOVERY is meetings, the 12x12, the step writing, the call you made instead. Both are the summons; only one is about becoming good at a thing.\n\nRECOVERY rather than SOBER, because SOBER names a state and the lane holds hours. If sobriety itself wants recording, it is the same shape as the job: a condition, not a stack of blocks. PROGRAM would work too, and is what you would actually say out loud.\n\nAll four names are placeholders. Change any of them in one line."
+    },
+    {
+      "id": "note-jobband",
+      "x": 0,
+      "y": 1930,
+      "w": 380,
+      "text": "The job as ground rather than as a lane.\n\nOne verdict a day — did it enlarge or diminish you — with no size, because the size is always the same and you already know it. Blank on a day off, which is why the ribbon has gaps exactly at weekends without anything drawing them.\n\nThe volume of the job carries nothing. The valence carries a great deal: 'it took the same forty hours every week and stopped enlarging me in March' is a finding, and it is invisible in every other tool you own."
     },
     {
       "id": "note-encoding",
-      "x": 0,
-      "y": 1900,
+      "x": 500,
+      "y": 1930,
       "w": 900,
-      "text": "LOCKED. B FULL / FADED for the day mark, 1 STACKED for the week cell.\n\nOne rule now holds at both resolutions: footprint means size, fill means enlarged, fade means diminished. Under solid/hollow the two zoom levels were speaking different languages, which was a bug nobody had named.\n\nThe rejected options stay on the board, dimmed, with their costs intact — a decision without its reasons is just a preference."
-    },
-    {
-      "id": "note-rejected",
-      "x": 1600,
-      "y": 1900,
-      "w": 380,
-      "text": "Kept as a record. Time ran left to right and lanes were rows. Vertical won: it puts today under the thumb, scrolls the way the device already scrolls, gives each day 25px instead of 17px, and bands the weekends for free."
+      "text": "LOCKED. B FULL / FADED for the day mark, 1 STACKED for the week cell.\n\nOne rule holds at both resolutions: footprint means size, fill means enlarged, fade means diminished. Rejected options kept and dimmed — a decision without its reasons is just a preference."
     }
   ],
   "launch": { "view": "canvas" }

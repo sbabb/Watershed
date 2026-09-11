@@ -25,6 +25,8 @@
 
   <div style="display: flex; margin-top: 16px;">
     <div style="width: 40px; flex-shrink: 0;"></div>
+    <div style="width: 22px; flex-shrink: 0; font-size: 9px; letter-spacing: 0.3px; color: #7aa2f7;">JOB</div>
+    <div style="width: 8px; flex-shrink: 0;"></div>
     <div style="flex-grow: 1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); text-align: center; font-size: 10px; font-weight: 500; letter-spacing: 0.4px;">
       <div style="color: #9ece6a;">CRAFT</div>
       <div style="color: #73daca;">RECOVERY</div>
@@ -49,6 +51,12 @@
         </sc-for>
       </div>
 
+      <div style="width: 22px; flex-shrink: 0; display: flex; flex-direction: column;">
+        <sc-for list="{{rows}}" as="r" hint-placeholder-count="21">
+          <div style="height: 25px; background: {{r.job}};"></div>
+        </sc-for>
+      </div>
+      <div style="width: 8px; flex-shrink: 0;"></div>
       <div style="flex-grow: 1; position: relative;">
         <div style="position: absolute; inset: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));">
           <div style="display: flex; justify-content: center;"><div style="width: 1px; background: #232838;"></div></div>
@@ -77,13 +85,17 @@
       <div style="width: 10px; height: 10px; background: rgba(192, 202, 245, 0.45);"></div>
       <div style="font-size: 10px; letter-spacing: 0.8px; color: #787c99;">DIMINISHED</div>
     </div>
+    <div style="display: flex; align-items: center; gap: 7px;">
+      <div style="width: 14px; height: 10px; background: #7aa2f7;"></div>
+      <div style="font-size: 10px; letter-spacing: 0.8px; color: #787c99;">THE JOB, THAT DAY</div>
+    </div>
   </div>
 
   <div style="margin-top: 14px; padding: 12px; background: #1f2335; border: 1px solid #2f3549;">
     <div style="font-size: 15px; line-height: 1.5; color: #c0caf5;">Slow Sunday. Wrote most of the afternoon, then the walk.</div>
   </div>
 
-  <div style="font-size: 12px; line-height: 1.6; color: #787c99; margin-top: 14px;">Four rails, 81px each. Fewer lanes means bigger marks, more air, and a year view you can actually read.</div>
+  <div style="font-size: 12px; line-height: 1.6; color: #787c99; margin-top: 14px;">The job is the ground the rest happened on, not a lane — one verdict a day, no size, blank on a day off. The gaps in that ribbon are weekends, drawn by nothing.</div>
 
   <div style="flex-grow: 1;"></div>
 
