@@ -9,11 +9,12 @@
 <helmet>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap">
   <style>
-    body { margin: 0; }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; background: #1a1b26; }
     a { color: #7aa2f7; } a:hover { color: #7dcfff; }
   </style>
 </helmet>
-<div style="width: 900px; height: 700px; background: #1a1b26; color: #c0caf5; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 17px; line-height: 1.45; padding: 28px; display: flex; flex-direction: column;">
+<div style="width: 910px; height: 830px; background: #1a1b26; color: #c0caf5; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 17px; line-height: 1.45; padding: 28px; display: flex; flex-direction: column;">
 
   <div style="display: flex; align-items: baseline; justify-content: space-between; border-bottom: 1px solid #2f3549; padding-bottom: 10px;">
     <div style="font-size: 15px; font-weight: 700; letter-spacing: 2px;">ENCODING &mdash; THE TWO OPEN QUESTIONS</div>
@@ -211,7 +212,7 @@
 
 </div>
 </x-dc>
-<script data-dc-script data-props='{"$preview":{"width":900,"height":700}}'>
+<script data-dc-script data-props='{"$preview":{"width":910,"height":830}}'>
 class Component extends DCLogic {
   renderVals() {
     // [total, diminished] out of 30px.
