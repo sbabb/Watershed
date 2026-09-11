@@ -63,11 +63,21 @@ choosing is the reflective act. It's also structural: a commit sits on one
 branch, multi-lane blocks turn parallel channels into an unreadable mesh, and
 "this lane has been quiet" stops meaning anything if a block can count twice.
 
-**Three size buckets, words in the UI and a number underneath.** Roughly *a bit*
-/ *a chunk* / *most of it*. Goals accumulate time, so the buckets have to carry
-canonical hours internally — but every derived figure is rendered hedged
-("~40 hours"), which is honest about being a reconstruction and stops the totals
-reading like a ledger you could be wrong in.
+**Three size buckets, words in the UI and a number underneath.** *A bit* (~1h) /
+*half a day* (~4h) / *most of a day* (~8h). Goals accumulate time, so the buckets
+have to carry canonical hours internally — but every derived figure is rendered
+hedged ("~40 hours"), which is honest about being a reconstruction and stops the
+totals reading like a ledger you could be wrong in.
+
+**The buckets are calibrated to a waking day, not a clock hour.** A job is not
+six hours; door to door it's closer to twelve, and if the largest bucket were
+smaller than a working day then earning would be systematically undercounted
+against a lane where a one-hour walk is captured whole — the year view would
+then flatter you, which is the exact opposite of what it's for. So the top
+bucket is a working day, the middle one is a morning or an evening, and the
+commute disappears into the rounding, which is what the tilde is for. Three
+stays three: a fourth bucket buys accuracy nobody needs and costs a moment of
+deliberation at the one place the design refuses to tax you.
 
 You log only the blocks that **mattered** — two or three on a normal day. There
 is no expectation of covering sixteen hours, because full-day reconstruction is
@@ -159,6 +169,13 @@ landing on them, dormant branches visibly quiet. It's the right metaphor, it's
 natively terminal, and it's built for exactly the problem of making a long
 stretch of time legible at a glance.
 
+**One encoding at both resolutions: fill means enlarged, fade means
+diminished.** Size is the mark's footprint, valence is its opacity — never a
+second hue, never solid-versus-hollow, which reads as present-versus-absent and
+puts a thumb on the scale. Small marks need more alpha than large ones to
+survive the dark ground (0.45 at day resolution, 0.32 at week), which is a
+rendering detail, not a second rule.
+
 **Two resolutions.** The home screen is the day-resolution graph over recent
 weeks, because that's where logging happens. The year view's cell is a **week** —
 52 columns at ~7px fits 390px, the same arithmetic as a contribution graph,
@@ -190,12 +207,15 @@ settling, back-out for anything that should read as impact) and a
 
 Everything left is a visual question that mockups have to answer, not prose:
 
-- How a week cell encodes presence, rough volume, and dominant valence at ~7px.
-- How a day-resolution commit mark encodes size and valence on its lane.
+- Whether the streams run horizontally (time rightward, lanes as rows) or
+  vertically (time downward, lanes as rails). Both are drawn.
+- Whether the five lanes ship as a prescribed set or as a pick-and-rename menu.
+- How the lane + goal screen earns its first read without a progress bar.
 - Where the motion moments land, and what they're called.
 - The file format's payload shape (the envelope is settled; the body follows the
   model above).
 
 ## Status
 
-Concept settled through two grilling passes. Mockups next. Nothing implemented.
+Concept settled through two grilling passes. Seven artboards drawn; encoding
+and bucket calibration settled against them. Nothing implemented.
