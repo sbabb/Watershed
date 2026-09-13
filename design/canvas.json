@@ -78,7 +78,7 @@
       "y": 2420,
       "w": 400,
       "h": 880,
-      "title": "B — The year with the job on it"
+      "title": "B — The year with the job on it (chosen)"
     },
     {
       "file": "TwoConditions.dc.html",
@@ -86,7 +86,31 @@
       "y": 2420,
       "w": 400,
       "h": 880,
-      "title": "C — Two conditions"
+      "title": "C — Two conditions (not chosen)"
+    },
+    {
+      "file": "WhyMoment.dc.html",
+      "x": 0,
+      "y": 3680,
+      "w": 400,
+      "h": 880,
+      "title": "D — The wall you walk through"
+    },
+    {
+      "file": "WhyHistory.dc.html",
+      "x": 500,
+      "y": 3680,
+      "w": 400,
+      "h": 880,
+      "title": "E — The why, and what it used to say"
+    },
+    {
+      "file": "AfterLog.dc.html",
+      "x": 1000,
+      "y": 3680,
+      "w": 400,
+      "h": 880,
+      "title": "F — What happens after you log"
     }
   ],
   "annotations": [
@@ -130,14 +154,21 @@
       "x": 500,
       "y": 2160,
       "w": 380,
-      "text": "B — DOES IT SURVIVE AT 11px A WEEK?\n\nTwo encodings of the same job, side by side, so the answer is visible rather than argued.\n\nLEFT keeps the day grain: five 4px marks a week. It turns to dither. You can just about see the year darken, but no particular week says anything, and the texture competes with the lanes for attention.\n\nRIGHT draws the week the way a lane is drawn — same length every time, only the solid/faded split moving. The March turn is unmissable, and it costs one encoding rule rather than two.\n\nThe blank rows are the one week off in August, drawn by nothing.\n\nIf the ribbon ships, it ships as the right-hand version at year scale and the day version on the home screen. Same fact, drawn at the resolution each view can carry."
+      "text": "B — THE YEAR, DECIDED.\n\nThe job is drawn the way a lane is drawn: one bar a week, the same length every time, with only the solid/faded split moving. One encoding rule, not two.\n\nThe day-grain version — five 4px marks a week — was drawn beside this one and dropped. At 11px a row it turns to dither: you can see the year darken, but no week says anything and the texture competes with the lanes.\n\nThe blank rows are the one week off in August, drawn by nothing."
     },
     {
       "id": "note-two-conditions",
       "x": 1000,
       "y": 2160,
       "w": 380,
-      "text": "C — WHERE THE CLUTTER STARTS. Sooner than expected, and not for the reason I expected.\n\nThe second ribbon is SOBER, and look at what it draws: twenty-one identical cells, an unbroken column. That is a streak. No number counts it, but the eye counts it, and the day it breaks the screen will say so louder than any counter — which is the one thing this app promised not to do.\n\nIt also does not fit the encoding. Solid means enlarged and faded means diminished everywhere else; here solid would mean 'yes' and faded would mean 'no', which is a different question wearing the same clothes.\n\nAnd it is already covered: RECOVERY is the lane that holds meetings, the 12x12 and the step writing — the hours you actually gave. Note that the ribbon even collides with that lane's colour.\n\nOne condition is a design. Two is a dashboard with a streak in it."
+      "text": "C — NOT CHOSEN. One ribbon, and the job is it.\n\nThe second ribbon here is SOBER, and look at what it draws: twenty-one identical cells, an unbroken column. That is a streak. No number counts it, but the eye does, and the day it breaks the screen will say so louder than any counter — the one thing this app promised not to do.\n\nIt also breaks the encoding: solid means enlarged and faded means diminished everywhere else, but here solid would mean yes and faded would mean no — a different question wearing the same clothes.\n\nAnd it duplicates a lane that already exists. RECOVERY holds the meetings, the 12x12 and the step writing — the hours actually given. The ribbon even collides with that lane's colour.\n\nOne condition is a design. Two is a dashboard with a streak in it."
+    },
+    {
+      "id": "note-write-time",
+      "x": 0,
+      "y": 3420,
+      "w": 1400,
+      "text": "THE VALUE IS AT WRITE TIME, NOT READ TIME.\n\nEvery habit tracker puts its value at read time: log dutifully all year, get a chart. The logging is a tax you pay for the chart, which is why it degrades into bookkeeping inside a fortnight.\n\nIf Hollis is right that you know in the body within a second, then the tap is not data entry — it is a two-second somatic check on time you have already spent. That is the product. The year view is the receipt.\n\nThree screens follow from taking that seriously. D puts your own sentence between you and the mechanics, so the pause lands on the reason rather than on the UI. E makes a changed why an event rather than an edit, because 'you find out when you read it and flinch' is only true if the flinch is recorded. F is the one that has to stay empty: the block joins the rail and nothing else happens, with the four things that did not happen listed underneath so that the silence reads as a decision."
     }
   ],
   "launch": {

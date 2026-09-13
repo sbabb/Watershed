@@ -178,7 +178,20 @@ would render diminishing as a *negative number*, and this app's whole stance is
 that a diminishing block is data, not a deficit. The grid keeps both axes
 visible at once, and the two valence rows must be visually symmetrical in weight
 and color intensity, or the layout smuggles back in the hierarchy the model
-refuses. The lane's why-sentence sits above the grid.
+refuses.
+
+**The why-sentence is not a caption above the grid — it is the screen before
+it.** Picking a lane opens your own sentence, nearly alone on the page, and
+*touching the sentence* is what opens the size grid. The gesture is literally
+reaching for your reason. The only other way off that screen is the quiet
+`THIS ISN'T TRUE ANY MORE`, which is the flinch given somewhere to go.
+
+This costs a tap, and the tap is the product. See "Where the value is".
+
+**A why that changes is an event, not an edit.** The old sentence is struck
+through, keeps the blocks it earned, and leaves a tick on the lane's rail. A
+why-sentence with no history is a claim; a why-sentence with three dated
+versions is a record of someone becoming harder to fool.
 
 **The day rolls at 4am**, because logging at 1am belongs to the day you've been
 living, not the one the clock just started.
@@ -190,6 +203,61 @@ can always catch up on, which is the same debt without the nag. One day covers
 the real case — asleep before logging Tuesday, remembering it Wednesday. A
 three-day trip is unrecoverable and draws as quiet, which is true.
 
+## Where the value is
+
+**At write time, not read time.** Every habit tracker puts its value at read
+time: log dutifully all year, get a chart. The logging is a tax you pay for the
+chart, the daily act means nothing on its own, and it degrades into bookkeeping
+within a fortnight. That is why those apps are annoying, and it is a structural
+fact about them, not a failure of polish.
+
+If Hollis is right that you know in the body within a second, then the tap is
+not data entry. It is a two-second somatic check on time you have already
+spent — the question you would otherwise skip past, because the next thing is
+already happening. **That is the product. The year view is the receipt.**
+
+Three consequences, and they are load-bearing:
+
+1. The why-sentence is the most important feature in the app, not a nicety. It
+   is what turns a tap into a re-bodying.
+2. The friction budget is not zero. Some friction *is* the product — but it
+   belongs in reading your own sentence, never in operating the UI.
+3. Rote logging is the real failure mode. A thumb that finds the green square
+   without you being present for it produces a beautiful year view and nothing
+   else. Nothing in the design defends against this yet.
+
+**Jung earns his place here precisely, not decoratively.** In his typology
+*feeling* is not emotion; it is a rational evaluative function whose job is to
+assign value. Sensation reports what happened and thinking counts it — that is
+the entire content of every tracker anyone has ever resented. Watershed asks the
+feeling function for a verdict. This is also why enlarge/diminish cannot become
+a 1–5 slider: a slider converts a value judgment back into a measurement.
+
+## What the year view is for
+
+Not analysis, and not journaling. **The year view must never be read; it must be
+recognized.** If a finding requires arithmetic, the view has failed. What it can
+produce is one sentence you did not have before, and the sentences come in five
+shapes:
+
+- **A silence.** BODY went quiet in March and did not come back until November.
+- **A trade.** CRAFT collapsed over exactly the weeks the job swelled.
+- **A constant.** RECOVERY never missed a week — the thing you assumed was
+  fragile turns out to be the sturdiest thing you have.
+- **A turn.** The job took the same forty hours all year and stopped enlarging
+  you in March.
+- **A mismatch.** The lane you would have named as most important got 41 hours.
+
+None of those require a number, and none of them can be optimized toward, which
+is the test every future addition to this view has to pass.
+
+It is not rapid journaling, and the distinction matters: journaling records
+events and thoughts, Watershed records **verdicts**. A verdict is small,
+comparable across time, and can be drawn. Prose cannot be drawn — the moment the
+record becomes prose, the year view dies and the thing becomes a diary with a
+worse editor. The optional one-line note on a day is the crack through which
+journaling enters, and it stays one line for that reason.
+
 ## Goals
 
 A goal is **a lane plus a name plus a date range** — "Ship Watershed, by March"
@@ -198,6 +266,34 @@ automatically, so logging a block never costs an extra tap and there is no such
 thing as an untagged block silently under-reporting a total. A goal is a lens on
 data you already have, which means creating or deleting one is non-destructive
 and retroactive.
+
+## Conditions
+
+Some things are **hours you gave**; some are **conditions you were in**. Forcing
+a condition into blocks is the model's main failure mode, and the job is the
+first instance: its volume carries nothing, because it is fixed by the world and
+you already know it, while its valence carries a great deal.
+
+So the job is drawn as a **ribbon**, not a lane: a 22px column beside the dates,
+one verdict a day, no size, blank on a day off. The gaps in it are weekends,
+drawn by nothing. Logging it is not the 3×2 grid — the ribbon cell *is* the
+control: one tap opens `ENLARGED` / `DIMINISHED` / `NO WORK` in place under the
+row, one more closes it, and the day grid never leaves the screen. `NO WORK` is
+an answer you give, never inferred from the calendar, which is what keeps
+non-Monday-to-Friday schedules working: **the logging defines the day, not the
+week.**
+
+At year scale the ribbon is drawn the way a lane is drawn — one bar a week, the
+same length every time, with only the solid/faded split moving. A day-grain
+version (five 4px marks a week) was drawn and dropped: at 11px a row it turns to
+dither.
+
+**The cap is one, and the job is it.** A second ribbon was drawn — sobriety as a
+state — and it fails three ways at once: it draws an unbroken column, which is a
+streak whether or not anything counts it; it breaks the encoding, because solid
+would mean *yes* rather than *enlarged*; and it duplicates the RECOVERY lane that
+already holds those hours. One condition is a design. Two is a dashboard with a
+streak in it.
 
 ## What it refuses to do
 
@@ -214,6 +310,10 @@ out:
   hard day does real harm.
 - **No live timer, no auto-capture, no app monitoring.** Deciding what the last
   two hours were *for* is the part that does the work.
+- **Nothing happens when you log.** The block joins the rail and the screen you
+  came from is the screen you go back to. No toast, no count, no "three days in
+  a row", no percentage of a goal, no note that a lane has been quiet. Every one
+  of those is a reason to log *for the app* instead of for yourself.
 - **A diminishing block is data, never a failure state.** No red, no warning, no
   suggestion to improve. Hollis's swamplands: the hard passages aren't
   malfunctions, they're territory with something to say.
@@ -294,18 +394,38 @@ settling, back-out for anything that should read as impact) and a
 
 ## Open
 
-Everything left is a visual question that mockups have to answer, not prose:
+**The honest list, worst first.** These are not polish items.
 
-- Whether the ribbon ships at all. It's a second data type, and one verdict a
-  day is still a daily ask. Drawn for the job; the same shape would serve
-  sobriety-as-a-state.
+- **Nothing in the design gives you a reason to come back.** Every refusal
+  removes pressure — no streak, no nag, no notification — and none of them
+  supply a pull. The year view is only interesting after months, so the first
+  ninety days pay nothing. The design solved for *not being annoying* and never
+  solved for *being wanted*. If there is an answer consistent with the refusals,
+  it is that you open the app to be **asked**, not to see data.
+- **The app records what you did; the thesis is about what you avoid.** A quiet
+  lane shows avoidance only for things already named as lanes. The most
+  diminishing thing in a life usually has no lane and never will — it is unnamed
+  precisely because it is avoided.
+- **There is no way to revise a verdict.** A snap judgment at the end of a bad
+  day may be wrong in a month; the conversation that diminished you on Tuesday
+  may be the most enlarging thing that happened all year. A record of
+  un-revisable snap verdicts risks being a record of moods rather than of
+  meaning. But revision invites rewriting your own history, which is worse.
+  Unresolved.
+- **Size may not earn its place.** Valence is the thesis; "how much" is a habit
+  inherited from the trackers this is a reaction against. Presence, absence and
+  valence alone might draw a truer year. Worth testing by deletion.
+- **Rote logging.** See "Where the value is" — the failure mode that looks
+  exactly like success.
 - Where the motion moments land, and what they're called.
 - The file format's payload shape (the envelope is settled; the body follows the
   model above).
 
 ## Status
 
-Concept settled through two grilling passes. Eight artboards drawn. Settled
-against them: the vertical axis, the six-lane set and its naming, the encoding,
-the bucket calibration, the logging flow, and the test for what earns a lane.
-Nothing implemented.
+Concept settled through two grilling passes. Fourteen artboards drawn. Settled
+against them: the vertical axis, the four-lane set and its naming, the encoding,
+the bucket calibration, the logging flow, the test for what earns a lane, the
+job as a single ribbon and how it is drawn at both resolutions, the why-sentence
+as the wall you walk through, and the silence after a logged block. Nothing
+implemented.
