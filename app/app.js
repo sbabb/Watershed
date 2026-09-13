@@ -201,9 +201,21 @@
   }
 
   function setJob(dateKey, verdict) {
-    if (verdict === 'clear') delete state.job[dateKey];
-    else state.job[dateKey] = verdict;
+    if (verdict === 'none') delete state.job[dateKey];
+    else state.job[dateKey] = verdict;   // 'enlarged' | 'diminished' | 'off'
     save();
+  }
+
+  // Three states plus absence. A day off is a real answer and draws as one —
+  // an outlined box, the same shape you tapped to say it — because the app
+  // must never guess a day off from the calendar.
+  function jobCell(dateKey, rowPx) {
+    const v = state.job[dateKey];
+    const c = JOBC();
+    if (v === 'enlarged') return `<i style="display:block;width:100%;height:100%;background:${c}"></i>`;
+    if (v === 'diminished') return `<i style="display:block;width:100%;height:100%;background:${alpha(c, FADE_DAY)}"></i>`;
+    if (v === 'off') return `<i style="display:block;width:100%;height:${rowPx}px;margin:auto 0;border:1px solid ${alpha(c, 0.5)}"></i>`;
+    return '';
   }
 
   function setWhy(laneId, text) {
@@ -248,10 +260,11 @@
 
   const gearButton = `<button class="icon" data-a="go:settings" aria-label="Settings">${GEAR}</button>`;
 
-  const legend = fadeAt => `
+  const legend = (fadeAt, withOff) => `
     <div class="legend">
       <span><i class="swatch" style="background:${theme.t.text}"></i>ENLARGED</span>
       <span><i class="swatch" style="background:${alpha(theme.t.text, fadeAt)}"></i>DIMINISHED</span>
+      ${withOff ? `<span><i class="swatch" style="border:1px solid ${alpha(JOBC(), 0.5)}"></i>NO WORK</span>` : ''}
     </div>`;
 
   function render() {
@@ -275,7 +288,7 @@
         <div class="date" style="margin-top:14px">${longDay(t)}</div>
         ${laneHeaderRow()}
         ${dayGrid(days, t, { tappable: true })}
-        ${legend(FADE_DAY)}`,
+        ${legend(FADE_DAY, true)}`,
       dock: answered
         ? `<div class="label" style="text-align:center">TAP ANY DAY TO LOG TO IT</div>`
         : `<div class="question">What were the last few hours for?</div>
@@ -309,13 +322,7 @@
             ${days.map(k => `<div class="day ${k === t ? 'today' : isWeekend(k) ? 'weekend' : ''}">${shortDay(k)}</div>`).join('')}
           </div>
           <div class="ribbon">
-            ${days.map(k => {
-              const v = state.job[k];
-              const bg = v === 'enlarged' ? JOBC() : v === 'diminished' ? alpha(JOBC(), FADE_DAY) : 'transparent';
-              return o.week
-                ? `<div class="ribbon-cell"><i style="background:${bg}"></i></div>`
-                : `<div class="ribbon-cell" style="background:${bg}"></div>`;
-            }).join('')}
+            ${days.map(k => `<div class="ribbon-cell">${jobCell(k, o.week ? 32 : 18)}</div>`).join('')}
           </div>
           <div class="col-gap"></div>
           <div class="marks">
@@ -371,7 +378,9 @@
     });
   }
 
-  const jobLabel = v => v === 'enlarged' ? 'ENLARGED' : v === 'diminished' ? 'DIMINISHED' : 'NOT LOGGED';
+  const jobLabel = v => v === 'enlarged' ? 'ENLARGED'
+    : v === 'diminished' ? 'DIMINISHED'
+    : v === 'off' ? 'NO WORK' : 'NOT LOGGED';
 
   /* ---- the job, for any day ------------------------------------------- */
 
@@ -392,12 +401,13 @@
         <div class="choices" style="margin-top:12px">
           <button data-a="setjob:enlarged"><i style="width:34px;height:26px;background:${c}"></i></button>
           <button data-a="setjob:diminished"><i style="width:34px;height:26px;background:${alpha(c, FADE_DAY)}"></i></button>
-          <button data-a="setjob:clear"><i style="width:34px;height:26px;border:1px solid ${alpha(c, 0.6)}"></i></button>
+          <button data-a="setjob:off"><i style="width:34px;height:26px;border:1px solid ${alpha(c, 0.6)}"></i></button>
         </div>
         <div class="sizes" style="margin-top:10px">
           <div><b>ENLARGED</b></div><div><b>DIMINISHED</b></div><div><b>NO WORK</b></div>
         </div>
-        <div class="help">The hours never change, so there is nothing to measure. Only which way they went.</div>`,
+        <div class="help">The hours never change, so there is nothing to measure. Only which way they went. A day off is a real answer, not an empty cell — the app never guesses one from the calendar.</div>
+        ${state.job[d] ? `<button class="link" style="margin-top:16px" data-a="setjob:none">CLEAR THIS DAY</button>` : ''}`,
       dock: `<div class="row-between"><div class="label">WRITING TO</div><div class="small">${longDay(d)}</div></div>`
     });
   }
@@ -483,7 +493,8 @@
     const totals = LANES.map(l => Math.round(state.blocks
       .filter(b => b.lane === l.id && parseKey(b.date).getFullYear() === y)
       .reduce((t, b) => t + size(b.size).hours, 0)));
-    const jobDays = Object.keys(state.job).filter(k => parseKey(k).getFullYear() === y).length;
+    const jobDays = Object.entries(state.job)
+      .filter(([k, v]) => parseKey(k).getFullYear() === y && v !== 'off').length;
     let lastMonth = -1;
     return shell({
       right: `${scaleChips('year')}${gearButton}`,
@@ -543,7 +554,7 @@
         </div>
         ${laneHeaderRow()}
         ${dayGrid(days, today(), { week: true })}
-        ${legend(FADE_DAY)}`,
+        ${legend(FADE_DAY, true)}`,
       dock: `<div style="display:flex;gap:8px">
         <button class="btn quiet" data-a="go:week:${addDays(start, -7)}">‹ ${dayMonth(addDays(start, -7))}</button>
         <button class="btn quiet" data-a="go:week:${addDays(start, 7)}">${dayMonth(addDays(start, 7))} ›</button>
@@ -745,8 +756,9 @@
 
     if (verb === 'setjob') {
       setJob(view.when, a);
-      if (a !== 'clear') state.answered[view.when] = true;
-      save();
+      // Working is itself an answer about the day. A day off is not: it is the
+      // day the question matters most, so it stays open.
+      if (a === 'enlarged' || a === 'diminished') { state.answered[view.when] = true; save(); }
       return goHome();
     }
 
@@ -815,7 +827,8 @@
     let k = `${y}-01-01`, n = 0;
     while (k <= end) {
       const dow = parseKey(k).getDay();
-      if (dow !== 0 && dow !== 6) s.job[k] = rand() < jobGood(n) ? 'enlarged' : 'diminished';
+      const holiday = k >= `${y}-08-10` && k <= `${y}-08-14`;
+      if (dow !== 0 && dow !== 6) s.job[k] = holiday ? 'off' : (rand() < jobGood(n) ? 'enlarged' : 'diminished');
       for (const l of LANES) {
         const sh = shape[l.id];
         if (rand() < sh.vol(n) * 0.8) {
