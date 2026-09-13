@@ -111,6 +111,30 @@
       "w": 400,
       "h": 880,
       "title": "F — What happens after you log"
+    },
+    {
+      "file": "DoorDay.dc.html",
+      "x": 0,
+      "y": 4940,
+      "w": 400,
+      "h": 880,
+      "title": "Door 1 — Today, unfinished"
+    },
+    {
+      "file": "DoorWords.dc.html",
+      "x": 500,
+      "y": 4940,
+      "w": 400,
+      "h": 880,
+      "title": "Door 2 — Your own words"
+    },
+    {
+      "file": "DoorBody.dc.html",
+      "x": 1000,
+      "y": 4940,
+      "w": 400,
+      "h": 880,
+      "title": "Door 3 — The body first"
     }
   ],
   "annotations": [
@@ -169,6 +193,27 @@
       "y": 3420,
       "w": 1400,
       "text": "THE VALUE IS AT WRITE TIME, NOT READ TIME.\n\nEvery habit tracker puts its value at read time: log dutifully all year, get a chart. The logging is a tax you pay for the chart, which is why it degrades into bookkeeping inside a fortnight.\n\nIf Hollis is right that you know in the body within a second, then the tap is not data entry — it is a two-second somatic check on time you have already spent. That is the product. The year view is the receipt.\n\nThree screens follow from taking that seriously. D puts your own sentence between you and the mechanics, so the pause lands on the reason rather than on the UI. E makes a changed why an event rather than an edit, because 'you find out when you read it and flinch' is only true if the flinch is recorded. F is the one that has to stay empty: the block joins the rail and nothing else happens, with the four things that did not happen listed underneath so that the silence reads as a decision."
+    },
+    {
+      "id": "note-door-1",
+      "x": 0,
+      "y": 4700,
+      "w": 380,
+      "text": "DOOR 1 — TODAY, UNFINISHED. Axis: the day as the subject.\n\nYou open to a date and a question, with today's blocks as a short row of marks rather than a chart. The four lanes are the answer, so logging is not a button you find — it is the screen you are already on. The record moves one tap away at the bottom.\n\nNOTHING, IT WAS THE JOB is a real answer, and the closest thing to a graceful exit for a day that had nothing in it.\n\nTradeoff: you are asked every single time you open the app, including the times you only came to look. A question you answer 'no' to daily becomes a nag without any of the machinery of a nag."
+    },
+    {
+      "id": "note-door-2",
+      "x": 500,
+      "y": 4700,
+      "w": 380,
+      "text": "DOOR 2 — YOUR OWN WORDS. Axis: the lane speaks first.\n\nOne of your four why-sentences, nearly alone on the page, chosen by what the record already knows — here BODY, quiet since August. Not a nudge about the silence: just the sentence you wrote about why it matters, in your words, dated.\n\nThis is the purest form of 'remember the root cause daily'. It is also the only door of the three that says something you did not type into it that minute.\n\nTradeoff: rotation turns into wallpaper. By week six you will have read all four sentences forty times, and the surface that was supposed to re-body you is the surface you swipe past. Mitigations all look like variable rewards, which is the thing being refused."
+    },
+    {
+      "id": "note-door-3",
+      "x": 1000,
+      "y": 4700,
+      "w": 380,
+      "text": "DOOR 3 — THE BODY FIRST. Axis: the model's order, inverted.\n\nValence before lane. Hollis's claim is that the body answers within a second and the intellect arrives afterwards with reasons — so this asks the fast question first and the naming second. It is the only one of the three that changes the data model's order rather than just the furniture.\n\nIt is also the most honest about what the app is: a two-second somatic check, with bookkeeping attached.\n\nTradeoff: it presumes you have something to log, so the escape hatch has to be permanent furniture. And answering valence before naming the block risks rating the MOOD you walked in with rather than the hours — which is already the thing I am least confident about in the whole model."
     }
   ],
   "launch": {

@@ -396,12 +396,17 @@ settling, back-out for anything that should read as impact) and a
 
 **The honest list, worst first.** These are not polish items.
 
-- **Nothing in the design gives you a reason to come back.** Every refusal
-  removes pressure — no streak, no nag, no notification — and none of them
-  supply a pull. The year view is only interesting after months, so the first
-  ninety days pay nothing. The design solved for *not being annoying* and never
-  solved for *being wanted*. If there is an answer consistent with the refusals,
-  it is that you open the app to be **asked**, not to see data.
+- **Nothing in the design gives you a reason to come back — and that is
+  accepted.** Every refusal removes pressure and none supply a pull, so the
+  first ninety days pay nothing. Retention machinery is explicitly out of scope:
+  a practice is the goal, not attention. Duolingo's angry-bird app icon is the
+  category being refused, and *that* backlog stays empty on purpose.
+  What is still open is the **front door**. If the value is at write time, the
+  app should perhaps open to the question rather than to the record. Three doors
+  are drawn: the day unfinished (the date and its question, lanes as the
+  answer), your own words (a why-sentence chosen by what the record knows), and
+  the body first (valence before lane, which inverts the model's order to match
+  Hollis's claim). Each has a real cost, named on the canvas; none is chosen.
 - **The app records what you did; the thesis is about what you avoid.** A quiet
   lane shows avoidance only for things already named as lanes. The most
   diminishing thing in a life usually has no lane and never will — it is unnamed
