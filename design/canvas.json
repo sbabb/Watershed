@@ -1,13 +1,69 @@
 {
   "artboards": [
-    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 400, "h": 880, "title": "1 — Home (four lanes)" },
-    { "file": "LogLane.dc.html", "x": 500, "y": 0, "w": 400, "h": 880, "title": "2 — Pick a lane" },
-    { "file": "LogGrid.dc.html", "x": 1000, "y": 0, "w": 400, "h": 880, "title": "3 — The 3x2 grid" },
-    { "file": "LaneDetail.dc.html", "x": 1600, "y": 0, "w": 400, "h": 880, "title": "Lane + goal" },
-    { "file": "Year.dc.html", "x": 2100, "y": 0, "w": 400, "h": 880, "title": "The year" },
-    { "file": "MainJobBand.dc.html", "x": 0, "y": 1020, "w": 400, "h": 880, "title": "Home — the job as ground, not a lane" },
-    { "file": "Encoding.dc.html", "x": 500, "y": 1020, "w": 920, "h": 840, "title": "Encoding — decided" },
-    { "file": "MainHorizontal.dc.html", "x": 1600, "y": 1020, "w": 400, "h": 880, "title": "Home — horizontal (not chosen)" }
+    {
+      "file": "Main.dc.html",
+      "x": 0,
+      "y": 0,
+      "w": 400,
+      "h": 880,
+      "title": "1 — Home (four lanes)"
+    },
+    {
+      "file": "LogLane.dc.html",
+      "x": 500,
+      "y": 0,
+      "w": 400,
+      "h": 880,
+      "title": "2 — Pick a lane"
+    },
+    {
+      "file": "LogGrid.dc.html",
+      "x": 1000,
+      "y": 0,
+      "w": 400,
+      "h": 880,
+      "title": "3 — The 3x2 grid"
+    },
+    {
+      "file": "LaneDetail.dc.html",
+      "x": 1600,
+      "y": 0,
+      "w": 400,
+      "h": 880,
+      "title": "Lane + goal"
+    },
+    {
+      "file": "Year.dc.html",
+      "x": 2100,
+      "y": 0,
+      "w": 400,
+      "h": 880,
+      "title": "The year"
+    },
+    {
+      "file": "MainJobBand.dc.html",
+      "x": 0,
+      "y": 1020,
+      "w": 400,
+      "h": 880,
+      "title": "Home — the job as ground, not a lane"
+    },
+    {
+      "file": "Encoding.dc.html",
+      "x": 500,
+      "y": 1020,
+      "w": 920,
+      "h": 840,
+      "title": "Encoding — decided"
+    },
+    {
+      "file": "MainHorizontal.dc.html",
+      "x": 1600,
+      "y": 1020,
+      "w": 400,
+      "h": 880,
+      "title": "Home — horizontal (not chosen)"
+    }
   ],
   "annotations": [
     {
@@ -15,7 +71,7 @@
       "x": 0,
       "y": -330,
       "w": 1400,
-      "text": "THE TEST FOR WHETHER SOMETHING IS A LANE: could it go quiet for six weeks without you noticing?\n\nIf yes, it is a lane — the silence is the finding, and the rail is how you see it.\nIf no, it is not. The job cannot silently go quiet; you would be unemployed. Drawing fifty-two identical fat bars for it is decoration, not information.\n\nAnd on overlap: one lane per block, and the choosing IS the reflective act. But that only survives contact with real life if the moment of hesitation is rare. A good lane set is one where roughly nine blocks in ten are obvious and the tenth makes you think for two seconds. If every block is ambiguous, the lanes are wrong — not the rule.\n\nFour lanes here, down from six. MONEY is gone: Cadence already does it, and a lane that duplicates a tool you already use produces no surprise. THE JOB is gone as a lane — see the variant below. What remains are the four that can go quiet on you."
+      "text": "THE TEST FOR WHETHER SOMETHING IS A LANE: could it go quiet for six weeks without you noticing?\n\nIf yes, it is a lane — the silence is the finding, and the rail is how you see it.\nIf no, it is not. The job cannot silently go quiet; you would be unemployed. Drawing fifty-two identical fat bars for it is decoration, not information.\n\nAnd on overlap: one lane per block, and the choosing IS the reflective act. But that only survives contact with real life if the moment of hesitation is rare. A good lane set is one where roughly nine blocks in ten are obvious and the tenth makes you think for two seconds. If every block is ambiguous, the lanes are wrong — not the rule.\n\nFour lanes here, down from six. MONEY is gone: Cadence already does it, and a lane that duplicates a tool you already use produces no surprise. THE JOB is gone as a lane — see the variant below. What remains are the four that can go quiet on you.\n\nFour rails, 81px each. Fewer lanes means bigger marks, more air, and a year view you can actually read."
     },
     {
       "id": "note-naming",
@@ -39,5 +95,7 @@
       "text": "LOCKED. B FULL / FADED for the day mark, 1 STACKED for the week cell.\n\nOne rule holds at both resolutions: footprint means size, fill means enlarged, fade means diminished. Rejected options kept and dimmed — a decision without its reasons is just a preference."
     }
   ],
-  "launch": { "view": "canvas" }
+  "launch": {
+    "view": "canvas"
+  }
 }
