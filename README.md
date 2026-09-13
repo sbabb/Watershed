@@ -220,12 +220,16 @@ versions is a record of someone becoming harder to fool.
 **The day rolls at 4am**, because logging at 1am belongs to the day you've been
 living, not the one the clock just started.
 
-**You can log today and yesterday. Nothing further back.** No-backfill is
-settled as a prompt policy, but reach-back is a separate decision and an open
-date picker quietly undoes it: unlimited backfill turns silence into a queue you
-can always catch up on, which is the same debt without the nag. One day covers
-the real case — asleep before logging Tuesday, remembering it Wednesday. A
-three-day trip is unrecoverable and draws as quiet, which is true.
+**Reach-back is three weeks — the span the record shows.** No-backfill stays a
+prompt policy: nothing ever says "you missed 3 days". But the reach itself is
+now the whole visible record, because the rule that mattered was *no queue*, not
+*no memory*, and a day you can see but cannot touch is its own small insult. You
+tap the day in the record and it opens the same question. Beyond three weeks the
+day is closed and draws as quiet, which is true.
+
+There is still no date picker, and there never will be: an open one turns
+silence into a backlog you can always catch up on, which is the same debt
+without the nag.
 
 ## Where the value is
 
@@ -421,6 +425,15 @@ curves, retypeable into Rive, with two curve families (expo-out for anything
 settling, back-out for anything that should read as impact) and a
 `prefers-reduced-motion` guard. Named moments, not scattered transitions.
 
+## Themes
+
+Three, the same ones Cadence ships and for the same reason: a theme is only a
+different set of values for the custom properties, so nothing in the layout
+knows a theme system exists. Tokyo Night (dark, the original), Slate (neutral
+grey, light with no hue in it) and Catppuccin Latte (light, readable in
+daylight). The lane colours are theme tokens too, so the encoding holds in all
+three — fill still means enlarged, fade still means diminished.
+
 ## Running it
 
 The app is in `app/` — plain HTML, one CSS file, one JS file, no build step and
@@ -459,21 +472,34 @@ Settings → Pages → Source → *GitHub Actions*, and a repository Pages can s
 
 Nine screens. If it is not here, it is not in the first build.
 
-1. **Home, day unanswered** — the date, the question, four lane names. No log
-   button; the lanes are the answer. Nothing singled out.
-2. **The lane, and the grid** — your why-sentence at the top, the 3×2 grid at the
-   bottom in thumb reach. One tap writes the block.
-3. **Home, day answered** — the same screen with the question gone: three weeks
-   of marks, the job ribbon beside them, `ADD ANOTHER` at the foot.
+1. **Home — the record.** Three weeks of marks, the job ribbon beside them, and
+   the day's question *in the dock at the bottom*. The four lanes sit under the
+   question as the answer, so logging is two taps from the moment you open the
+   app. When the day is answered the question disappears and the four lanes
+   stay, because adding another block should not need a different screen.
+2. **Pick a lane** — reached by tapping any day in the record. The same question
+   for a day that is not today.
+3. **The lane, and the grid** — your why-sentence at the top, the 3×2 grid
+   below. One tap writes the block. The dock says which day you are writing to.
 4. **The job verdict** — three cells open in place under today's ribbon row.
 5. **A lane, and its goal** — the spine: why, the goal open on it, blocks earned.
 6. **A why, and what it used to say** — struck-through versions, dated.
-7. **The year** — one tap from home via the scale control in the header.
+7. **The year** — one tap from home via the scale control in the bar.
 8. **One week** — one tap from the year; seven days at full size.
-9. **The encoding** — not a screen, the spec the other eight obey.
+9. **Settings** — the theme, and where the record lives.
 
-**Home is one screen in two states**, not two screens, and every other screen is
-one tap from it and returns to it.
+**The record is home**, and it is the only screen with no back. The wordmark
+returns to it from anywhere. Everything else is one tap from it and comes back.
+
+**The door became the dock.** It was drawn as its own screen and that was wrong
+in the hand: opening to a question with no record behind it made the app feel
+like it had no floor, and the record screen had a blank gap where the question
+should have been. One screen now, with the question in it.
+
+**Three shapes are tappable and nothing else is.** A bordered box is what the
+screen is for; underlined text with a `›` goes somewhere; an underlined chip
+changes what you are looking at. Plain dim text never does anything. A terminal
+aesthetic has no hover state to lean on, so the rule has to be visible.
 
 **One thing to know before building:** `NOTHING, IT WAS THE JOB` answers the day
 without writing a block, so an answered day is not proof anything was logged and
