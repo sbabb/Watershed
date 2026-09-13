@@ -66,6 +66,10 @@
     { id: 'body',     name: 'BODY',     tok: 'orange' },
     { id: 'love',     name: 'LOVE',     tok: 'purple' }
   ];
+  // The job is still a condition rather than a lane — one verdict a day, no
+  // size — but it is logged the same way everything else is, from the same
+  // screen. Making it a special gesture on one cell only made it invisible.
+  const JOBLANE = { id: 'job', name: 'JOB', tok: 'job' };
   const laneColor = id => theme.t[(LANES.find(l => l.id === id) || LANES[0]).tok];
   const JOBC = () => theme.t.job;
 
@@ -251,10 +255,12 @@
     </div>`;
 
   function render() {
-    const screens = { home, pick, log, year, week, detail, why, settings };
+    const screens = { home, pick, log, jobday, goal, year, week, detail, why, settings };
     el.innerHTML = (screens[view.screen] || home)();
     const body = el.querySelector('.body');
     if (body) body.scrollTop = 0;
+    const field = el.querySelector('#why-input, #goal-input');
+    if (field) { field.focus(); if (field.setSelectionRange) field.setSelectionRange(field.value.length, field.value.length); }
   }
 
   /* ---- home: the record, and the question in the dock ----------------- */
@@ -266,39 +272,28 @@
     return shell({
       right: `${scaleChips('weeks')}${gearButton}`,
       body: `
-        <div class="row-between" style="margin-top:14px">
-          <div class="date">${longDay(t)}</div>
-          <div class="label">TAP A DAY TO LOG IT</div>
-        </div>
+        <div class="date" style="margin-top:14px">${longDay(t)}</div>
         ${laneHeaderRow()}
         ${dayGrid(days, t, { tappable: true })}
-        ${view.jobPicker ? verdictPicker() : ''}
         ${legend(FADE_DAY)}`,
-      dock: `
-        ${answered ? '' : `<div class="question">What were the last few hours for?</div>`}
-        ${laneButtons(t)}
-        ${answered ? '' : `<button class="btn quiet" style="margin-top:8px" data-a="nothing">NOTHING, IT WAS THE JOB</button>`}`
+      dock: answered
+        ? `<div class="label" style="text-align:center">TAP ANY DAY TO LOG TO IT</div>`
+        : `<div class="question">What were the last few hours for?</div>
+           <button class="btn" style="margin-top:12px" data-a="day:${t}">LOG TODAY</button>`
     });
   }
 
   function laneHeaderRow() {
     return `
+      <div class="label" style="margin-top:20px">TAP A NAME TO SEE WHY THAT LANE EXISTS</div>
       <div class="cols">
         <div class="col-days"></div>
         <div class="col-job"><div class="tag">JOB</div></div>
         <div class="col-gap"></div>
         <div class="col-lanes">
-          ${LANES.map(l => `<button data-a="go:detail:${l.id}" style="color:${laneColor(l.id)}">${l.name}</button>`).join('')}
+          ${LANES.map(l => `<button data-a="go:detail:${l.id}" style="color:${laneColor(l.id)}"><span>${l.name}</span></button>`).join('')}
         </div>
       </div>`;
-  }
-
-  function laneButtons(dateKey) {
-    return `<div class="lane-grid">
-      ${LANES.map(l => `<button data-a="lane:${l.id}:${dateKey}" style="color:${laneColor(l.id)}">
-        <i style="background:${laneColor(l.id)}"></i>${l.name}
-      </button>`).join('')}
-    </div>`;
   }
 
   function dayGrid(days, t, opts) {
@@ -306,16 +301,12 @@
     return `
       <div class="grid ${o.week ? 'week-grid' : ''}">
         <div class="bands">
-          ${days.map(k => `<div class="band ${isWeekend(k) ? '' : ''}" style="background:${isWeekend(k) ? 'var(--weekend)' : 'transparent'}"></div>`).join('')}
+          ${days.map(k => `<div class="band" style="background:${isWeekend(k) ? 'var(--weekend)' : 'transparent'}"></div>`).join('')}
         </div>
+        ${o.tappable ? `<div class="hits">${days.map(k => `<button class="hit" data-a="day:${k}" aria-label="Log to ${longDay(k)}"></button>`).join('')}</div>` : ''}
         <div class="grid-body">
           <div class="days">
-            ${days.map(k => {
-              const cls = `day ${k === t ? 'today' : isWeekend(k) ? 'weekend' : ''}`;
-              return o.tappable
-                ? `<button class="${cls}" data-a="day:${k}">${shortDay(k)}</button>`
-                : `<div class="${cls}">${shortDay(k)}</div>`;
-            }).join('')}
+            ${days.map(k => `<div class="day ${k === t ? 'today' : isWeekend(k) ? 'weekend' : ''}">${shortDay(k)}</div>`).join('')}
           </div>
           <div class="ribbon">
             ${days.map(k => {
@@ -323,7 +314,7 @@
               const bg = v === 'enlarged' ? JOBC() : v === 'diminished' ? alpha(JOBC(), FADE_DAY) : 'transparent';
               return o.week
                 ? `<div class="ribbon-cell"><i style="background:${bg}"></i></div>`
-                : `<button class="ribbon-cell" data-a="${k === t ? 'job:pick' : 'noop'}" style="background:${bg}"></button>`;
+                : `<div class="ribbon-cell" style="background:${bg}"></div>`;
             }).join('')}
           </div>
           <div class="col-gap"></div>
@@ -343,15 +334,6 @@
           </div>
         </div>
       </div>`;
-  }
-
-  function verdictPicker() {
-    const c = JOBC();
-    return `<div class="verdicts">
-      <button data-a="job:enlarged"><i style="background:${c}"></i>ENLARGED</button>
-      <button data-a="job:diminished"><i style="background:${alpha(c, FADE_DAY)}"></i>DIMINISHED</button>
-      <button data-a="job:clear"><i class="outline"></i>NO WORK</button>
-    </div>`;
   }
 
   /* ---- pick: which lane were those hours for ------------------------- */
@@ -374,8 +356,49 @@
               <span class="grow"></span>${mark}
             </button>`;
           }).join('')}
-        </div>`,
-      dock: `<button class="btn quiet" data-a="nothing:${d}">NOTHING, IT WAS THE JOB</button>`
+        </div>
+
+        <div class="label" style="margin-top:24px">AND THE DAY ITSELF</div>
+        <button class="btn" data-a="go:jobday:${d}" style="justify-content:flex-start;margin-top:9px">
+          <i class="dot" style="background:${JOBC()}"></i>
+          <span style="color:${JOBC()};font-weight:500">${JOBLANE.name}</span>
+          <span class="grow"></span>
+          <span class="small">${jobLabel(state.job[d])}</span>
+        </button>
+        <div class="help">Whether you worked, and whether it enlarged or diminished you. No size — the job's is always the same.</div>
+        <div style="height:14px"></div>`,
+      dock: `<button class="btn quiet" data-a="nothing:${d}">NOTHING TO LOG FOR THIS DAY</button>`
+    });
+  }
+
+  const jobLabel = v => v === 'enlarged' ? 'ENLARGED' : v === 'diminished' ? 'DIMINISHED' : 'NOT LOGGED';
+
+  /* ---- the job, for any day ------------------------------------------- */
+
+  function jobday() {
+    const d = view.when;
+    const c = JOBC();
+    return shell({
+      back: true,
+      body: `
+        <div class="lane-head">
+          <i class="dot" style="background:${c}"></i>
+          <div class="h2" style="color:${c}">${JOBLANE.name}</div>
+        </div>
+        <div class="why-block" style="border-left-color:${c}">
+          <div class="why-text">Did the work day enlarge you, or diminish you?</div>
+        </div>
+        <div class="band-label"><span>THE DAY</span><i></i></div>
+        <div class="choices" style="margin-top:12px">
+          <button data-a="setjob:enlarged"><i style="width:34px;height:26px;background:${c}"></i></button>
+          <button data-a="setjob:diminished"><i style="width:34px;height:26px;background:${alpha(c, FADE_DAY)}"></i></button>
+          <button data-a="setjob:clear"><i style="width:34px;height:26px;border:1px solid ${alpha(c, 0.6)}"></i></button>
+        </div>
+        <div class="sizes" style="margin-top:10px">
+          <div><b>ENLARGED</b></div><div><b>DIMINISHED</b></div><div><b>NO WORK</b></div>
+        </div>
+        <div class="help">The hours never change, so there is nothing to measure. Only which way they went.</div>`,
+      dock: `<div class="row-between"><div class="label">WRITING TO</div><div class="small">${longDay(d)}</div></div>`
     });
   }
 
@@ -562,8 +585,10 @@
             ${s.goal
               ? `<div class="goal-name">${esc(s.goal.name)}</div>
                  <div class="goal-meta">${Math.max(0, Math.round((parseKey(today()) - parseKey(s.goal.from)) / 86400000))} DAYS IN</div>
-                 <div class="goal-meta">~${goalHours} HOURS SINCE IT OPENED</div>`
-              : `<button class="link" data-a="goal:new">OPEN A GOAL ON THIS LANE</button>`}
+                 <div class="goal-meta">~${goalHours} HOURS SINCE IT OPENED</div>
+                 <button class="link" style="margin-top:12px" data-a="goal:close">CLOSE THIS GOAL</button>`
+              : `<button class="link" data-a="goal:new">OPEN A GOAL ON THIS LANE</button>
+                 <div class="help" style="margin-top:10px">No goal open. Most lanes never have one — a goal just names a stretch of work so the blocks after it add up.</div>`}
           </div>
         </div>
 
@@ -601,7 +626,14 @@
         </div>` + (editing
         ? `<div class="why-editor">
              <div class="label" style="margin-top:20px">WHY THIS LANE EXISTS</div>
-             <textarea id="why-input" placeholder="Because…">${esc(s.why)}</textarea>
+             <div class="actions" style="margin-top:12px">
+               <button class="btn" data-a="why:save" style="color:${c};border-color:${c}">SAVE</button>
+               <button class="btn quiet" data-a="why:cancel">CANCEL</button>
+             </div>
+             <textarea id="why-input" rows="4" placeholder="Because…"
+               style="border-color:${c}">${esc(s.why)}</textarea>
+             <div class="help">One sentence, in your own words. You meet it every time you log to this lane, and you will know it has stopped being true by reading it and flinching.</div>
+             <div style="height:20px"></div>
            </div>`
         : `<div class="spine" style="margin-top:18px">
              <div class="gutter"><i class="thick" style="background:${c}"></i><b style="top:8px;background:${c}"></b></div>
@@ -618,12 +650,32 @@
                <div class="label" style="margin-top:10px">${dayMonth(h.from)} — ${dayMonth(h.to)}</div>
              </div>
            </div>`).join('')}`),
-      dock: editing
-        ? `<div class="actions">
-             <button class="btn" data-a="why:save">SAVE</button>
-             <button class="btn quiet" data-a="why:cancel">CANCEL</button>
-           </div>`
-        : `<button class="btn quiet" data-a="why:edit">THIS ISN'T TRUE ANY MORE</button>`
+      dock: editing ? '' : `<button class="btn quiet" data-a="why:edit">THIS ISN'T TRUE ANY MORE</button>`
+    });
+  }
+
+  /* ---- opening a goal --------------------------------------------------- */
+
+  function goal() {
+    const l = laneMeta(view.lane);
+    const c = laneColor(l.id);
+    return shell({
+      back: true,
+      body: `
+        <div class="lane-head">
+          <i class="dot" style="background:${c}"></i>
+          <div class="h2" style="color:${c}">${l.name}</div>
+        </div>
+        <div class="why-editor">
+          <div class="label" style="margin-top:20px">WHAT ARE YOU IN THE MIDDLE OF?</div>
+          <div class="actions" style="margin-top:12px">
+            <button class="btn" data-a="goal:save" style="color:${c};border-color:${c}">OPEN IT</button>
+            <button class="btn quiet" data-a="goal:cancel">CANCEL</button>
+          </div>
+          <input id="goal-input" type="text" placeholder="Ship Watershed" style="border-color:${c}">
+          <div class="help">A goal is only a name for the stretch of work you are in, and the day it started. It has no target and no deadline: nothing counts down, nothing fills up, and no percentage appears anywhere. All it does is mark a point on the lane so the blocks after it add up to something you can look at.<br><br>Most lanes never need one. Open a goal when you are in the middle of a particular piece of work and you want to see what it actually cost.</div>
+          <div style="height:20px"></div>
+        </div>`
     });
   }
 
@@ -673,6 +725,7 @@
       if (a === 'detail') return go({ screen: 'detail', lane: b });
       if (a === 'why') return go({ screen: 'why', lane: b, editing: false, from: view.screen });
       if (a === 'settings') return go({ screen: 'settings' });
+      if (a === 'jobday') return go({ screen: 'jobday', when: b });
       return;
     }
 
@@ -690,11 +743,11 @@
       return goHome();
     }
 
-    if (verb === 'job') {
-      if (a === 'pick') { view.jobPicker = !view.jobPicker; return render(); }
-      setJob(today(), a);
-      view.jobPicker = false;
-      return render();
+    if (verb === 'setjob') {
+      setJob(view.when, a);
+      if (a !== 'clear') state.answered[view.when] = true;
+      save();
+      return goHome();
     }
 
     if (verb === 'why') {
@@ -709,9 +762,15 @@
     }
 
     if (verb === 'goal') {
-      const name = prompt('What is the goal? A name, not a target.');
-      if (name && name.trim()) { laneState(view.lane).goal = { name: name.trim().toUpperCase(), from: today() }; save(); }
-      return render();
+      if (a === 'new') return go({ screen: 'goal', lane: view.lane });
+      if (a === 'cancel') return history.back();
+      if (a === 'save') {
+        const t = document.getElementById('goal-input');
+        const name = t ? t.value.trim() : '';
+        if (name) { laneState(view.lane).goal = { name: name.toUpperCase(), from: today() }; save(); }
+        return history.back();
+      }
+      if (a === 'close') { laneState(view.lane).goal = null; save(); return render(); }
     }
 
     if (verb === 'theme') { applyTheme(a); return render(); }

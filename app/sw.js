@@ -3,7 +3,7 @@
  * Nothing here touches your data — that lives in localStorage and never leaves
  * the phone. */
 
-const CACHE = 'watershed-v2';
+const CACHE = 'watershed-v3';
 const SHELL = [
   './',
   './index.html',

@@ -220,6 +220,11 @@ versions is a record of someone becoming harder to fool.
 **The day rolls at 4am**, because logging at 1am belongs to the day you've been
 living, not the one the clock just started.
 
+**Every row in the record is the way in.** Tapping a day — anywhere on it —
+opens that day's question. The lane *names* along the top are a different
+control and are underlined to say so: the grid is for logging, the name is for
+what the lane is *for*.
+
 **Reach-back is three weeks — the span the record shows.** No-backfill stays a
 prompt policy: nothing ever says "you missed 3 days". But the reach itself is
 now the whole visible record, because the rule that mattered was *no queue*, not
@@ -425,6 +430,20 @@ curves, retypeable into Rive, with two curve families (expo-out for anything
 settling, back-out for anything that should read as impact) and a
 `prefers-reduced-motion` guard. Named moments, not scattered transitions.
 
+## Goals
+
+A goal is **a name for the stretch of work you are in, and the day it started**.
+That is all. It has no target and no deadline, nothing counts down, nothing
+fills up, and no percentage appears anywhere — a completion figure would require
+knowing a total nobody knows, and a fabricated "23%" on a hard day does real
+harm. All a goal does is mark a point on the lane so the blocks after it add up
+to something you can look at.
+
+**Most lanes never have one**, and that is the answer to why some do and some
+don't: you open a goal when you are in the middle of a particular piece of work
+and want to see what it actually cost. It is not a property of a lane, it is an
+episode on one, and it can be closed.
+
 ## Themes
 
 Three, the same ones Cadence ships and for the same reason: a theme is only a
@@ -472,13 +491,12 @@ Settings → Pages → Source → *GitHub Actions*, and a repository Pages can s
 
 Nine screens. If it is not here, it is not in the first build.
 
-1. **Home — the record.** Three weeks of marks, the job ribbon beside them, and
-   the day's question *in the dock at the bottom*. The four lanes sit under the
-   question as the answer, so logging is two taps from the moment you open the
-   app. When the day is answered the question disappears and the four lanes
-   stay, because adding another block should not need a different screen.
-2. **Pick a lane** — reached by tapping any day in the record. The same question
-   for a day that is not today.
+1. **Home — the record.** Three weeks of marks, the job ribbon beside them.
+   **Every row is a button**: tap anywhere on a day — label, ribbon or lane — and
+   that day opens. While today is unanswered the dock carries the question and
+   one `LOG TODAY` button; once it is answered the dock is a single line saying
+   you can tap any day. There is exactly one way to log, and it is the record.
+2. **Pick a lane** — what a tapped day opens: the four lanes, and the job.
 3. **The lane, and the grid** — your why-sentence at the top, the 3×2 grid
    below. One tap writes the block. The dock says which day you are writing to.
 4. **The job verdict** — three cells open in place under today's ribbon row.
@@ -486,7 +504,11 @@ Nine screens. If it is not here, it is not in the first build.
 6. **A why, and what it used to say** — struck-through versions, dated.
 7. **The year** — one tap from home via the scale control in the bar.
 8. **One week** — one tap from the year; seven days at full size.
-9. **Settings** — the theme, and where the record lives.
+9. **The job, for a day** — enlarged, diminished or no work. Reached from the
+   same place as the lanes, because a special gesture on one cell made the job
+   invisible: people work, and logging Saturday's work should not be a puzzle.
+10. **Opening a goal**, and **Settings** — a name for a stretch of work, and
+    the theme.
 
 **The record is home**, and it is the only screen with no back. The wordmark
 returns to it from anywhere. Everything else is one tap from it and comes back.
