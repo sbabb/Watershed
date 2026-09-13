@@ -171,13 +171,23 @@ the app opens straight to the record, with a quiet ADD ANOTHER at the bottom.
 You are asked once a day, and only until you answer. Coming only to look costs
 one tap out of the bottom of the door, and answering nothing costs nothing.
 
-**Two taps, or three, depending on the wall.** Lane then cell is two — but that
-folds the why-sentence and the size grid onto one screen. Keeping the wall
-below (your sentence alone, touched to open the grid) makes it three, the same
-count as the old button-first flow: the door then replaces a step rather than
-removing one. Two is not too many and neither is three; the open question is
-whether the pause is load-bearing, and only use will say. One tap on a grid cell
-writes the block and returns you to the record with the mark already on the rail. There is no confirm step, because a confirm step
+**No lane is singled out on the door.** An early version put the quiet lane's
+why-sentence there — BODY, silent since August, with its own words underneath
+it. It was wrong. A sentence you did not ask for, about a lane you were not
+logging to, is a reminder with good manners: you came to log a CRAFT session and
+the phone mentioned that you haven't walked. The rule is now explicit — **the app
+never shows you a sentence you did not ask for.** You meet your own words on the
+lane screen, because you chose that lane, and on the why screen, because you
+went looking. The silence stays perfectly visible where it belongs: an empty
+rail on the record, twenty-one days long. Overview, not a self-manager.
+
+**Two taps, and the wall is folded in.** Lane, then cell. The why-sentence and
+the size grid share one screen rather than sitting on two: the sentence at the
+top where the eye lands, the six cells at the bottom in thumb reach. That saves
+the third tap and costs the deliberate pause of *touching* the sentence to open
+the grid. The unfolded version stays drawn, because if rote logging ever shows
+up this is the first thing to try. One tap on a grid cell writes the block and
+returns you to the record with the mark already on the rail. There is no confirm step, because a confirm step
 doubles the taps and carries no information. The undo lives where the reach-back
 line was: LOGGED · UNDO, for a few seconds.
 
@@ -328,6 +338,11 @@ out:
   came from is the screen you go back to. No toast, no count, no "three days in
   a row", no percentage of a goal, no note that a lane has been quiet. Every one
   of those is a reason to log *for the app* instead of for yourself.
+- **It never shows you a sentence you did not ask for.** Your why-sentences
+  appear when you pick that lane or go looking for it, and nowhere else. A
+  sentence surfaced *at* you about a lane you weren't logging to is a reminder
+  wearing good manners — the phone influencing you, which is the whole thing
+  being refused.
 - **A diminishing block is data, never a failure state.** No red, no warning, no
   suggestion to improve. Hollis's swamplands: the hard passages aren't
   malfunctions, they're territory with something to say.
@@ -415,14 +430,13 @@ settling, back-out for anything that should read as impact) and a
   first ninety days pay nothing. Retention machinery is explicitly out of scope:
   a practice is the goal, not attention. Duolingo's angry-bird app icon is the
   category being refused, and *that* backlog stays empty on purpose.
-  What was still open was the **front door**, and it is now drawn as a
-  combined flow: the day's question with the quiet lane's own words folded into
-  it, the lanes as the answer, and the door disappearing once the day is
+  The **front door** is now settled: the day's question with the four lanes as
+  the answer, no sentence pushed at you, and the door gone once the day is
   answered. Three doors were drawn separately first — the day unfinished, your
   own words, the body first — and the third, valence before lane, remains
   undrawn as a flow because it inverts the model's order rather than the
-  furniture. What the combined flow leaves undecided is **the wall**: folding the
-  why-sentence into the grid screen saves the third tap and costs the pause.
+  furniture. It is the one worth revisiting if the two-tap flow ever feels like
+  bookkeeping.
 - **The app records what you did; the thesis is about what you avoid.** A quiet
   lane shows avoidance only for things already named as lanes. The most
   diminishing thing in a life usually has no lane and never will — it is unnamed
@@ -444,7 +458,8 @@ settling, back-out for anything that should read as impact) and a
 
 ## Status
 
-Concept settled through two grilling passes. Twenty artboards drawn. Settled
+Concept settled through two grilling passes. Twenty-one artboards drawn,
+laid out as the app first and the argument underneath it. Settled
 against them: the vertical axis, the four-lane set and its naming, the encoding,
 the bucket calibration, the logging flow, the test for what earns a lane, the
 job as a single ribbon and how it is drawn at both resolutions, the why-sentence

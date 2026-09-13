@@ -1,250 +1,265 @@
 {
   "artboards": [
     {
-      "file": "Main.dc.html",
+      "file": "FlowMap.dc.html",
       "x": 0,
       "y": 0,
-      "w": 400,
-      "h": 880,
-      "title": "1 \u2014 Home (four lanes)"
+      "w": 1280,
+      "h": 900,
+      "title": "The whole thing \u2014 every screen, every tap"
     },
     {
-      "file": "LogLane.dc.html",
+      "file": "FlowOpen.dc.html",
+      "x": 0,
+      "y": 1260,
+      "w": 400,
+      "h": 880,
+      "title": "1 \u2014 The door"
+    },
+    {
+      "file": "FlowLane.dc.html",
       "x": 500,
-      "y": 0,
+      "y": 1260,
       "w": 400,
       "h": 880,
-      "title": "2 \u2014 Pick a lane"
+      "title": "2 \u2014 Lane + grid"
     },
     {
-      "file": "LogGrid.dc.html",
+      "file": "FlowRest.dc.html",
       "x": 1000,
-      "y": 0,
+      "y": 1260,
       "w": 400,
       "h": 880,
-      "title": "3 \u2014 The 3x2 grid"
+      "title": "3 \u2014 The record"
+    },
+    {
+      "file": "RibbonLog.dc.html",
+      "x": 1500,
+      "y": 1260,
+      "w": 400,
+      "h": 880,
+      "title": "4 \u2014 The job verdict"
     },
     {
       "file": "LaneDetail.dc.html",
-      "x": 1600,
-      "y": 0,
+      "x": 2000,
+      "y": 1260,
       "w": 400,
       "h": 880,
-      "title": "Lane + goal"
+      "title": "5 \u2014 Lane + goal"
     },
     {
-      "file": "Year.dc.html",
-      "x": 2100,
-      "y": 0,
+      "file": "YearRibbon.dc.html",
+      "x": 2500,
+      "y": 1260,
       "w": 400,
       "h": 880,
-      "title": "The year"
+      "title": "6 \u2014 The year"
     },
     {
-      "file": "MainJobBand.dc.html",
-      "x": 0,
-      "y": 1020,
+      "file": "WhyHistory.dc.html",
+      "x": 3000,
+      "y": 1260,
       "w": 400,
       "h": 880,
-      "title": "Home \u2014 the job as ground, not a lane"
+      "title": "7 \u2014 The why, and what it used to say"
     },
     {
       "file": "Encoding.dc.html",
-      "x": 500,
-      "y": 1020,
+      "x": 0,
+      "y": 2660,
       "w": 920,
       "h": 840,
       "title": "Encoding \u2014 decided"
     },
     {
-      "file": "MainHorizontal.dc.html",
-      "x": 1600,
-      "y": 1020,
-      "w": 400,
-      "h": 880,
-      "title": "Home \u2014 horizontal (not chosen)"
-    },
-    {
-      "file": "RibbonLog.dc.html",
-      "x": 0,
-      "y": 2420,
-      "w": 400,
-      "h": 880,
-      "title": "A \u2014 Logging a verdict, in place"
-    },
-    {
-      "file": "YearRibbon.dc.html",
-      "x": 500,
-      "y": 2420,
-      "w": 400,
-      "h": 880,
-      "title": "B \u2014 The year with the job on it (chosen)"
-    },
-    {
-      "file": "TwoConditions.dc.html",
-      "x": 1000,
-      "y": 2420,
-      "w": 400,
-      "h": 880,
-      "title": "C \u2014 Two conditions (not chosen)"
-    },
-    {
       "file": "WhyMoment.dc.html",
-      "x": 0,
-      "y": 3680,
+      "x": 1020,
+      "y": 2660,
       "w": 400,
       "h": 880,
-      "title": "D \u2014 The wall you walk through"
-    },
-    {
-      "file": "WhyHistory.dc.html",
-      "x": 500,
-      "y": 3680,
-      "w": 400,
-      "h": 880,
-      "title": "E \u2014 The why, and what it used to say"
+      "title": "The wall \u2014 drawn, then folded in"
     },
     {
       "file": "AfterLog.dc.html",
-      "x": 1000,
-      "y": 3680,
+      "x": 1520,
+      "y": 2660,
       "w": 400,
       "h": 880,
-      "title": "F \u2014 What happens after you log"
+      "title": "What happens after you log \u2014 nothing"
+    },
+    {
+      "file": "Main.dc.html",
+      "x": 0,
+      "y": 3940,
+      "w": 400,
+      "h": 880,
+      "title": "Home with a LOG A BLOCK button"
+    },
+    {
+      "file": "MainJobBand.dc.html",
+      "x": 500,
+      "y": 3940,
+      "w": 400,
+      "h": 880,
+      "title": "Home with the job ribbon"
+    },
+    {
+      "file": "MainHorizontal.dc.html",
+      "x": 1000,
+      "y": 3940,
+      "w": 400,
+      "h": 880,
+      "title": "Home \u2014 horizontal"
+    },
+    {
+      "file": "LogLane.dc.html",
+      "x": 1500,
+      "y": 3940,
+      "w": 400,
+      "h": 880,
+      "title": "Pick a lane, as a screen"
+    },
+    {
+      "file": "LogGrid.dc.html",
+      "x": 2000,
+      "y": 3940,
+      "w": 400,
+      "h": 880,
+      "title": "The 3x2 grid, as a screen"
+    },
+    {
+      "file": "Year.dc.html",
+      "x": 2500,
+      "y": 3940,
+      "w": 400,
+      "h": 880,
+      "title": "The year, before the ribbon"
+    },
+    {
+      "file": "TwoConditions.dc.html",
+      "x": 3000,
+      "y": 3940,
+      "w": 400,
+      "h": 880,
+      "title": "Two ribbons"
     },
     {
       "file": "DoorDay.dc.html",
-      "x": 0,
-      "y": 4940,
+      "x": 3500,
+      "y": 3940,
       "w": 400,
       "h": 880,
       "title": "Door 1 \u2014 Today, unfinished"
     },
     {
       "file": "DoorWords.dc.html",
-      "x": 500,
-      "y": 4940,
+      "x": 4000,
+      "y": 3940,
       "w": 400,
       "h": 880,
       "title": "Door 2 \u2014 Your own words"
     },
     {
       "file": "DoorBody.dc.html",
-      "x": 1000,
-      "y": 4940,
+      "x": 4500,
+      "y": 3940,
       "w": 400,
       "h": 880,
       "title": "Door 3 \u2014 The body first"
-    },
-    {
-      "file": "FlowOpen.dc.html",
-      "x": 0,
-      "y": 6200,
-      "w": 400,
-      "h": 880,
-      "title": "Flow 1 \u2014 The door (lanes, not the day)"
-    },
-    {
-      "file": "FlowLane.dc.html",
-      "x": 500,
-      "y": 6200,
-      "w": 400,
-      "h": 880,
-      "title": "Flow 2 \u2014 One tap in"
-    },
-    {
-      "file": "FlowRest.dc.html",
-      "x": 1000,
-      "y": 6200,
-      "w": 400,
-      "h": 880,
-      "title": "Flow 3 \u2014 Two taps in, and after"
     }
   ],
   "annotations": [
     {
-      "id": "note-test",
+      "id": "note-app",
       "x": 0,
-      "y": -330,
+      "y": -430,
       "w": 1400,
-      "text": "THE TEST FOR WHETHER SOMETHING IS A LANE: could it go quiet for six weeks without you noticing?\n\nIf yes, it is a lane \u2014 the silence is the finding, and the rail is how you see it.\nIf no, it is not. The job cannot silently go quiet; you would be unemployed. Drawing fifty-two identical fat bars for it is decoration, not information.\n\nAnd on overlap: one lane per block, and the choosing IS the reflective act. But that only survives contact with real life if the moment of hesitation is rare. A good lane set is one where roughly nine blocks in ten are obvious and the tenth makes you think for two seconds. If every block is ambiguous, the lanes are wrong \u2014 not the rule.\n\nFour lanes here, down from six. MONEY is gone: Cadence already does it, and a lane that duplicates a tool you already use produces no surprise. THE JOB is gone as a lane \u2014 see the variant below. What remains are the four that can go quiet on you.\n\nFour rails, 81px each. Fewer lanes means bigger marks, more air, and a year view you can actually read."
+      "text": "THE APP, LAID OUT. Three bands, top to bottom.\n\nTHIS BAND is the app: the map, then the seven screens it names, left to right in the order you meet them. Two taps to log, and everything after screen three is looking rather than logging.\n\nBELOW THAT, what was decided along the way and still governs: the encoding, the wall, and the deliberate silence after a logged block.\n\nBELOW THAT AGAIN, what has been superseded and is kept anyway. A decision without its rejected alternatives is just a preference, and every one of those boards is a question someone will ask again in six months."
     },
     {
-      "id": "note-naming",
-      "x": 1600,
-      "y": -330,
-      "w": 900,
-      "text": "WHY 'THE WORK' HAD TO GO. It was the right idea with a name that swallows everything: the portfolio is the work, the steps are the work, the body is the work. Every lane except the job is 'the work' \u2014 it is the name of the app, not of a lane.\n\nSo name lanes by their OBJECT, not their spirit. CRAFT is being good at something. RECOVERY is meetings, the 12x12, the step writing, the call you made instead. Both are the summons; only one is about becoming good at a thing.\n\nRECOVERY rather than SOBER, because SOBER names a state and the lane holds hours. If sobriety itself wants recording, it is the same shape as the job: a condition, not a stack of blocks. PROGRAM would work too, and is what you would actually say out loud.\n\nAll four names are placeholders. Change any of them in one line."
-    },
-    {
-      "id": "note-jobband",
+      "id": "note-flow",
       "x": 0,
-      "y": 1930,
-      "w": 380,
-      "text": "The job as ground rather than as a lane.\n\nOne verdict a day \u2014 did it enlarge or diminish you \u2014 with no size, because the size is always the same and you already know it. Blank on a day off, which is why the ribbon has gaps exactly at weekends without anything drawing them.\n\nThe volume of the job carries nothing. The valence carries a great deal: 'it took the same forty hours every week and stopped enlarging me in March' is a finding, and it is invisible in every other tool you own."
-    },
-    {
-      "id": "note-encoding",
-      "x": 500,
-      "y": 1930,
-      "w": 900,
-      "text": "LOCKED. B FULL / FADED for the day mark, 1 STACKED for the week cell.\n\nOne rule holds at both resolutions: footprint means size, fill means enlarged, fade means diminished. Rejected options kept and dimmed \u2014 a decision without its reasons is just a preference."
+      "y": 1000,
+      "w": 1400,
+      "text": "THE FLOW \u2014 TWO TAPS, AND THE DOOR IS A STATE.\n\nThere is no LOG A BLOCK button anywhere. The screen you open to IS the first half of the log: the day's question, then the four lane names. Tap a lane, tap a cell, done \u2014 two taps, and the second one is the commit.\n\nTHE WALL IS FOLDED IN. The why-sentence and the size grid share screen two rather than sitting on two screens. That saves the third tap and costs the deliberate pause; the unfolded version is kept below as 'the wall'. Folded is the decision.\n\nTHE DOOR IS GONE ONCE THE DAY IS ANSWERED. You open straight to the record, with ADD ANOTHER at the foot. You are asked once a day, and only until you answer \u2014 which is the whole of the answer to 'a question you decline daily becomes a nag'.\n\nNO LANE IS SINGLED OUT. An earlier version put the quiet lane's why-sentence on the door, and it was wrong: a sentence you did not ask for, about a lane you were not logging to, is a reminder with good manners. The rule now is that THE APP NEVER SHOWS YOU A SENTENCE YOU DID NOT ASK FOR. You meet your own words on screen two, because you chose that lane, and on screen seven, because you went looking. BODY's silence is still perfectly visible on screen three \u2014 an empty rail, twenty-one days long. Overview, not a self-manager.\n\nScreen three is also the only hub: the job verdict, the lanes, and the year all hang off it, and every one of them comes back to it."
     },
     {
       "id": "note-ribbon-log",
-      "x": 0,
-      "y": 2160,
+      "x": 1500,
+      "y": 1000,
       "w": 380,
       "text": "A \u2014 HOW YOU LOG A VERDICT.\n\nNo screen and no prompt: the ribbon cell IS the control. Tap today's cell and three cells open in place under the row; tap one and it closes. Two taps, no navigation, and the day grid never leaves the screen.\n\nThis is deliberately not the 3x2 grid. There is no size to pick, so a full screen for one bit of information would read as a chore \u2014 which is exactly how a daily ask turns into a streak you resent.\n\nNO WORK is the third cell rather than a default, because a day off is a real answer and the app should never guess it from the calendar.\n\nSkip a day and the cell stays blank. Nothing counts it, nothing mentions it, and no badge appears."
     },
     {
       "id": "note-ribbon-year",
-      "x": 500,
-      "y": 2160,
+      "x": 1980,
+      "y": 1000,
       "w": 380,
       "text": "B \u2014 THE YEAR, DECIDED.\n\nThe job is drawn the way a lane is drawn: one bar a week, the same length every time, with only the solid/faded split moving. One encoding rule, not two.\n\nThe day-grain version \u2014 five 4px marks a week \u2014 was drawn beside this one and dropped. At 11px a row it turns to dither: you can see the year darken, but no week says anything and the texture competes with the lanes.\n\nThe blank rows are the one week off in August, drawn by nothing."
     },
     {
-      "id": "note-two-conditions",
-      "x": 1000,
-      "y": 2160,
-      "w": 380,
-      "text": "C \u2014 NOT CHOSEN. One ribbon, and the job is it.\n\nThe second ribbon here is SOBER, and look at what it draws: twenty-one identical cells, an unbroken column. That is a streak. No number counts it, but the eye does, and the day it breaks the screen will say so louder than any counter \u2014 the one thing this app promised not to do.\n\nIt also breaks the encoding: solid means enlarged and faded means diminished everywhere else, but here solid would mean yes and faded would mean no \u2014 a different question wearing the same clothes.\n\nAnd it duplicates a lane that already exists. RECOVERY holds the meetings, the 12x12 and the step writing \u2014 the hours actually given. The ribbon even collides with that lane's colour.\n\nOne condition is a design. Two is a dashboard with a streak in it."
+      "id": "note-test",
+      "x": 2460,
+      "y": 1000,
+      "w": 1400,
+      "text": "THE TEST FOR WHETHER SOMETHING IS A LANE: could it go quiet for six weeks without you noticing?\n\nIf yes, it is a lane \u2014 the silence is the finding, and the rail is how you see it.\nIf no, it is not. The job cannot silently go quiet; you would be unemployed. Drawing fifty-two identical fat bars for it is decoration, not information.\n\nAnd on overlap: one lane per block, and the choosing IS the reflective act. But that only survives contact with real life if the moment of hesitation is rare. A good lane set is one where roughly nine blocks in ten are obvious and the tenth makes you think for two seconds. If every block is ambiguous, the lanes are wrong \u2014 not the rule.\n\nFour lanes here, down from six. MONEY is gone: Cadence already does it, and a lane that duplicates a tool you already use produces no surprise. THE JOB is gone as a lane \u2014 see the variant below. What remains are the four that can go quiet on you.\n\nFour rails, 81px each. Fewer lanes means bigger marks, more air, and a year view you can actually read."
+    },
+    {
+      "id": "note-encoding",
+      "x": 0,
+      "y": 2400,
+      "w": 900,
+      "text": "LOCKED. B FULL / FADED for the day mark, 1 STACKED for the week cell.\n\nOne rule holds at both resolutions: footprint means size, fill means enlarged, fade means diminished. Rejected options kept and dimmed \u2014 a decision without its reasons is just a preference."
     },
     {
       "id": "note-write-time",
-      "x": 0,
-      "y": 3420,
+      "x": 1020,
+      "y": 2400,
       "w": 1400,
       "text": "THE VALUE IS AT WRITE TIME, NOT READ TIME.\n\nEvery habit tracker puts its value at read time: log dutifully all year, get a chart. The logging is a tax you pay for the chart, which is why it degrades into bookkeeping inside a fortnight.\n\nIf Hollis is right that you know in the body within a second, then the tap is not data entry \u2014 it is a two-second somatic check on time you have already spent. That is the product. The year view is the receipt.\n\nThree screens follow from taking that seriously. D puts your own sentence between you and the mechanics, so the pause lands on the reason rather than on the UI. E makes a changed why an event rather than an edit, because 'you find out when you read it and flinch' is only true if the flinch is recorded. F is the one that has to stay empty: the block joins the rail and nothing else happens, with the four things that did not happen listed underneath so that the silence reads as a decision."
     },
     {
+      "id": "note-jobband",
+      "x": 500,
+      "y": 3680,
+      "w": 380,
+      "text": "The job as ground rather than as a lane.\n\nOne verdict a day \u2014 did it enlarge or diminish you \u2014 with no size, because the size is always the same and you already know it. Blank on a day off, which is why the ribbon has gaps exactly at weekends without anything drawing them.\n\nThe volume of the job carries nothing. The valence carries a great deal: 'it took the same forty hours every week and stopped enlarging me in March' is a finding, and it is invisible in every other tool you own."
+    },
+    {
+      "id": "note-naming",
+      "x": 1500,
+      "y": 3680,
+      "w": 900,
+      "text": "WHY 'THE WORK' HAD TO GO. It was the right idea with a name that swallows everything: the portfolio is the work, the steps are the work, the body is the work. Every lane except the job is 'the work' \u2014 it is the name of the app, not of a lane.\n\nSo name lanes by their OBJECT, not their spirit. CRAFT is being good at something. RECOVERY is meetings, the 12x12, the step writing, the call you made instead. Both are the summons; only one is about becoming good at a thing.\n\nRECOVERY rather than SOBER, because SOBER names a state and the lane holds hours. If sobriety itself wants recording, it is the same shape as the job: a condition, not a stack of blocks. PROGRAM would work too, and is what you would actually say out loud.\n\nAll four names are placeholders. Change any of them in one line."
+    },
+    {
+      "id": "note-two-conditions",
+      "x": 3000,
+      "y": 3680,
+      "w": 380,
+      "text": "C \u2014 NOT CHOSEN. One ribbon, and the job is it.\n\nThe second ribbon here is SOBER, and look at what it draws: twenty-one identical cells, an unbroken column. That is a streak. No number counts it, but the eye does, and the day it breaks the screen will say so louder than any counter \u2014 the one thing this app promised not to do.\n\nIt also breaks the encoding: solid means enlarged and faded means diminished everywhere else, but here solid would mean yes and faded would mean no \u2014 a different question wearing the same clothes.\n\nAnd it duplicates a lane that already exists. RECOVERY holds the meetings, the 12x12 and the step writing \u2014 the hours actually given. The ribbon even collides with that lane's colour.\n\nOne condition is a design. Two is a dashboard with a streak in it."
+    },
+    {
       "id": "note-door-1",
-      "x": 0,
-      "y": 4700,
+      "x": 3500,
+      "y": 3680,
       "w": 380,
       "text": "DOOR 1 \u2014 TODAY, UNFINISHED. Axis: the day as the subject.\n\nYou open to a date and a question, with today's blocks as a short row of marks rather than a chart. The four lanes are the answer, so logging is not a button you find \u2014 it is the screen you are already on. The record moves one tap away at the bottom.\n\nNOTHING, IT WAS THE JOB is a real answer, and the closest thing to a graceful exit for a day that had nothing in it.\n\nTradeoff: you are asked every single time you open the app, including the times you only came to look. A question you answer 'no' to daily becomes a nag without any of the machinery of a nag."
     },
     {
       "id": "note-door-2",
-      "x": 500,
-      "y": 4700,
+      "x": 4000,
+      "y": 3680,
       "w": 380,
       "text": "DOOR 2 \u2014 YOUR OWN WORDS. Axis: the lane speaks first.\n\nOne of your four why-sentences, nearly alone on the page, chosen by what the record already knows \u2014 here BODY, quiet since August. Not a nudge about the silence: just the sentence you wrote about why it matters, in your words, dated.\n\nThis is the purest form of 'remember the root cause daily'. It is also the only door of the three that says something you did not type into it that minute.\n\nTradeoff: rotation turns into wallpaper. By week six you will have read all four sentences forty times, and the surface that was supposed to re-body you is the surface you swipe past. Mitigations all look like variable rewards, which is the thing being refused."
     },
     {
       "id": "note-door-3",
-      "x": 1000,
-      "y": 4700,
+      "x": 4500,
+      "y": 3680,
       "w": 380,
       "text": "DOOR 3 \u2014 THE BODY FIRST. Axis: the model's order, inverted.\n\nValence before lane. Hollis's claim is that the body answers within a second and the intellect arrives afterwards with reasons \u2014 so this asks the fast question first and the naming second. It is the only one of the three that changes the data model's order rather than just the furniture.\n\nIt is also the most honest about what the app is: a two-second somatic check, with bookkeeping attached.\n\nTradeoff: it presumes you have something to log, so the escape hatch has to be permanent furniture. And answering valence before naming the block risks rating the MOOD you walked in with rather than the hours \u2014 which is already the thing I am least confident about in the whole model."
-    },
-    {
-      "id": "note-flow",
-      "x": 0,
-      "y": 5940,
-      "w": 1400,
-      "text": "THE COMBINED FLOW \u2014 AND THE HONEST TAP COUNT.\n\nThe door is Door 1's question with Door 2's sentence folded into it. The four lanes ARE the answer, so there is no LOG A BLOCK button anywhere: the thing you would have tapped first has become the screen you open to. One lane carries its why-sentence in full \u2014 the one that has gone quiet \u2014 and the other three carry only a name and today's mark. Nothing nags about the silence; the sentence is simply there, in your words, beside a rail with nothing on it.\n\nTAPS. Old flow: LOG A BLOCK, then the lane, then the cell \u2014 three. This flow: the lane, then the cell \u2014 two. But read screen two closely, because that is where the tap went. The why-sentence and the size grid are on ONE screen here, and the settled design had them on two: your sentence nearly alone on the page, and TOUCHING THE SENTENCE is what opens the grid \u2014 the wall you walk through (board D, drawn above).\n\nSo the real count is a choice, not a saving:\n  \u2022 WALL FOLDED (drawn here) \u2014 two taps. Fastest, and the reason is on screen while you choose. But the deliberate pause is gone for the lane you actually picked.\n  \u2022 WALL KEPT \u2014 three taps, the same as today: door, then board D, then the grid. The door replaces the button rather than removing a step, and the pause survives.\n\nTwo taps is not too many either way. Three is not either. The question is not the count \u2014 it is whether the pause is load-bearing, and only using it will say.\n\nTHE THIRD SCREEN IS THE POINT. Once the day is answered the door is gone: you open straight to the record, with ADD ANOTHER sitting quietly at the bottom. The door is a STATE, not a screen. That answers Door 1's honest cost \u2014 you are not asked every time you open the app, you are asked once a day, and only until you answer.\n\nCame only to look? THE LAST THREE WEEKS is one tap out of the bottom of the door, and answering nothing costs nothing. BODY's rail on screen three is empty all twenty-one days \u2014 that silence is what the whole app exists to make visible."
     }
   ],
   "launch": {
