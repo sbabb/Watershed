@@ -1,0 +1,292 @@
+/* Watershed — Tokyo Night, sharp corners, no shadows, no gradients.
+   Borders carry state; fills only group. Red is never used: it reads as error,
+   and a diminishing block is data, not a failure. */
+
+:root {
+  --bg: #1a1b26;
+  --panel: #1f2335;
+  --line: #2f3549;
+  --line-bright: #3b4261;
+  --rail: #232838;
+  --weekend: #1d1e2a;
+  --text: #c0caf5;
+  --mid: #787c99;
+  --dim: #636c97;
+  --dimmest: #4a5178;
+  --job: #7aa2f7;
+  --row: 25px;
+}
+
+* , *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace;
+  font-size: 17px;
+  line-height: 1.45;
+  -webkit-text-size-adjust: 100%;
+}
+
+body { display: flex; justify-content: center; }
+
+.app {
+  width: 100%;
+  max-width: 420px;
+  min-height: 100dvh;
+  padding: 14px;
+  padding-top: max(14px, env(safe-area-inset-top));
+  padding-bottom: max(14px, env(safe-area-inset-bottom));
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.grow { flex-grow: 1; }
+
+/* ---- chrome ---------------------------------------------------------- */
+
+.head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 8px;
+}
+.wordmark { font-size: 15px; font-weight: 700; letter-spacing: 2px; }
+.back { font-size: 11px; letter-spacing: 1px; color: var(--dim); }
+
+.scale { display: flex; align-items: baseline; font-size: 11px; letter-spacing: 1px; }
+.scale .sep { color: var(--dimmest); margin: 0 8px; }
+.scale button { color: var(--dim); border-bottom: 1px solid transparent; padding-bottom: 2px; }
+.scale button.on { color: var(--text); border-bottom-color: var(--text); }
+
+.date { font-size: 13px; letter-spacing: 0.8px; color: var(--mid); margin-top: 14px; }
+.date-big { font-size: 22px; font-weight: 700; letter-spacing: 1px; margin-top: 18px; }
+.title { font-size: 20px; font-weight: 700; letter-spacing: 1.5px; }
+.muted { color: var(--dim); }
+.tiny { font-size: 10px; letter-spacing: 1.2px; color: var(--dim); }
+.small { font-size: 13px; letter-spacing: 0.8px; color: var(--dim); }
+
+.question { font-size: 20px; line-height: 1.55; margin-top: 26px; }
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+}
+.footer button, .footer .small { font-size: 13px; letter-spacing: 0.8px; color: var(--dim); }
+
+/* ---- the door -------------------------------------------------------- */
+
+.lanes { display: flex; flex-direction: column; gap: 8px; margin-top: 20px; }
+.lane-row {
+  width: 100%;
+  border: 1px solid var(--line);
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.lane-row:active { border-color: var(--line-bright); }
+.dot { width: 10px; height: 10px; flex-shrink: 0; }
+.lane-name { font-size: 16px; font-weight: 500; letter-spacing: 1px; }
+.nothing { font-size: 13px; letter-spacing: 0.5px; color: var(--mid); margin-top: 20px; }
+
+/* ---- the record ------------------------------------------------------ */
+
+.cols { display: flex; margin-top: 16px; }
+.col-days { width: 40px; flex-shrink: 0; }
+.col-job { width: 22px; flex-shrink: 0; }
+.col-gap { width: 8px; flex-shrink: 0; }
+.col-lanes {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  text-align: center;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+}
+.col-lanes button { text-align: center; width: 100%; }
+.col-job .tag { font-size: 9px; letter-spacing: 0.3px; color: var(--job); }
+
+.grid {
+  position: relative;
+  margin-top: 8px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.bands { position: absolute; inset: 0; display: flex; flex-direction: column; }
+.band { height: var(--row); }
+.grid-body { position: relative; display: flex; }
+.days { width: 40px; flex-shrink: 0; display: flex; flex-direction: column; }
+.day {
+  height: var(--row);
+  display: flex;
+  align-items: center;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  color: var(--dim);
+}
+.day.today { color: var(--text); }
+.day.weekend { color: var(--mid); }
+.ribbon { width: 22px; flex-shrink: 0; display: flex; flex-direction: column; }
+.ribbon-cell { height: var(--row); width: 100%; display: block; }
+.marks { flex-grow: 1; position: relative; }
+.rails { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.rails div { display: flex; justify-content: center; }
+.rails div i { width: 1px; background: var(--rail); }
+.cells { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.cell { height: var(--row); display: flex; align-items: center; justify-content: center; }
+.mark { position: relative; }
+
+.legend { display: flex; gap: 16px; margin-top: 12px; }
+.legend span { display: flex; align-items: center; gap: 7px; font-size: 10px; letter-spacing: 0.8px; color: var(--mid); }
+.swatch { width: 10px; height: 10px; }
+
+.verdicts { display: flex; gap: 8px; margin-top: 10px; }
+.verdicts button {
+  flex: 1;
+  height: 68px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 9px;
+  font-size: 10px;
+  letter-spacing: 0.8px;
+  color: var(--mid);
+  position: relative;
+}
+.verdicts button .fill { position: absolute; top: 14px; left: 50%; transform: translateX(-50%); width: 30px; height: 22px; }
+.verdicts button .outline { border: 1px solid var(--line-bright); background: none; }
+
+.rule { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.rule i { flex-grow: 1; height: 1px; background: var(--line); }
+.rule span { font-size: 11px; letter-spacing: 0.8px; color: var(--dimmest); }
+
+.ghost {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border: 1px solid var(--line);
+  padding: 14px;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  color: var(--dim);
+}
+
+/* ---- the lane, and the grid ------------------------------------------ */
+
+.lane-head { display: flex; align-items: center; gap: 10px; margin-top: 18px; }
+.why-block { border-left: 1px solid var(--line); padding: 2px 0 2px 14px; margin-top: 16px; }
+.why-text { font-size: 16px; line-height: 1.6; }
+.why-empty { font-size: 14px; line-height: 1.6; color: var(--dim); }
+
+.when { display: flex; gap: 14px; margin-top: 16px; }
+.when button { font-size: 11px; letter-spacing: 1px; color: var(--dim); border-bottom: 1px solid transparent; padding-bottom: 2px; }
+.when button.on { color: var(--text); border-bottom-color: var(--text); }
+
+.sizes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: 16px; }
+.sizes div { display: flex; flex-direction: column; gap: 3px; }
+.sizes b { font-size: 12px; font-weight: 400; letter-spacing: 0.5px; }
+.sizes i { font-size: 11px; font-style: normal; color: var(--dim); }
+
+.band-label { display: flex; align-items: center; gap: 12px; margin-top: 18px; }
+.band-label span { font-size: 12px; letter-spacing: 1.5px; color: var(--mid); }
+.band-label i { flex-grow: 1; height: 1px; background: var(--line); }
+
+.choices { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: 10px; }
+.choices button {
+  height: 92px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.choices button:active { border-color: var(--line-bright); }
+
+/* ---- lane detail, why history ---------------------------------------- */
+
+.spine { display: flex; }
+.spine .gutter { width: 34px; flex-shrink: 0; position: relative; }
+.spine .gutter i { position: absolute; left: 16px; top: 0; bottom: 0; width: 2px; }
+.spine .gutter i.thick { left: 15px; width: 4px; }
+.spine .gutter b { position: absolute; left: 9px; width: 16px; height: 2px; }
+.spine .body { flex-grow: 1; padding: 12px 0 14px 0; min-width: 0; }
+
+.goal-name { font-size: 17px; font-weight: 700; letter-spacing: 1.2px; }
+.goal-meta { font-size: 12px; letter-spacing: 0.6px; color: var(--mid); margin-top: 6px; }
+
+.struck { text-decoration: line-through; color: var(--dim); }
+.why-editor { width: 100%; margin-top: 12px; }
+.why-editor textarea {
+  width: 100%;
+  min-height: 96px;
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--line-bright);
+  padding: 12px;
+  font: inherit;
+  font-size: 15px;
+  line-height: 1.55;
+  resize: vertical;
+}
+.actions { display: flex; gap: 8px; margin-top: 10px; }
+.actions button {
+  flex: 1;
+  border: 1px solid var(--line);
+  padding: 13px;
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 1.2px;
+  color: var(--mid);
+}
+
+/* ---- the year, one week ---------------------------------------------- */
+
+.year-cols { display: flex; margin-top: 14px; }
+.year-cols .lab { width: 34px; flex-shrink: 0; }
+.year-cols .job { width: 32px; flex-shrink: 0; font-size: 10px; font-weight: 500; letter-spacing: 0.4px; color: var(--job); }
+.year-cols .lanes4 { flex-grow: 1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); font-size: 10px; font-weight: 500; letter-spacing: 0.4px; }
+.year-cols .lanes4 u { text-decoration: none; display: block; }
+.year-cols small { display: block; color: var(--dim); margin-top: 2px; font-size: 10px; }
+
+.year {
+  display: flex;
+  margin-top: 8px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 4px 0;
+}
+.year .wlab { width: 34px; flex-shrink: 0; display: flex; flex-direction: column; }
+.year .wjob { width: 32px; flex-shrink: 0; display: flex; flex-direction: column; }
+.year .wlanes { flex-grow: 1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.wrow { height: 11px; display: flex; align-items: center; font-size: 10px; letter-spacing: 0.5px; color: var(--dim); }
+.wbar { height: 8px; }
+
+.week-grid { --row: 46px; }
+.week-grid .ribbon-cell { display: flex; align-items: center; }
+.week-grid .ribbon-cell i { display: block; width: 22px; height: 30px; }
+
+.note { font-size: 12px; line-height: 1.6; color: var(--mid); margin-top: 14px; }

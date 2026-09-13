@@ -421,6 +421,26 @@ curves, retypeable into Rive, with two curve families (expo-out for anything
 settling, back-out for anything that should read as impact) and a
 `prefers-reduced-motion` guard. Named moments, not scattered transitions.
 
+## Running it
+
+The app is in `app/` — plain HTML, one CSS file, one JS file, no build step and
+no dependencies.
+
+    cd app && python3 -m http.server 8000
+
+Then <http://localhost:8000>. On a phone, open the published URL and choose
+*Add to Home Screen*: it installs standalone with its own icon and runs with no
+network. Data lives in `localStorage` on that device under `watershed.v1` — no
+account, no sync, no server.
+
+Two query strings exist for testing and are deliberately not in the UI:
+`?demo` opens a throwaway year of invented blocks under a separate key, and
+`?reset` clears the current one. See `app/README.md`.
+
+Publishing is a GitHub Actions workflow that uploads `app/` to GitHub Pages on
+every push to `main` — the same shape as Cadence, minus the build step. It needs
+Settings → Pages → Source → *GitHub Actions*, and a repository Pages can serve.
+
 ## Architecture
 
 - **Local-first, no accounts, no server.** This is also what makes a one-time
