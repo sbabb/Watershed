@@ -159,11 +159,25 @@ the year was; the sentences tell you what it felt like.
 
 Pick a lane, then one **3×2 grid**: size across, enlarged/diminished down.
 
-**Three taps from home to a logged block, and the third tap is the commit.**
-LOG A BLOCK sits pinned to the bottom edge where the thumb already is; the lane
-picker shows all six with their why-sentences, so the reason is on screen while
-you choose; one tap on a grid cell writes the block and returns you home with
-the mark already on the rail. There is no confirm step, because a confirm step
+**There is no LOG A BLOCK button, because the app opens to the lanes.** The
+front door is the question — *what were the last few hours for?* — with the four
+lanes underneath it as the answer, so the tap that used to open the logger now
+*is* the first half of the log. One lane carries its why-sentence in full: the
+one that has gone quiet. The other three carry a name and today's mark. Nothing
+comments on the silence.
+
+**The door is a state, not a screen.** Once the day is answered it is gone and
+the app opens straight to the record, with a quiet ADD ANOTHER at the bottom.
+You are asked once a day, and only until you answer. Coming only to look costs
+one tap out of the bottom of the door, and answering nothing costs nothing.
+
+**Two taps, or three, depending on the wall.** Lane then cell is two — but that
+folds the why-sentence and the size grid onto one screen. Keeping the wall
+below (your sentence alone, touched to open the grid) makes it three, the same
+count as the old button-first flow: the door then replaces a step rather than
+removing one. Two is not too many and neither is three; the open question is
+whether the pause is load-bearing, and only use will say. One tap on a grid cell
+writes the block and returns you to the record with the mark already on the rail. There is no confirm step, because a confirm step
 doubles the taps and carries no information. The undo lives where the reach-back
 line was: LOGGED · UNDO, for a few seconds.
 
@@ -401,12 +415,14 @@ settling, back-out for anything that should read as impact) and a
   first ninety days pay nothing. Retention machinery is explicitly out of scope:
   a practice is the goal, not attention. Duolingo's angry-bird app icon is the
   category being refused, and *that* backlog stays empty on purpose.
-  What is still open is the **front door**. If the value is at write time, the
-  app should perhaps open to the question rather than to the record. Three doors
-  are drawn: the day unfinished (the date and its question, lanes as the
-  answer), your own words (a why-sentence chosen by what the record knows), and
-  the body first (valence before lane, which inverts the model's order to match
-  Hollis's claim). Each has a real cost, named on the canvas; none is chosen.
+  What was still open was the **front door**, and it is now drawn as a
+  combined flow: the day's question with the quiet lane's own words folded into
+  it, the lanes as the answer, and the door disappearing once the day is
+  answered. Three doors were drawn separately first — the day unfinished, your
+  own words, the body first — and the third, valence before lane, remains
+  undrawn as a flow because it inverts the model's order rather than the
+  furniture. What the combined flow leaves undecided is **the wall**: folding the
+  why-sentence into the grid screen saves the third tap and costs the pause.
 - **The app records what you did; the thesis is about what you avoid.** A quiet
   lane shows avoidance only for things already named as lanes. The most
   diminishing thing in a life usually has no lane and never will — it is unnamed
@@ -428,7 +444,7 @@ settling, back-out for anything that should read as impact) and a
 
 ## Status
 
-Concept settled through two grilling passes. Fourteen artboards drawn. Settled
+Concept settled through two grilling passes. Twenty artboards drawn. Settled
 against them: the vertical axis, the four-lane set and its naming, the encoding,
 the bucket calibration, the logging flow, the test for what earns a lane, the
 job as a single ribbon and how it is drawn at both resolutions, the why-sentence
