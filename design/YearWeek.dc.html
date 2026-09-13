@@ -18,12 +18,15 @@
 
   <div style="display: flex; align-items: baseline; justify-content: space-between; border-bottom: 1px solid #2f3549; padding-bottom: 8px;">
     <div style="font-size: 15px; font-weight: 700; letter-spacing: 2px; color: #c0caf5;">WATERSHED</div>
-    <div style="display: flex; align-items: baseline; font-size: 11px; letter-spacing: 1px;"><div style="color: #c0caf5; border-bottom: 1px solid #c0caf5; padding-bottom: 2px;">3 WEEKS</div><div style="color: #4a5178; margin: 0 8px;">/</div><div style="color: #636c97; border-bottom: 1px solid transparent; padding-bottom: 2px;">THE YEAR</div></div>
+    <div style="font-size: 11px; letter-spacing: 1px; color: #636c97;">BACK TO THE YEAR</div>
   </div>
 
-  <div style="font-size: 13px; letter-spacing: 0.8px; color: #787c99; margin-top: 14px;">WED 3 SEP</div>
+  <div style="display: flex; align-items: baseline; justify-content: space-between; margin-top: 16px;">
+    <div style="font-size: 20px; font-weight: 700; letter-spacing: 1.2px;">WEEK OF 23 MAR</div>
+    <div style="font-size: 11px; letter-spacing: 0.8px; color: #636c97;">WEEK 13</div>
+  </div>
 
-  <div style="display: flex; margin-top: 16px;">
+  <div style="display: flex; margin-top: 18px;">
     <div style="width: 40px; flex-shrink: 0;"></div>
     <div style="width: 22px; flex-shrink: 0; font-size: 9px; letter-spacing: 0.3px; color: #7aa2f7;">JOB</div>
     <div style="width: 8px; flex-shrink: 0;"></div>
@@ -38,22 +41,22 @@
   <div style="position: relative; margin-top: 8px; border-top: 1px solid #2f3549; border-bottom: 1px solid #2f3549;">
 
     <div style="position: absolute; inset: 0; display: flex; flex-direction: column;">
-      <sc-for list="{{rows}}" as="r" hint-placeholder-count="21">
-        <div style="height: 25px; background: {{r.bg}};"></div>
+      <sc-for list="{{rows}}" as="r" hint-placeholder-count="7">
+        <div style="height: 46px; background: {{r.bg}};"></div>
       </sc-for>
     </div>
 
     <div style="position: relative; display: flex;">
 
       <div style="width: 40px; flex-shrink: 0; display: flex; flex-direction: column;">
-        <sc-for list="{{rows}}" as="r" hint-placeholder-count="21">
-          <div style="height: 25px; display: flex; align-items: center; font-size: 10px; letter-spacing: 0.5px; color: {{r.color}};">{{r.day}}</div>
+        <sc-for list="{{rows}}" as="r" hint-placeholder-count="7">
+          <div style="height: 46px; display: flex; align-items: center; font-size: 10px; letter-spacing: 0.5px; color: {{r.color}};">{{r.day}}</div>
         </sc-for>
       </div>
 
       <div style="width: 22px; flex-shrink: 0; display: flex; flex-direction: column;">
-        <sc-for list="{{rows}}" as="r" hint-placeholder-count="21">
-          <div style="height: 25px; background: {{r.job}};"></div>
+        <sc-for list="{{rows}}" as="r" hint-placeholder-count="7">
+          <div style="height: 46px; display: flex; align-items: center;"><div style="width: 22px; height: 30px; background: {{r.job}};"></div></div>
         </sc-for>
       </div>
       <div style="width: 8px; flex-shrink: 0;"></div>
@@ -66,8 +69,8 @@
           <div style="display: flex; justify-content: center;"><div style="width: 1px; background: #232838;"></div></div>
         </div>
         <div style="position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));">
-          <sc-for list="{{cells}}" as="c" hint-placeholder-count="84">
-            <div style="height: 25px; display: flex; align-items: center; justify-content: center;">
+          <sc-for list="{{cells}}" as="c" hint-placeholder-count="28">
+            <div style="height: 46px; display: flex; align-items: center; justify-content: center;">
               <div style="width: {{c.px}}; height: {{c.px}}; background: {{c.fill}};"></div>
             </div>
           </sc-for>
@@ -90,12 +93,10 @@
 
   <div style="flex-grow: 1;"></div>
 
-  <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px;">
-    <div style="flex-grow: 1; height: 1px; background: #2f3549;"></div>
-    <div style="font-size: 11px; letter-spacing: 0.8px; color: #4a5178;">ANSWERED — NO QUESTION TODAY</div>
+  <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid #2f3549; padding-top: 14px;">
+    <div style="font-size: 13px; letter-spacing: 0.8px; color: #636c97;">WEEK OF 16 MAR</div>
+    <div style="font-size: 13px; letter-spacing: 0.8px; color: #636c97;">WEEK OF 30 MAR</div>
   </div>
-
-  <div style="display: flex; align-items: center; justify-content: center; color: #636c97; border: 1px solid #2f3549; padding: 14px; font-size: 13px; letter-spacing: 1.5px;">ADD ANOTHER</div>
 
 </div>
 </x-dc>
@@ -109,40 +110,35 @@ class Component extends DCLogic {
   }
 
   renderVals() {
-    // Strings run oldest to newest; the stream runs newest first, so they reverse.
-    // Today (last character) now carries the block just logged: a HALF A DAY, enlarged.
+    // One week, Monday to Sunday, read top to bottom. Same encoding as the record,
+    // only the row is taller because there is room for it.
     const LANES = [
-      { color: '#9ece6a', s: 'aa.a..bba.a..cbx.a..b' },
-      { color: '#73daca', s: 'aaabaaaaaabaaaaaabaaa' },
-      { color: '#ff9e64', s: '.....................' },
-      { color: '#bb9af7', s: '.a..cb.a...bc.a...cb.' }
+      { color: '#9ece6a', s: 'b..a..x' },
+      { color: '#73daca', s: 'a.a.a.a' },
+      { color: '#ff9e64', s: '.......' },
+      { color: '#bb9af7', s: '...a.cb' }
     ];
-    const SIZE = { a: 8, b: 13, c: 18, x: 8, y: 13, z: 18 };
-    const DAYS = ['WE 3', 'TU 2', 'MO 1',
-                  'SU 31', 'SA 30', 'FR 29', 'TH 28', 'WE 27', 'TU 26', 'MO 25',
-                  'SU 24', 'SA 23', 'FR 22', 'TH 21', 'WE 20', 'TU 19', 'MO 18',
-                  'SU 17', 'SA 16', 'FR 15', 'TH 14'];
-
-    // The job: one verdict a day, e enlarged, d diminished, dot for a day off.
-    // It stopped enlarging him in the third week of August and has not started again.
-    const JOB = 'ee..dddee..ddddd..ddd';
+    const SIZE = { a: 10, b: 16, c: 22, x: 10, y: 16, z: 22 };
+    const DAYS = ['MO 23', 'TU 24', 'WE 25', 'TH 26', 'FR 27', 'SA 28', 'SU 29'];
+    // The week the job stopped enlarging him. It never started again that year.
+    const JOB = 'ddddd..';
 
     const rows = DAYS.map((d, i) => {
-      const weekend = d.charAt(0) === 'S';
-      const j = JOB.charAt(20 - i);
+      const weekend = i >= 5;
+      const j = JOB.charAt(i);
       return {
         day: d,
         bg: weekend ? '#1d1e2a' : 'transparent',
-        color: i === 0 ? '#c0caf5' : (weekend ? '#787c99' : '#636c97'),
+        color: weekend ? '#787c99' : '#636c97',
         job: j === 'e' ? '#7aa2f7' : (j === 'd' ? this.fade('#7aa2f7', 0.45) : 'transparent')
       };
     });
 
     const cells = [];
-    for (let i = 0; i < 21; i += 1) {
+    for (let i = 0; i < 7; i += 1) {
       for (const ln of LANES) {
-        const ch = ln.s.charAt(20 - i);
-        if (ch === '.' || ch === '') {
+        const ch = ln.s.charAt(i);
+        if (ch === '.') {
           cells.push({ px: '0px', fill: 'transparent' });
         } else if (ch === 'a' || ch === 'b' || ch === 'c') {
           cells.push({ px: SIZE[ch] + 'px', fill: ln.color });

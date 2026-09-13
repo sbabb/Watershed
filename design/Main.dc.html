@@ -14,139 +14,155 @@
     a { color: #7aa2f7; } a:hover { color: #7dcfff; }
   </style>
 </helmet>
-<div style="width: 393px; height: 873px; background: #1a1b26; color: #c0caf5; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 17px; line-height: 1.45; padding: 14px; display: flex; flex-direction: column;">
+<div style="width: 1240px; height: 862px; background: #1a1b26; color: #c0caf5; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; position: relative;">
 
-  <div style="font-size: 15px; font-weight: 700; letter-spacing: 2px; color: #c0caf5; border-bottom: 1px solid #2f3549; padding-bottom: 8px;">WATERSHED</div>
+  <div style="position: absolute; left: 24px; top: 22px; font-size: 15px; font-weight: 700; letter-spacing: 2px;">WATERSHED — THE WHOLE THING</div>
+  <div style="position: absolute; left: 24px; top: 48px; font-size: 11px; letter-spacing: 0.6px; color: #636c97;">Every screen, and every tap between them. Two taps to log. Everything else is looking.</div>
 
-  <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 14px;">
-    <div style="font-size: 13px; letter-spacing: 0.8px; color: #787c99;">SUN 7 SEP</div>
-    <div style="font-size: 13px; letter-spacing: 0.8px; color: #636c97;">TAP A LANE TO LOG</div>
+  <!-- ADD ANOTHER loop, over the top -->
+  <div style="position: absolute; left: 1160px; top: 100px; width: 1px; height: 316px; background: #3b4261;"></div>
+  <div style="position: absolute; left: 438px; top: 100px; width: 723px; height: 1px; background: #3b4261;"></div>
+  <div style="position: absolute; left: 438px; top: 100px; width: 1px; height: 40px; background: #3b4261;"></div>
+  <div style="position: absolute; left: 434px; top: 132px; width: 0; height: 0; border-top: 7px solid #3b4261; border-left: 4px solid transparent; border-right: 4px solid transparent;"></div>
+  <div style="position: absolute; left: 780px; top: 415px; width: 381px; height: 1px; background: #3b4261;"></div>
+  <div style="position: absolute; left: 800px; top: 384px; font-size: 9px; letter-spacing: 1px; color: #787c99;">ADD ANOTHER</div>
+
+  <!-- OPEN -> THE DOOR -->
+  <div style="position: absolute; left: 224px; top: 195px; width: 104px; height: 1px; background: #3b4261;"></div>
+  <div style="position: absolute; left: 320px; top: 191px; width: 0; height: 0; border-left: 7px solid #3b4261; border-top: 4px solid transparent; border-bottom: 4px solid transparent;"></div>
+  <div style="position: absolute; left: 224px; top: 164px; width: 104px; text-align: center; font-size: 9px; line-height: 1.4; letter-spacing: 0.8px; color: #787c99;">DAY<br>UNANSWERED</div>
+
+  <!-- THE DOOR -> LANE + GRID -->
+  <div style="position: absolute; left: 548px; top: 195px; width: 84px; height: 1px; background: #3b4261;"></div>
+  <div style="position: absolute; left: 624px; top: 191px; width: 0; height: 0; border-left: 7px solid #3b4261; border-top: 4px solid transparent; border-bottom: 4px solid transparent;"></div>
+  <div style="position: absolute; left: 548px; top: 164px; width: 84px; text-align: center; font-size: 9px; line-height: 1.4; letter-spacing: 0.8px; color: #787c99;">TAP A<br>LANE</div>
+
+  <!-- LANE + GRID -> THE RECORD -->
+  <div style="position: absolute; left: 742px; top: 260px; width: 1px; height: 50px; background: #3b4261;"></div>
+  <div style="position: absolute; left: 620px; top: 310px; width: 123px; height: 1px; background: #3b4261;"></div>
+  <div style="position: absolute; left: 620px; top: 310px; width: 1px; height: 50px; background: #3b4261;"></div>
+  <div style="position: absolute; left: 616px; top: 352px; width: 0; height: 0; border-top: 7px solid #3b4261; border-left: 4px solid transparent; border-right: 4px solid transparent;"></div>
+  <div style="position: absolute; left: 760px; top: 272px; width: 160px; font-size: 9px; line-height: 1.4; letter-spacing: 0.8px; color: #787c99;">TAP A CELL —<br>THE BLOCK IS WRITTEN</div>
+
+  <!-- THE DOOR -> THE RECORD, answering with no lane -->
+  <div style="position: absolute; left: 490px; top: 260px; width: 1px; height: 100px; background: #3b4261;"></div>
+  <div style="position: absolute; left: 486px; top: 352px; width: 0; height: 0; border-top: 7px solid #3b4261; border-left: 4px solid transparent; border-right: 4px solid transparent;"></div>
+  <div style="position: absolute; left: 386px; top: 288px; width: 96px; text-align: right; font-size: 9px; line-height: 1.4; letter-spacing: 0.8px; color: #787c99;">NOTHING,<br>IT WAS THE JOB</div>
+
+  <!-- OPEN -> THE RECORD, the day already answered -->
+  <div style="position: absolute; left: 124px; top: 350px; width: 1px; height: 60px; background: #3b4261;"></div>
+  <div style="position: absolute; left: 124px; top: 410px; width: 336px; height: 1px; background: #3b4261;"></div>
+  <div style="position: absolute; left: 452px; top: 406px; width: 0; height: 0; border-left: 7px solid #3b4261; border-top: 4px solid transparent; border-bottom: 4px solid transparent;"></div>
+  <div style="position: absolute; left: 140px; top: 380px; font-size: 9px; letter-spacing: 0.8px; color: #787c99;">DAY ANSWERED — THE DOOR IS GONE</div>
+
+  <!-- THE RECORD -> the three ways of looking -->
+  <div style="position: absolute; left: 620px; top: 470px; width: 1px; height: 35px; background: #3b4261;"></div>
+  <div style="position: absolute; left: 200px; top: 505px; width: 841px; height: 1px; background: #3b4261;"></div>
+  <div style="position: absolute; left: 200px; top: 505px; width: 1px; height: 65px; background: #3b4261;"></div>
+  <div style="position: absolute; left: 620px; top: 505px; width: 1px; height: 65px; background: #3b4261;"></div>
+  <div style="position: absolute; left: 1040px; top: 505px; width: 1px; height: 65px; background: #3b4261;"></div>
+  <div style="position: absolute; left: 196px; top: 562px; width: 0; height: 0; border-top: 7px solid #3b4261; border-left: 4px solid transparent; border-right: 4px solid transparent;"></div>
+  <div style="position: absolute; left: 616px; top: 562px; width: 0; height: 0; border-top: 7px solid #3b4261; border-left: 4px solid transparent; border-right: 4px solid transparent;"></div>
+  <div style="position: absolute; left: 1036px; top: 562px; width: 0; height: 0; border-top: 7px solid #3b4261; border-left: 4px solid transparent; border-right: 4px solid transparent;"></div>
+  <div style="position: absolute; left: 660px; top: 482px; font-size: 9px; letter-spacing: 0.8px; color: #787c99;">FROM THE RECORD — AND BACK AGAIN FROM ANY OF THEM</div>
+
+  <!-- LANE + GOAL -> THE WHY -->
+  <div style="position: absolute; left: 620px; top: 690px; width: 1px; height: 32px; background: #3b4261;"></div>
+  <div style="position: absolute; left: 616px; top: 714px; width: 0; height: 0; border-top: 7px solid #3b4261; border-left: 4px solid transparent; border-right: 4px solid transparent;"></div>
+
+  <!-- OPEN THE APP -->
+  <div style="position: absolute; left: 24px; top: 240px; width: 200px; height: 110px; border: 1px solid #2f3549; background: #1f2335; padding: 13px;">
+    <div style="font-size: 14px; font-weight: 700; letter-spacing: 1.2px;">OPEN THE APP</div>
+    <div style="font-size: 11px; line-height: 1.55; color: #787c99; margin-top: 9px;">The icon does nothing on its own. No badge, no count, no face.</div>
   </div>
 
-  <div style="display: flex; margin-top: 16px;">
-    <div style="width: 40px; flex-shrink: 0;"></div>
-    <div style="flex-grow: 1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); text-align: center; font-size: 10px; font-weight: 500; letter-spacing: 0.4px;">
-      <div style="color: #9ece6a;">CRAFT</div>
-      <div style="color: #73daca;">RECOVERY</div>
-      <div style="color: #ff9e64;">BODY</div>
-      <div style="color: #bb9af7;">LOVE</div>
+  <!-- THE DOOR -->
+  <div style="position: absolute; left: 328px; top: 140px; width: 220px; height: 120px; border: 1px solid #2f3549; background: #1f2335; padding: 13px;">
+    <div style="display: flex; align-items: baseline;">
+      <div style="font-size: 14px; font-weight: 700; letter-spacing: 1.2px;">THE DOOR</div>
+      <div style="flex-grow: 1;"></div>
+      <div style="font-size: 9px; letter-spacing: 0.8px; color: #636c97;">FLOW 1</div>
     </div>
+    <div style="font-size: 11px; line-height: 1.55; color: #787c99; margin-top: 9px;">The day's question, then four lane names. No log button — the lanes are the answer.</div>
   </div>
 
-  <div style="position: relative; margin-top: 8px; border-top: 1px solid #2f3549; border-bottom: 1px solid #2f3549;">
-
-    <div style="position: absolute; inset: 0; display: flex; flex-direction: column;">
-      <sc-for list="{{rows}}" as="r" hint-placeholder-count="21">
-        <div style="height: 25px; background: {{r.bg}};"></div>
-      </sc-for>
+  <!-- LANE + GRID -->
+  <div style="position: absolute; left: 632px; top: 140px; width: 220px; height: 120px; border: 1px solid #2f3549; background: #1f2335; padding: 13px;">
+    <div style="display: flex; align-items: baseline;">
+      <div style="font-size: 14px; font-weight: 700; letter-spacing: 1.2px;">LANE + GRID</div>
+      <div style="flex-grow: 1;"></div>
+      <div style="font-size: 9px; letter-spacing: 0.8px; color: #636c97;">FLOW 2</div>
     </div>
+    <div style="font-size: 11px; line-height: 1.55; color: #787c99; margin-top: 9px;">Your own sentence, then six cells: size across, enlarged or diminished down.</div>
+  </div>
 
-    <div style="position: relative; display: flex;">
-
-      <div style="width: 40px; flex-shrink: 0; display: flex; flex-direction: column;">
-        <sc-for list="{{rows}}" as="r" hint-placeholder-count="21">
-          <div style="height: 25px; display: flex; align-items: center; font-size: 10px; letter-spacing: 0.5px; color: {{r.color}};">{{r.day}}</div>
-        </sc-for>
-      </div>
-
-      <div style="flex-grow: 1; position: relative;">
-        <div style="position: absolute; inset: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));">
-          <div style="display: flex; justify-content: center;"><div style="width: 1px; background: #232838;"></div></div>
-          <div style="display: flex; justify-content: center;"><div style="width: 1px; background: #232838;"></div></div>
-          <div style="display: flex; justify-content: center;"><div style="width: 1px; background: #232838;"></div></div>
-          <div style="display: flex; justify-content: center;"><div style="width: 1px; background: #232838;"></div></div>
-        </div>
-        <div style="position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));">
-          <sc-for list="{{cells}}" as="c" hint-placeholder-count="84">
-            <div style="height: 25px; display: flex; align-items: center; justify-content: center;">
-              <div style="width: {{c.px}}; height: {{c.px}}; background: {{c.fill}};"></div>
-            </div>
-          </sc-for>
-        </div>
-      </div>
-
+  <!-- THE RECORD -->
+  <div style="position: absolute; left: 460px; top: 360px; width: 320px; height: 110px; border: 1px solid #3b4261; background: #1f2335; padding: 13px;">
+    <div style="display: flex; align-items: baseline;">
+      <div style="font-size: 14px; font-weight: 700; letter-spacing: 1.2px;">THE RECORD</div>
+      <div style="flex-grow: 1;"></div>
+      <div style="font-size: 9px; letter-spacing: 0.8px; color: #636c97;">FLOW 3 · THE ONLY HUB</div>
     </div>
+    <div style="font-size: 11px; line-height: 1.55; color: #787c99; margin-top: 9px;">Three weeks of marks with the job ribbon beside them, and ADD ANOTHER at the foot. Nothing here congratulates you.</div>
   </div>
 
-  <div style="display: flex; gap: 16px; margin-top: 12px; flex-wrap: wrap;">
-    <div style="display: flex; align-items: center; gap: 7px;">
-      <div style="width: 10px; height: 10px; background: #c0caf5;"></div>
-      <div style="font-size: 10px; letter-spacing: 0.8px; color: #787c99;">ENLARGED</div>
+  <!-- THE JOB VERDICT -->
+  <div style="position: absolute; left: 90px; top: 570px; width: 220px; height: 120px; border: 1px solid #2f3549; background: #1f2335; padding: 13px;">
+    <div style="font-size: 9px; letter-spacing: 0.8px; color: #636c97;">TAP TODAY'S JOB CELL</div>
+    <div style="display: flex; align-items: baseline; margin-top: 6px;">
+      <div style="font-size: 14px; font-weight: 700; letter-spacing: 1.2px; color: #7aa2f7;">THE JOB VERDICT</div>
+      <div style="flex-grow: 1;"></div>
+      <div style="font-size: 9px; letter-spacing: 0.8px; color: #636c97;">A</div>
     </div>
-    <div style="display: flex; align-items: center; gap: 7px;">
-      <div style="width: 10px; height: 10px; background: rgba(192, 202, 245, 0.45);"></div>
-      <div style="font-size: 10px; letter-spacing: 0.8px; color: #787c99;">DIMINISHED</div>
+    <div style="font-size: 11px; line-height: 1.5; color: #787c99; margin-top: 7px;">Three cells open in place. No size — the job's is always the same.</div>
+  </div>
+
+  <!-- LANE + GOAL -->
+  <div style="position: absolute; left: 510px; top: 570px; width: 220px; height: 120px; border: 1px solid #2f3549; background: #1f2335; padding: 13px;">
+    <div style="font-size: 9px; letter-spacing: 0.8px; color: #636c97;">TAP A LANE NAME</div>
+    <div style="display: flex; align-items: baseline; margin-top: 6px;">
+      <div style="font-size: 14px; font-weight: 700; letter-spacing: 1.2px; color: #9ece6a;">LANE + GOAL</div>
+      <div style="flex-grow: 1;"></div>
+      <div style="font-size: 9px; letter-spacing: 0.8px; color: #636c97;">LANE DETAIL</div>
     </div>
+    <div style="font-size: 11px; line-height: 1.5; color: #787c99; margin-top: 7px;">The spine: the why, the goal open on it, the blocks it earned.</div>
   </div>
 
-  <div style="margin-top: 14px; padding: 12px; background: #1f2335; border: 1px solid #2f3549;">
-    <div style="font-size: 15px; line-height: 1.5; color: #c0caf5;">Slow Sunday. Wrote most of the afternoon, then the walk.</div>
+  <!-- THE YEAR -->
+  <div style="position: absolute; left: 930px; top: 570px; width: 220px; height: 120px; border: 1px solid #2f3549; background: #1f2335; padding: 13px;">
+    <div style="font-size: 9px; letter-spacing: 0.8px; color: #636c97;">TAP &quot;THE YEAR&quot; — TOP RIGHT</div>
+    <div style="display: flex; align-items: baseline; margin-top: 6px;">
+      <div style="font-size: 14px; font-weight: 700; letter-spacing: 1.2px;">THE YEAR</div>
+      <div style="flex-grow: 1;"></div>
+      <div style="font-size: 9px; letter-spacing: 0.8px; color: #636c97;">B</div>
+    </div>
+    <div style="font-size: 11px; line-height: 1.5; color: #787c99; margin-top: 7px;">Fifty-two weeks, one bar each. Same rails, same order — one tap back to 3 WEEKS.</div>
   </div>
 
-  <div style="flex-grow: 1;"></div>
+  <!-- THE YEAR -> ONE WEEK -->
+  <div style="position: absolute; left: 1040px; top: 690px; width: 1px; height: 32px; background: #3b4261;"></div>
+  <div style="position: absolute; left: 1036px; top: 714px; width: 0; height: 0; border-top: 7px solid #3b4261; border-left: 4px solid transparent; border-right: 4px solid transparent;"></div>
 
-  <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
-    <div style="flex-grow: 1; height: 1px; background: #2f3549;"></div>
-    <div style="font-size: 11px; letter-spacing: 0.8px; color: #636c97;">YESTERDAY IS STILL OPEN</div>
+  <div style="position: absolute; left: 930px; top: 722px; width: 220px; height: 106px; border: 1px solid #2f3549; background: #1f2335; padding: 13px;">
+    <div style="display: flex; align-items: baseline;">
+      <div style="font-size: 14px; font-weight: 700; letter-spacing: 1.2px;">ONE WEEK</div>
+      <div style="flex-grow: 1;"></div>
+      <div style="font-size: 9px; letter-spacing: 0.8px; color: #636c97;">TAP A WEEK</div>
+    </div>
+    <div style="font-size: 11px; line-height: 1.5; color: #787c99; margin-top: 8px;">Seven days at full size. The only way to ask a year what a particular week was.</div>
   </div>
 
-  <div style="display: flex; align-items: center; justify-content: center; background: transparent; color: #9ece6a; border: 1px solid #9ece6a; padding: 15px; font-size: 15px; font-weight: 500; letter-spacing: 1.5px;">LOG A BLOCK</div>
+  <!-- THE WHY -->
+  <div style="position: absolute; left: 510px; top: 722px; width: 220px; height: 106px; border: 1px solid #2f3549; background: #1f2335; padding: 13px;">
+    <div style="display: flex; align-items: baseline;">
+      <div style="font-size: 14px; font-weight: 700; letter-spacing: 1.2px; color: #9ece6a;">THE WHY</div>
+      <div style="flex-grow: 1;"></div>
+      <div style="font-size: 9px; letter-spacing: 0.8px; color: #636c97;">E</div>
+    </div>
+    <div style="font-size: 11px; line-height: 1.5; color: #787c99; margin-top: 8px;">What it says now, and every version it used to say, struck through and dated.</div>
+  </div>
 
 </div>
 </x-dc>
-<script data-dc-script data-props='{"$preview":{"width":393,"height":873}}'>
-class Component extends DCLogic {
-  fade(hex, alpha) {
-    const r = parseInt(hex.slice(1, 3), 16);
-    const g = parseInt(hex.slice(3, 5), 16);
-    const b = parseInt(hex.slice(5, 7), 16);
-    return 'rgba(' + r + ', ' + g + ', ' + b + ', ' + alpha + ')';
-  }
-
-  renderVals() {
-    // Strings run oldest to newest; the stream runs newest first, so they reverse.
-    const LANES = [
-      { color: '#9ece6a', s: 'a.a..bba.a..cbx.a..bb' },
-      { color: '#73daca', s: 'aaaabaaaaaabaaaaaabaa' },
-      { color: '#ff9e64', s: 'a................a.aa' },
-      { color: '#bb9af7', s: '..a..cb.a...bc.a...cb' }
-    ];
-    // Marks are bigger than the six-lane version: 81px columns can carry them.
-    const SIZE = { a: 8, b: 13, c: 18, x: 8, y: 13, z: 18 };
-    const DAYS = ['SU 7', 'SA 6', 'FR 5', 'TH 4', 'WE 3', 'TU 2', 'MO 1',
-                  'SU 31', 'SA 30', 'FR 29', 'TH 28', 'WE 27', 'TU 26', 'MO 25',
-                  'SU 24', 'SA 23', 'FR 22', 'TH 21', 'WE 20', 'TU 19', 'MO 18'];
-    // The job: one verdict a day, e enlarged, d diminished, dot for a day off.
-    const JOB = 'eedee..eddde..dddee..';
-
-    const rows = DAYS.map((d, i) => {
-      const weekend = d.charAt(0) === 'S';
-      const j = JOB.charAt(20 - i);
-      return {
-        day: d,
-        bg: weekend ? '#1d1e2a' : 'transparent',
-        color: i === 0 ? '#c0caf5' : (weekend ? '#787c99' : '#636c97'),
-        job: j === 'e' ? '#7aa2f7' : (j === 'd' ? this.fade('#7aa2f7', 0.45) : 'transparent')
-      };
-    });
-
-    const cells = [];
-    for (let i = 0; i < 21; i += 1) {
-      for (const ln of LANES) {
-        const ch = ln.s.charAt(20 - i);
-        if (ch === '.') {
-          cells.push({ px: '0px', fill: 'transparent' });
-        } else if (ch === 'a' || ch === 'b' || ch === 'c') {
-          cells.push({ px: SIZE[ch] + 'px', fill: ln.color });
-        } else {
-          cells.push({ px: SIZE[ch] + 'px', fill: this.fade(ln.color, 0.45) });
-        }
-      }
-    }
-
-    return { rows: rows, cells: cells };
-  }
-}
-</script>
 </body>
 </html>

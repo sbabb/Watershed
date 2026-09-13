@@ -16,17 +16,15 @@
 </helmet>
 <div style="width: 393px; height: 873px; background: #1a1b26; color: #c0caf5; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 17px; line-height: 1.45; padding: 14px; display: flex; flex-direction: column;">
 
-  <div style="display: flex; align-items: baseline; justify-content: space-between; border-bottom: 1px solid #2f3549; padding-bottom: 8px;">
-    <div style="font-size: 15px; font-weight: 700; letter-spacing: 2px; color: #c0caf5;">WATERSHED</div>
-    <div style="display: flex; align-items: baseline; font-size: 11px; letter-spacing: 1px;"><div style="color: #c0caf5; border-bottom: 1px solid #c0caf5; padding-bottom: 2px;">3 WEEKS</div><div style="color: #4a5178; margin: 0 8px;">/</div><div style="color: #636c97; border-bottom: 1px solid transparent; padding-bottom: 2px;">THE YEAR</div></div>
-  </div>
+  <div style="font-size: 15px; font-weight: 700; letter-spacing: 2px; color: #c0caf5; border-bottom: 1px solid #2f3549; padding-bottom: 8px;">WATERSHED</div>
 
-  <div style="font-size: 13px; letter-spacing: 0.8px; color: #787c99; margin-top: 14px;">WED 3 SEP</div>
+  <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 14px;">
+    <div style="font-size: 13px; letter-spacing: 0.8px; color: #787c99;">SUN 7 SEP</div>
+    <div style="font-size: 13px; letter-spacing: 0.8px; color: #636c97;">TAP A LANE TO LOG</div>
+  </div>
 
   <div style="display: flex; margin-top: 16px;">
     <div style="width: 40px; flex-shrink: 0;"></div>
-    <div style="width: 22px; flex-shrink: 0; font-size: 9px; letter-spacing: 0.3px; color: #7aa2f7;">JOB</div>
-    <div style="width: 8px; flex-shrink: 0;"></div>
     <div style="flex-grow: 1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); text-align: center; font-size: 10px; font-weight: 500; letter-spacing: 0.4px;">
       <div style="color: #9ece6a;">CRAFT</div>
       <div style="color: #73daca;">RECOVERY</div>
@@ -51,13 +49,6 @@
         </sc-for>
       </div>
 
-      <div style="width: 22px; flex-shrink: 0; display: flex; flex-direction: column;">
-        <sc-for list="{{rows}}" as="r" hint-placeholder-count="21">
-          <div style="height: 25px; background: {{r.job}};"></div>
-        </sc-for>
-      </div>
-      <div style="width: 8px; flex-shrink: 0;"></div>
-
       <div style="flex-grow: 1; position: relative;">
         <div style="position: absolute; inset: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));">
           <div style="display: flex; justify-content: center;"><div style="width: 1px; background: #232838;"></div></div>
@@ -77,7 +68,7 @@
     </div>
   </div>
 
-  <div style="display: flex; gap: 16px; margin-top: 12px;">
+  <div style="display: flex; gap: 16px; margin-top: 12px; flex-wrap: wrap;">
     <div style="display: flex; align-items: center; gap: 7px;">
       <div style="width: 10px; height: 10px; background: #c0caf5;"></div>
       <div style="font-size: 10px; letter-spacing: 0.8px; color: #787c99;">ENLARGED</div>
@@ -88,14 +79,18 @@
     </div>
   </div>
 
-  <div style="flex-grow: 1;"></div>
-
-  <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px;">
-    <div style="flex-grow: 1; height: 1px; background: #2f3549;"></div>
-    <div style="font-size: 11px; letter-spacing: 0.8px; color: #4a5178;">ANSWERED — NO QUESTION TODAY</div>
+  <div style="margin-top: 14px; padding: 12px; background: #1f2335; border: 1px solid #2f3549;">
+    <div style="font-size: 15px; line-height: 1.5; color: #c0caf5;">Slow Sunday. Wrote most of the afternoon, then the walk.</div>
   </div>
 
-  <div style="display: flex; align-items: center; justify-content: center; color: #636c97; border: 1px solid #2f3549; padding: 14px; font-size: 13px; letter-spacing: 1.5px;">ADD ANOTHER</div>
+  <div style="flex-grow: 1;"></div>
+
+  <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+    <div style="flex-grow: 1; height: 1px; background: #2f3549;"></div>
+    <div style="font-size: 11px; letter-spacing: 0.8px; color: #636c97;">YESTERDAY IS STILL OPEN</div>
+  </div>
+
+  <div style="display: flex; align-items: center; justify-content: center; background: transparent; color: #9ece6a; border: 1px solid #9ece6a; padding: 15px; font-size: 15px; font-weight: 500; letter-spacing: 1.5px;">LOG A BLOCK</div>
 
 </div>
 </x-dc>
@@ -110,22 +105,19 @@ class Component extends DCLogic {
 
   renderVals() {
     // Strings run oldest to newest; the stream runs newest first, so they reverse.
-    // Today (last character) now carries the block just logged: a HALF A DAY, enlarged.
     const LANES = [
-      { color: '#9ece6a', s: 'aa.a..bba.a..cbx.a..b' },
-      { color: '#73daca', s: 'aaabaaaaaabaaaaaabaaa' },
-      { color: '#ff9e64', s: '.....................' },
-      { color: '#bb9af7', s: '.a..cb.a...bc.a...cb.' }
+      { color: '#9ece6a', s: 'a.a..bba.a..cbx.a..bb' },
+      { color: '#73daca', s: 'aaaabaaaaaabaaaaaabaa' },
+      { color: '#ff9e64', s: 'a................a.aa' },
+      { color: '#bb9af7', s: '..a..cb.a...bc.a...cb' }
     ];
+    // Marks are bigger than the six-lane version: 81px columns can carry them.
     const SIZE = { a: 8, b: 13, c: 18, x: 8, y: 13, z: 18 };
-    const DAYS = ['WE 3', 'TU 2', 'MO 1',
+    const DAYS = ['SU 7', 'SA 6', 'FR 5', 'TH 4', 'WE 3', 'TU 2', 'MO 1',
                   'SU 31', 'SA 30', 'FR 29', 'TH 28', 'WE 27', 'TU 26', 'MO 25',
-                  'SU 24', 'SA 23', 'FR 22', 'TH 21', 'WE 20', 'TU 19', 'MO 18',
-                  'SU 17', 'SA 16', 'FR 15', 'TH 14'];
-
+                  'SU 24', 'SA 23', 'FR 22', 'TH 21', 'WE 20', 'TU 19', 'MO 18'];
     // The job: one verdict a day, e enlarged, d diminished, dot for a day off.
-    // It stopped enlarging him in the third week of August and has not started again.
-    const JOB = 'ee..dddee..ddddd..ddd';
+    const JOB = 'eedee..eddde..dddee..';
 
     const rows = DAYS.map((d, i) => {
       const weekend = d.charAt(0) === 'S';
@@ -142,7 +134,7 @@ class Component extends DCLogic {
     for (let i = 0; i < 21; i += 1) {
       for (const ln of LANES) {
         const ch = ln.s.charAt(20 - i);
-        if (ch === '.' || ch === '') {
+        if (ch === '.') {
           cells.push({ px: '0px', fill: 'transparent' });
         } else if (ch === 'a' || ch === 'b' || ch === 'c') {
           cells.push({ px: SIZE[ch] + 'px', fill: ln.color });

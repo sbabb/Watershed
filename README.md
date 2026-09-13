@@ -401,6 +401,20 @@ eight screen-lengths of scroll. A graph you scroll can never show "quiet for six
 weeks" as a single perceived shape, and that gestalt is the entire output of the
 year view. Both resolutions share an axis, so nothing flips when you zoom.
 
+**The year is a resolution, not a destination.** The record's header carries the
+scale — `3 WEEKS / THE YEAR`, the live one underlined — and one tap changes it.
+There is no year *section*, no tab bar, no menu: same rails, same order, same
+encoding, drawn at 11px a row instead of 25px. This is the payoff for making the
+encoding hold at both resolutions; the year is legible for free because nothing
+new was invented for it.
+
+**And back down again.** A year is for noticing, not reading. When something in
+it catches you — the March turn in the job, the eight months with no BODY — you
+tap that week and get its seven days at full size, with the neighbouring weeks
+one tap either side. That is the only drill-down in the app, and it exists so a
+year can be *asked a question* rather than admired. Nothing in the app is more
+than one tap from the record.
+
 **Motion is high priority and deliberately placed.** Cadence's `motion.js` is
 the model — one readable data table of named moments with durations and bezier
 curves, retypeable into Rive, with two curve families (expo-out for anything
@@ -420,6 +434,35 @@ settling, back-out for anything that should read as impact) and a
   `exportedAt`, `data`) around the payload, with a deliberately strict parser
   that refuses a malformed file at the door and says why. That *is* the sync
   story, with no account and no password.
+
+## Locked for the prototype
+
+Nine screens. If it is not here, it is not in the first build.
+
+1. **Home, day unanswered** — the date, the question, four lane names. No log
+   button; the lanes are the answer. Nothing singled out.
+2. **The lane, and the grid** — your why-sentence at the top, the 3×2 grid at the
+   bottom in thumb reach. One tap writes the block.
+3. **Home, day answered** — the same screen with the question gone: three weeks
+   of marks, the job ribbon beside them, `ADD ANOTHER` at the foot.
+4. **The job verdict** — three cells open in place under today's ribbon row.
+5. **A lane, and its goal** — the spine: why, the goal open on it, blocks earned.
+6. **A why, and what it used to say** — struck-through versions, dated.
+7. **The year** — one tap from home via the scale control in the header.
+8. **One week** — one tap from the year; seven days at full size.
+9. **The encoding** — not a screen, the spec the other eight obey.
+
+**Home is one screen in two states**, not two screens, and every other screen is
+one tap from it and returns to it.
+
+**One thing to know before building:** `NOTHING, IT WAS THE JOB` answers the day
+without writing a block, so an answered day is not proof anything was logged and
+the door's absence is not a receipt.
+
+Boards argued past and removed from the design — the horizontal home, the
+button-first home, the lane picker as its own screen, the two-ribbon year, the
+three separate doors, the unfolded wall — are in `design/retired/` and in git,
+not on the canvas.
 
 ## Open
 
@@ -458,8 +501,8 @@ settling, back-out for anything that should read as impact) and a
 
 ## Status
 
-Concept settled through two grilling passes. Twenty-one artboards drawn,
-laid out as the app first and the argument underneath it. Settled
+Concept settled through three grilling passes and locked for a prototype: nine
+screens, three rows on the canvas, twelve boards retired. Settled
 against them: the vertical axis, the four-lane set and its naming, the encoding,
 the bucket calibration, the logging flow, the test for what earns a lane, the
 job as a single ribbon and how it is drawn at both resolutions, the why-sentence
