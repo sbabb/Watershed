@@ -63,6 +63,30 @@
       "w": 400,
       "h": 880,
       "title": "Home — horizontal (not chosen)"
+    },
+    {
+      "file": "RibbonLog.dc.html",
+      "x": 0,
+      "y": 2420,
+      "w": 400,
+      "h": 880,
+      "title": "A — Logging a verdict, in place"
+    },
+    {
+      "file": "YearRibbon.dc.html",
+      "x": 500,
+      "y": 2420,
+      "w": 400,
+      "h": 880,
+      "title": "B — The year with the job on it"
+    },
+    {
+      "file": "TwoConditions.dc.html",
+      "x": 1000,
+      "y": 2420,
+      "w": 400,
+      "h": 880,
+      "title": "C — Two conditions"
     }
   ],
   "annotations": [
@@ -93,6 +117,27 @@
       "y": 1930,
       "w": 900,
       "text": "LOCKED. B FULL / FADED for the day mark, 1 STACKED for the week cell.\n\nOne rule holds at both resolutions: footprint means size, fill means enlarged, fade means diminished. Rejected options kept and dimmed — a decision without its reasons is just a preference."
+    },
+    {
+      "id": "note-ribbon-log",
+      "x": 0,
+      "y": 2160,
+      "w": 380,
+      "text": "A — HOW YOU LOG A VERDICT.\n\nNo screen and no prompt: the ribbon cell IS the control. Tap today's cell and three cells open in place under the row; tap one and it closes. Two taps, no navigation, and the day grid never leaves the screen.\n\nThis is deliberately not the 3x2 grid. There is no size to pick, so a full screen for one bit of information would read as a chore — which is exactly how a daily ask turns into a streak you resent.\n\nNO WORK is the third cell rather than a default, because a day off is a real answer and the app should never guess it from the calendar.\n\nSkip a day and the cell stays blank. Nothing counts it, nothing mentions it, and no badge appears."
+    },
+    {
+      "id": "note-ribbon-year",
+      "x": 500,
+      "y": 2160,
+      "w": 380,
+      "text": "B — DOES IT SURVIVE AT 11px A WEEK?\n\nTwo encodings of the same job, side by side, so the answer is visible rather than argued.\n\nLEFT keeps the day grain: five 4px marks a week. It turns to dither. You can just about see the year darken, but no particular week says anything, and the texture competes with the lanes for attention.\n\nRIGHT draws the week the way a lane is drawn — same length every time, only the solid/faded split moving. The March turn is unmissable, and it costs one encoding rule rather than two.\n\nThe blank rows are the one week off in August, drawn by nothing.\n\nIf the ribbon ships, it ships as the right-hand version at year scale and the day version on the home screen. Same fact, drawn at the resolution each view can carry."
+    },
+    {
+      "id": "note-two-conditions",
+      "x": 1000,
+      "y": 2160,
+      "w": 380,
+      "text": "C — WHERE THE CLUTTER STARTS. Sooner than expected, and not for the reason I expected.\n\nThe second ribbon is SOBER, and look at what it draws: twenty-one identical cells, an unbroken column. That is a streak. No number counts it, but the eye counts it, and the day it breaks the screen will say so louder than any counter — which is the one thing this app promised not to do.\n\nIt also does not fit the encoding. Solid means enlarged and faded means diminished everywhere else; here solid would mean 'yes' and faded would mean 'no', which is a different question wearing the same clothes.\n\nAnd it is already covered: RECOVERY is the lane that holds meetings, the 12x12 and the step writing — the hours you actually gave. Note that the ribbon even collides with that lane's colour.\n\nOne condition is a design. Two is a dashboard with a streak in it."
     }
   ],
   "launch": {
